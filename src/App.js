@@ -6,6 +6,7 @@ import "./App.css";
 import particlesOptions from "./particles.json";
 import NavBar from "./components/NavBar"
 import ProjectsSection from "./components/ProjectsSection";
+import Skills from "./components/Skills";
 
 function App() {
     const [init, setInit] = useState(false);
@@ -29,7 +30,7 @@ function App() {
             {init && <Particles options={particlesOptions}/>}
             <div id="home">
       <div className="text-white py-5 custom-padding hero">
-        <div className="container text-center">
+        <div className="container text-center hero2">
           <img
             src="/portrait.jpg"
             alt="Anthony Seadler"
@@ -39,16 +40,17 @@ function App() {
           <h1 className="mt-3">ANTHONY SEADLER</h1>
 
           <div className="coding-divider1">
-          <i className="fab fa-github fa-2x"></i>
+          <i className="fa fa-code fa-2x"></i>
             
           </div>
 
-          <h5 className="text-white job-position">Full Stack Web Developer</h5>
+          <h3 className="text-white job-position">Full Stack Web Developer</h3>
         </div>
        
       </div>
     </div>
       <ProjectsSection />
+      <Skills />
         </div>
         </>
     );

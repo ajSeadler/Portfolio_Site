@@ -10,8 +10,13 @@ body {
   z-index: 100;
 }
 
+.navbar a {
+  color: white;
+}
 
-
+.navbar {
+  background-color: #00000091;
+}
 
 .custom-divider {
   border-top: 1px solid #fff;
@@ -40,13 +45,15 @@ body {
 .coding-divider::after {
   content: '';
   display: inline-block;
+  margin-bottom: 15px;
   width: 20%;
-  height: 4px;
+  height: 5px;
   background-color: #fff;
 }
 
 .coding-divider::before {
   margin-right: 10px;
+  
 }
 
 .coding-divider::after {
@@ -55,7 +62,7 @@ body {
 
 .coding-divider1 i {
   color: white;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .coding-divider1 {
@@ -63,7 +70,7 @@ body {
   margin: 20px 0;
   font-size: 24px;
   color: #fff;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .job-position {
@@ -75,6 +82,7 @@ body {
   content: '';
   display: inline-block;
   width: 20%;
+  margin-bottom: 15px;
   height: 4px;
   background-color: #fff;
 }
@@ -127,7 +135,8 @@ body {
 }
 
 #projects {
-  background-color: #7E8D85;
+  /* background-color: #7e8d8558; */
+  /* backdrop-filter: blur(5px); */
 }
 
 
@@ -137,8 +146,10 @@ body {
 }
 
 .hero {
-  margin-bottom: 20vh;
+  margin-bottom: 25vh;
 }
+
+
 
 .profile-pic {
   margin-top: 10%; /* Adjust the value as needed */
@@ -156,9 +167,9 @@ body {
   border-color: #6C7A70; /* Change the border color on hover to a slightly darker shade */
 }
 
-#skills {
+/* #skills {
   background-color: #7E8D85;
-}
+} */
 
 #skills h1 {
   color: white;
@@ -177,9 +188,19 @@ body {
   display: none;
 }
 
+
+
 /* CSS for mobile view (max-width: 768px) */
 @media (max-width: 768px) {
   .mobile-icon {
     display: inline; /* Display the icons in mobile view */
+  }
+
+  .hero {
+    margin-bottom: 20vh;
+  }
+
+  .hero2 {
+    margin-top: 20%;
   }
 }

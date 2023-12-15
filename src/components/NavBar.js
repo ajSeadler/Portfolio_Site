@@ -3,7 +3,7 @@ import React from 'react';
 function NavBar() {
   const navBarStyle = {
     padding: '10px 20px',
-    background: 'rgba(255, 255, 255, 0.1)', // Set background to none
+    // Set background to none
     backdropFilter: 'blur(10px)', // Adjust the blur intensity as needed
   };
 
@@ -17,7 +17,7 @@ function NavBar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark sticky-top navbar-with-background" style={navBarStyle}>
-      <a className="navbar-brand" href="#home">Anthony Seadler</a>
+      <a className="navbar-brand" href="#home">AS</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>

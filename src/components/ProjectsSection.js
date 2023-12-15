@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 function ProjectsSection() {
   const [showDescription1, setShowDescription1] = useState(false);
@@ -43,8 +44,22 @@ function ProjectsSection() {
     setShowDescription4(false);
   };
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  const fadeInStyle = {
+    opacity: inView ? 1 : 0,
+    transition: "opacity 1s ease-in-out",
+  };
+
+  const fadeInStyle2 = {
+    opacity: inView ? 1 : 0,
+    transition: "opacity 3s ease-in-out",
+  };
+
   const projectDescriptionStyle = {
-    background: "rgba(0, 0, 0, 0.5)",
+    // background: "rgba(0, 0, 0, 0.5)",
     color:'white',
     textAlign:'left'
   };
@@ -52,6 +67,15 @@ function ProjectsSection() {
   const projectImageStyle = {
     cursor: "pointer",
     maxWidth: "70%",
+    ...fadeInStyle,
+    
+  };
+
+  const projectImageStyle2 = {
+    cursor: "pointer",
+    maxWidth: "70%",
+    ...fadeInStyle2,
+    
   };
 
   const imageOverlayStyle = {
@@ -60,11 +84,14 @@ function ProjectsSection() {
     left: 0,
     width: "100%",
     height: "100%",
-    background: "rgba(0, 0, 0, 0.5)",
+    // background: "rgba(0, 0, 0, 0.5)",
+    background:'none',
     display: "none",
     transition: "opacity 0.3s",
     textAlign: "center",
   };
+
+  
 
   return (
     <div id="projects" className="py-5">
@@ -84,12 +111,13 @@ function ProjectsSection() {
           <div className="col-md-12 mb-4 sty">
             <div className="card" style={{ background: "transparent", border:'none' }}>
               <div class="d-flex justify-content-between align-items-center">
-                <img
+              <img
+                  ref={ref}
                   src="/fork-it.png"
                   className="card-img-top mx-auto clickable-image"
                   alt="Fork-It Reviews Website"
                   onClick={toggleDescription1}
-                  style={{ ...projectImageStyle, ...showDescription1 }}
+                  style={projectImageStyle}
                 />
               </div>
 
@@ -172,12 +200,13 @@ function ProjectsSection() {
           <div className="col-md-12 mb-4">
             <div className="card" style={{ background: "transparent", border:'none' }}>
               <div class="d-flex justify-content-between align-items-center">
-                <img
+              <img
+                  ref={ref}
                   src="/weather_app.png"
                   className="card-img-top mx-auto clickable-image"
-                  alt="Weather App"
+                  alt="Fork-It Reviews Website"
                   onClick={toggleDescription5}
-                  style={{ ...projectImageStyle, ...showDescription5 }}
+                  style={projectImageStyle2}
                 />
               </div>
 

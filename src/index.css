@@ -1,13 +1,185 @@
+/* CSS (Custom Styles) */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+
+
+.custom-divider {
+  border-top: 1px solid #fff;
+  margin: 20px 0;
+}
+
+.logo {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.coding-divider i {
+  color: #fff;
+}
+
+.coding-divider {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: #fff;
+}
+
+
+.coding-divider::before,
+.coding-divider::after {
+  content: '';
+  display: inline-block;
+  width: 20%;
+  height: 4px;
+  background-color: #fff;
+}
+
+.coding-divider::before {
+  margin-right: 10px;
+}
+
+.coding-divider::after {
+  margin-left: 10px;
+}
+
+.coding-divider1 i {
+  color: white;
+  margin-top: 15px;
+}
+
+.coding-divider1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.job-position {
+  margin-top: 70px;
+}
+
+.coding-divider1::before,
+.coding-divider1::after {
+  content: '';
+  display: inline-block;
+  width: 20%;
+  height: 4px;
+  background-color: #fff;
+}
+
+.coding-divider1::before {
+  margin-right: 10px;
+}
+
+.coding-divider1::after {
+  margin-left: 10px;
+}
+
+.clickable-image:hover {
+  transform: scale(1.05); /* Increase the size slightly on hover */
+  transition: transform 0.2s; /* Add a smooth transition effect */
+  cursor: pointer; /* Change the cursor to a pointer hand */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow on hover */
+}
+
+/* .card {
+  border: none;
+  background-color: #7E8D85;
+} */
+
+.card-title {
+  color: black;
+}
+
+.hyper-links {
+  display: flex;
+  gap: 10px;
+  color: #000000;
+}
+
+  
+.features li {
+  margin: 10px;
+}
+
+.hand {
+  color: black;
+}
+
+.bu {
+  color: #000000;
+}
+
+.card-body a {
+  color: black;
+}
+
+#projects {
+  background-color: #7E8D85;
+}
+
+
+
+#projects h2 {
+  color: white;
+}
+
+.hero {
+  margin-bottom: 20vh;
+}
+
+.profile-pic {
+  margin-top: 10%; /* Adjust the value as needed */
+}
+
+/* Your CSS stylesheet */
+.btn-custom {
+  background-color: #7E8D85; /* Set the background color to #7E8D85 */
+  color: #fff; /* Set the text color to white */
+  border-color: #000000; /* Set the border color to #7E8D85 */
+}
+
+.btn-custom:hover {
+  background-color: #6C7A70; /* Change the background color on hover to a slightly darker shade */
+  border-color: #6C7A70; /* Change the border color on hover to a slightly darker shade */
+}
+
+#skills {
+  background-color: #7E8D85;
+}
+
+#skills h1 {
+  color: white;
+}
+
+.navbar-toggler {
+  background-color: #7E8D85;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: end;
+}
+
+.mobile-icon {
+  display: none;
+}
+
+/* CSS for mobile view (max-width: 768px) */
+@media (max-width: 768px) {
+  .mobile-icon {
+    display: inline; /* Display the icons in mobile view */
+  }
 }

@@ -4,6 +4,8 @@ import {loadFull} from "tsparticles";
 import logo from "./logo.svg";
 import "./App.css";
 import particlesOptions from "./particles.json";
+import NavBar from "./components/NavBar"
+import ProjectsSection from "./components/ProjectsSection";
 
 function App() {
     const [init, setInit] = useState(false);
@@ -21,35 +23,34 @@ function App() {
     }, []);
 
     return (
+      <>
+      <NavBar />
         <div className="App">
             {init && <Particles options={particlesOptions}/>}
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <p>
-                    Edit <code>src/particles.json</code> to customize Particles, then save
-                    to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-                <a
-                    className="App-link"
-                    href="https://particles.js.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    See Particles samples
-                </a>
-            </header>
+            <div id="home">
+      <div className="text-white py-5 custom-padding hero">
+        <div className="container text-center">
+          <img
+            src="/portrait.jpg"
+            alt="Anthony Seadler"
+            className="rounded-circle img-fluid profile-pic"
+            style={{ width: "200px", height: "200px" }}
+          />
+          <h1 className="mt-3">ANTHONY SEADLER</h1>
+
+          <div className="coding-divider1">
+          <i className="fab fa-github fa-2x"></i>
+            
+          </div>
+
+          <h5 className="text-white job-position">Full Stack Web Developer</h5>
         </div>
+       
+      </div>
+    </div>
+      <ProjectsSection />
+        </div>
+        </>
     );
 }
 

@@ -34,6 +34,7 @@ function ProjectsSection() {
     setShowDescription2(false);
     setShowDescription3(false);
     setShowDescription4(false);
+    setShowDescription5(false);
   };
 
   const toggleDescription2 = () => {
@@ -41,6 +42,7 @@ function ProjectsSection() {
     setShowDescription1(false);
     setShowDescription3(false);
     setShowDescription4(false);
+    setShowDescription5(false);
   };
 
   const toggleDescription3 = () => {
@@ -48,6 +50,7 @@ function ProjectsSection() {
     setShowDescription1(false);
     setShowDescription2(false);
     setShowDescription4(false);
+    setShowDescription5(false);
   };
 
   const toggleDescription4 = () => {
@@ -55,6 +58,7 @@ function ProjectsSection() {
     setShowDescription1(false);
     setShowDescription2(false);
     setShowDescription3(false);
+    setShowDescription5(false);
   };
 
   const toggleDescription5 = () => {
@@ -96,7 +100,6 @@ function ProjectsSection() {
     textAlign: "left",
   };
 
-  
   return (
     <div id="projects" className="">
       <div className="container">
@@ -138,7 +141,7 @@ function ProjectsSection() {
 
               {showDescription1 && (
                 <div className="card-body" style={projectDescriptionStyle}>
-                  <h5 className="card-title">Fork-It (Reviews website)</h5>
+                  <h5 className="card-title">Fork It (Reviews website)</h5>
                   <p className="card-text">
                     | Full Stack Developer | Oct./Nov. 2023 <br />| React, HTML,
                     CSS, JavaScript, Express, Postgres, Node.js
@@ -164,7 +167,7 @@ function ProjectsSection() {
                         class="fa fa-hand-point-right"
                         style={{ color: "white" }}
                       ></i>{" "}
-                      Live Demo
+                      Video Demo
                     </a>
                   </div>
 
@@ -178,9 +181,8 @@ function ProjectsSection() {
                     between multiple team members, and my role primarily
                     involved working on the back end by creating database tables
                     and building API routes. Additionally, I contributed to
-                    building many of the React components, ensuring a
-                    well-rounded skill set in web development. Most of the
-                    Material UI styling is done by myself as well.
+                    building React components for those routes, ensuring a
+                    well-rounded skill set in web development.
                   </p>
                   <ul class="fa-ul features">
                     <li>
@@ -280,18 +282,26 @@ function ProjectsSection() {
                       target="_self"
                       rel="noopener noreferrer"
                     >
-                      <i class="fa fa-hand-point-right"></i> Live Demo
+                      <i class="fa fa-hand-point-right"></i> Video Demo
                     </a>
                   </div>
 
                   <p>
-                    Welcome to "Weather Or Not," a web application designed to
-                    provide users with current weather information. Here's a
-                    detailed breakdown of the key features and components of
-                    this project: (...p.s. this is my first real Python project!
-                    It was fully built from scratch by myself. The only content
-                    that was not 'built' by me would be the Open Weather Map
-                    API. It was a fun gateway into the world of python)
+                    Welcome to "Weather Or Not," an elegantly designed web
+                    application crafted to deliver timely weather updates. This
+                    project marks a significant milestone in my journey as a
+                    Python developer, representing my first demonstration
+                    project. Developed with Flask and Python, the application
+                    seamlessly integrates with the Open Weather Map API,
+                    offering a simple yet effective solution for users seeking
+                    current weather information. Within the confines of this
+                    project, simplicity is key, reflecting a mindful approach to
+                    user experience. This introductory Python endeavor,
+                    showcased in my portfolio, embodies my dedication to
+                    creating functional and user-friendly applications. I invite
+                    you to explore "Weather Or Not" as a glimpse into my early
+                    yet meaningful contributions to the world of Python
+                    development.
                   </p>
                   <ul class="fa-ul features">
                     <li>
@@ -390,10 +400,10 @@ function ProjectsSection() {
 
               {showDescription2 && (
                 <div className="card-body" style={projectDescriptionStyle}>
-                  <h5 className="card-title">Band Website</h5>
+                  <h5 className="card-title">Disco Stranger Band Website</h5>
                   <p className="card-text">
-                    | Full Stack Developer | Sep. 2023 <br />| HTML, CSS,
-                    JavaScript
+                    | Full Stack Developer | Sep. 2023 <br />| React,
+                    JavaScript, Node.js, Material UI
                   </p>
                   <a
                     href="https://github.com/ajSeadler/discoband"
@@ -497,7 +507,7 @@ function ProjectsSection() {
               {showDescription3 && (
                 <div className="card-body" style={projectDescriptionStyle}>
                   <h5 className="card-title">The Legend of Zelda Compendium</h5>
-                  <p className="card-text">Full Stack Developer | Sep. 2023</p>
+                  <p className="card-text">Full Stack Developer | React, JavaScript, HTML, CSS | September 2023</p>
                   <a
                     href="https://github.com/ajSeadler/Zelda-Encyc"
                     target="_blank"
@@ -505,6 +515,17 @@ function ProjectsSection() {
                   >
                     <i className="fab fa-github" style={{ color: "white" }}></i>{" "}
                     GitHub Repository
+                  </a>
+                  <a
+                    href="https://zeldainfo.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className="fa fa-link"
+                      style={{ color: "white", margin: "5px" }}
+                    ></i>{" "}
+                    Check Out The Site!
                   </a>
                   <p>
                     The Legend of Zelda Compendium is a fan-made web application
@@ -555,7 +576,7 @@ function ProjectsSection() {
               {showDescription4 && (
                 <div className="card-body" style={projectDescriptionStyle}>
                   <h5 className="card-title">Eco Sync</h5>
-                  <p className="card-text">Full Stack Developer | Sep. 2023</p>
+                  <p className="card-text">Front-End Developer | React, JavaScript, HTML, CSS | September 2023</p>
                   <a
                     href="https://github.com/ajSeadler/Eco-Sync-Repo"
                     target="_blank"
@@ -564,21 +585,34 @@ function ProjectsSection() {
                     <i className="fab fa-github" style={{ color: "white" }}></i>{" "}
                     GitHub Repository
                   </a>
+                  <a
+                    href="https://fakeproduct1.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className="fa fa-link"
+                      style={{ color: "white", margin: "5px" }}
+                    ></i>{" "}
+                    Check Out The Site!
+                  </a>
+
                   <p>
-                    Eco Sync is a project aimed at providing environmental
-                    enthusiasts with the tools and information they need to make
-                    a positive impact on the planet.
-                  </p>
-                  <p>
-                    Developed a user-friendly web application that empowers
-                    users to discover sustainable practices, connect with
-                    eco-conscious communities, and track their environmental
-                    efforts.
-                  </p>
-                  <p>
-                    Leveraged cutting-edge technologies to create a seamless and
-                    informative platform that contributes to a more sustainable
-                    world.
+                    Eco Sync, a fictional product/web application created for demonstration
+                    purposes, serves as a tangible showcase of my dedication to
+                    refining front-end development skills. This endeavor
+                    specifically focuses on the practice of crafting responsive
+                    web applications that seamlessly adapt to diverse screen
+                    sizes. Through the lens of Eco Sync, I present a
+                    user-friendly platform designed for environmental
+                    enthusiasts to explore sustainable practices, connect with
+                    eco-conscious communities, and monitor their environmental
+                    efforts. The project not only underscores my technical
+                    capabilities but also highlights my attention to styling,
+                    ensuring a visually appealing and cohesive user experience.
+                    Take a closer look at Eco Sync to appreciate my commitment
+                    to creating responsive and aesthetically pleasing
+                    applications in a simulated environment.
                   </p>
                 </div>
               )}
@@ -592,4 +626,4 @@ function ProjectsSection() {
 
 export default ProjectsSection;
 
-//yeah i could oop a little more here..
+//AT SOME POINT YOU NEED TO TOSS THESE DESCRIPTIONS IN A DIFFERENT FILE, IMPORT IT, THEN USE ARRAYS AND MAPPING. 

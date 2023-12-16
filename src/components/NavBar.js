@@ -70,6 +70,15 @@ function NavBar() {
           >
             Contact
           </Nav.Link>
+          {/* <Nav.Link
+            as={NavLink}
+            to="/about"
+            onClick={closeNavbar}
+            style={navLinkStyle}
+            activeStyle={activeLinkStyle}
+          >
+            About Me
+          </Nav.Link> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

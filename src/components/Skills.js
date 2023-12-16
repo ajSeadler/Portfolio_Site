@@ -7,6 +7,7 @@ const Skills = () => {
     color: "white",
     fontSize: "2rem",
     marginBottom: "2rem",
+    marginTop:'0%'
   };
 
   const paragraphStyle = {

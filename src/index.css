@@ -157,10 +157,13 @@ body {
 
 #projects {
   background-color: transparent;
-  margin-top: 20%;
+  margin-top: 0%;
   
 }
 
+#skills {
+  margin-top: -3%;
+}
 
 
 #projects h2 {
@@ -217,6 +220,10 @@ body {
   background-color: white;
 }
 
+.proj-home {
+  margin-top: 20%;
+}
+
 
 
 /* CSS for mobile view (max-width: 768px) */
@@ -230,7 +237,11 @@ body {
   }
 
   #projects {
-    margin-top: 72%;
+    margin-top: 0%;
+  }
+
+  .proj-home {
+    margin-top:75%;
   }
   
   .skillz li {

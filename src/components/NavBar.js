@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 
 function NavBar() {
@@ -12,6 +13,14 @@ function NavBar() {
     fontSize: '2.5rem', 
   };
 
+  const navLinkStyle = {
+    color: 'white', // Default color
+  };
+
+  const activeLinkStyle = {
+    color: 'lightgrey', // Color for the active link
+  };
+
   const closeNavbar = () => {
     const navbar = document.querySelector('.navbar-collapse');
     if (navbar.classList.contains('show')) {
@@ -21,14 +30,46 @@ function NavBar() {
 
   return (
     <Navbar expand="lg" className="navbar-with-background" sticky="top" style={navBarStyle}>
-      <Navbar.Brand href="#home" style={brandStyle}>AS</Navbar.Brand>
+      <Navbar.Brand as={NavLink} to="/" style={brandStyle}>AS</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarNav" />
       <Navbar.Collapse id="navbarNav">
         <Nav className="ml-auto">
-          <Nav.Link href="#home" onClick={closeNavbar}>Home</Nav.Link>
-          <Nav.Link href="#projects" onClick={closeNavbar}>Portfolio</Nav.Link>
-          <Nav.Link href="#skills" onClick={closeNavbar}>Skills</Nav.Link>
-          <Nav.Link href="#locations" onClick={closeNavbar}>Contact</Nav.Link>
+          <Nav.Link
+            as={NavLink}
+            to="/"
+            onClick={closeNavbar}
+            style={navLinkStyle}
+            activeStyle={activeLinkStyle}
+          >
+            Home
+          </Nav.Link>
+          <Nav.Link
+            as={NavLink}
+            to="/projects"
+            onClick={closeNavbar}
+            style={navLinkStyle}
+            activeStyle={activeLinkStyle}
+          >
+            Portfolio
+          </Nav.Link>
+          <Nav.Link
+            as={NavLink}
+            to="/skills"
+            onClick={closeNavbar}
+            style={navLinkStyle}
+            activeStyle={activeLinkStyle}
+          >
+            Skills
+          </Nav.Link>
+          <Nav.Link
+            as={NavLink}
+            to="/locations"
+            onClick={closeNavbar}
+            style={navLinkStyle}
+            activeStyle={activeLinkStyle}
+          >
+            Contact
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

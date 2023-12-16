@@ -30,7 +30,7 @@ function App() {
         <div className="App">
             <div className="part-back"> {init && <Particles options={particlesOptions}/>} </div>
             <div id="home">
-      <div className="text-white py-5 hero">
+      
         <div className="container text-center hero2">
           <img
             src="/portrait.jpg"
@@ -38,17 +38,19 @@ function App() {
             className="rounded-circle img-fluid profile-pic"
             style={{ width: "200px", height: "200px" }}
           />
-          <h1 className="mt-3">ANTHONY SEADLER</h1>
+          <h1 className="mt-0" style={{color:'white'}}>ANTHONY SEADLER</h1>
 
           <div className="coding-divider1">
           <i className="fa fa-code fa-2x"></i>
+          
             
           </div>
+          <h3 className="text-white">Full Stack Web Developer</h3>
 
-          <h3 className="text-white job-position">Full Stack Web Developer</h3>
+          
         </div>
        
-      </div>
+      
     </div>
       <ProjectsSection />
       <Skills />

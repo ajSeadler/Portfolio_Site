@@ -155,10 +155,11 @@ body {
   color: white;
 }
 
-/* #projects {
-  background-color: #7e8d8558;
-  backdrop-filter: blur(5px);
-} */
+#projects {
+  background-color: transparent;
+  margin-top: 20%;
+  
+}
 
 
 
@@ -225,6 +226,15 @@ body {
   }
   
   .hero2 {
-    margin-top: 20%;
+    margin-top: 34%;
   }
+
+  #projects {
+    margin-top: 72%;
+  }
+  
+  .skillz li {
+    width: 100%;
+  }
+
 }

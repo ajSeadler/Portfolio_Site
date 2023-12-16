@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import VideoModal from "./VideoModal";
+import ReactModal from "react-modal";
 
 function ProjectsSection() {
   const [showDescription1, setShowDescription1] = useState(false);
@@ -8,6 +10,16 @@ function ProjectsSection() {
   const [showDescription3, setShowDescription3] = useState(false);
   const [showDescription4, setShowDescription4] = useState(false);
   const [showDescription5, setShowDescription5] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [showModal1, setShowModal1] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const toggleModal1 = () => {
+    setShowModal1(!showModal1);
+  };
 
   const [ref1, inView1] = useInView({
     triggerOnce: true,
@@ -35,6 +47,7 @@ function ProjectsSection() {
     setShowDescription3(false);
     setShowDescription4(false);
     setShowDescription5(false);
+    setShowModal(false);
   };
 
   const toggleDescription2 = () => {
@@ -43,6 +56,7 @@ function ProjectsSection() {
     setShowDescription3(false);
     setShowDescription4(false);
     setShowDescription5(false);
+   
   };
 
   const toggleDescription3 = () => {
@@ -67,32 +81,11 @@ function ProjectsSection() {
     setShowDescription2(false);
     setShowDescription3(false);
     setShowDescription4(false);
+    setShowModal1(false);
+    
   };
 
-  const fadeInStyle1 = {
-    opacity: inView1 ? 1 : 0,
-    transition: "opacity 1s ease-in-out",
-  };
-
-  const fadeInStyle2 = {
-    opacity: inView2 ? 1 : 0,
-    transition: "opacity 3s ease-in-out",
-  };
-
-  const fadeInStyle3 = {
-    opacity: inView3 ? 1 : 0,
-    transition: "opacity 3s ease-in-out",
-  };
-
-  const fadeInStyle4 = {
-    opacity: inView4 ? 1 : 0,
-    transition: "opacity 3s ease-in-out",
-  };
-
-  const fadeInStyle5 = {
-    opacity: inView5 ? 1 : 0,
-    transition: "opacity 3s ease-in-out",
-  };
+  
 
   const projectDescriptionStyle = {
     backdropFilter: "blur(10px)",
@@ -158,13 +151,9 @@ function ProjectsSection() {
                       ></i>{" "}
                       GitHub Repository
                     </a>
-                    <a
-                      href="#projects"
-                      target="_self"
-                      rel="noopener noreferrer"
-                    >
+                    <a href="#projects" onClick={toggleModal}>
                       <i
-                        class="fa fa-hand-point-right"
+                        className="fa fa-hand-point-right"
                         style={{ color: "white" }}
                       ></i>{" "}
                       Video Demo
@@ -233,6 +222,18 @@ function ProjectsSection() {
                   </ul>
                 </div>
               )}
+              <ReactModal
+                isOpen={showModal}
+                onRequestClose={toggleModal}
+                contentLabel="Video Demo Modal"
+              >
+                <button onClick={toggleModal}>Close Modal</button>
+                {/* Add the video player component here */}
+                <video controls width="100%" height="auto">
+                  <source src="path/to/your/video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </ReactModal>
             </div>
           </div>
         </div>
@@ -277,12 +278,12 @@ function ProjectsSection() {
                     >
                       <i className="fab fa-github"></i> GitHub Repository
                     </a>
-                    <a
-                      href="#projects"
-                      target="_self"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fa fa-hand-point-right"></i> Video Demo
+                    <a href="#projects" onClick={toggleModal1}>
+                      <i
+                        className="fa fa-hand-point-right"
+                        style={{ color: "white" }}
+                      ></i>{" "}
+                      Video Demo
                     </a>
                   </div>
 
@@ -369,6 +370,18 @@ function ProjectsSection() {
                   </ul>
                 </div>
               )}
+              <ReactModal
+                isOpen={showModal1}
+                onRequestClose={toggleModal1}
+                contentLabel="Video Demo Modal"
+              >
+                <button onClick={toggleModal1}>Close Modal</button>
+                {/* Add the video player component here */}
+                <video controls width="100%" height="auto">
+                  <source src="path/to/your/video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </ReactModal>
             </div>
           </div>
         </div>
@@ -507,7 +520,10 @@ function ProjectsSection() {
               {showDescription3 && (
                 <div className="card-body" style={projectDescriptionStyle}>
                   <h5 className="card-title">The Legend of Zelda Compendium</h5>
-                  <p className="card-text">Full Stack Developer | React, JavaScript, HTML, CSS | September 2023</p>
+                  <p className="card-text">
+                    Full Stack Developer | React, JavaScript, HTML, CSS |
+                    September 2023
+                  </p>
                   <a
                     href="https://github.com/ajSeadler/Zelda-Encyc"
                     target="_blank"
@@ -576,7 +592,10 @@ function ProjectsSection() {
               {showDescription4 && (
                 <div className="card-body" style={projectDescriptionStyle}>
                   <h5 className="card-title">Eco Sync</h5>
-                  <p className="card-text">Front-End Developer | React, JavaScript, HTML, CSS | September 2023</p>
+                  <p className="card-text">
+                    Front-End Developer | React, JavaScript, HTML, CSS |
+                    September 2023
+                  </p>
                   <a
                     href="https://github.com/ajSeadler/Eco-Sync-Repo"
                     target="_blank"
@@ -598,12 +617,12 @@ function ProjectsSection() {
                   </a>
 
                   <p>
-                    Eco Sync, a fictional product/web application created for demonstration
-                    purposes, serves as a tangible showcase of my dedication to
-                    refining front-end development skills. This endeavor
-                    specifically focuses on the practice of crafting responsive
-                    web applications that seamlessly adapt to diverse screen
-                    sizes. Through the lens of Eco Sync, I present a
+                    Eco Sync, a fictional product/web application created for
+                    demonstration purposes, serves as a tangible showcase of my
+                    dedication to refining front-end development skills. This
+                    endeavor specifically focuses on the practice of crafting
+                    responsive web applications that seamlessly adapt to diverse
+                    screen sizes. Through the lens of Eco Sync, I present a
                     user-friendly platform designed for environmental
                     enthusiasts to explore sustainable practices, connect with
                     eco-conscious communities, and monitor their environmental
@@ -626,4 +645,4 @@ function ProjectsSection() {
 
 export default ProjectsSection;
 
-//AT SOME POINT YOU NEED TO TOSS THESE DESCRIPTIONS IN A DIFFERENT FILE, IMPORT IT, THEN USE ARRAYS AND MAPPING. 
+//AT SOME POINT YOU NEED TO TOSS THESE DESCRIPTIONS IN A DIFFERENT FILE, IMPORT IT, THEN USE ARRAYS AND MAPPING.

@@ -4,6 +4,7 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+
 .sticky-top {
   position: sticky;
   top: 0;
@@ -14,8 +15,22 @@ body {
   color: white;
 }
 
+.navbar a:hover {
+  color: #A3B4A2;
+}
+
+.navbar-with-background .navbar-nav .nav-link.active,
+.navbar-with-background .navbar-nav .nav-link:active {
+  color: lightgrey !important;
+}
+
+
 .navbar {
   background-color: #00000091;
+}
+
+.navbar button {
+  background-color: rgb(255, 255, 255);
 }
 
 .custom-divider {
@@ -102,6 +117,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow on hover */
 }
 
+
+
 /* .card {
   border: none;
   background-color: #7E8D85;
@@ -114,7 +131,11 @@ body {
 .hyper-links {
   display: flex;
   gap: 10px;
-  color: #000000;
+  color: #fff;
+}
+
+.hyper-links i {
+  color: #fff;
 }
 
   
@@ -131,13 +152,13 @@ body {
 }
 
 .card-body a {
-  color: black;
+  color: white;
 }
 
-#projects {
-  /* background-color: #7e8d8558; */
-  /* backdrop-filter: blur(5px); */
-}
+/* #projects {
+  background-color: #7e8d8558;
+  backdrop-filter: blur(5px);
+} */
 
 
 
@@ -146,9 +167,12 @@ body {
 }
 
 .hero {
-  margin-bottom: 25vh;
+  height: 100vh;
 }
 
+.hero2 {
+  margin-top: 5%;
+}
 
 
 .profile-pic {
@@ -188,6 +212,10 @@ body {
   display: none;
 }
 
+.resume-download button {
+  background-color: white;
+}
+
 
 
 /* CSS for mobile view (max-width: 768px) */
@@ -195,11 +223,7 @@ body {
   .mobile-icon {
     display: inline; /* Display the icons in mobile view */
   }
-
-  .hero {
-    margin-bottom: 20vh;
-  }
-
+  
   .hero2 {
     margin-top: 20%;
   }

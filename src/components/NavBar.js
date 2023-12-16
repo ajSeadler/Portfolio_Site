@@ -1,13 +1,17 @@
 import React from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
 
 function NavBar() {
   const navBarStyle = {
     padding: '10px 20px',
-    // Set background to none
-    backdropFilter: 'blur(10px)', // Adjust the blur intensity as needed
+    backdropFilter: 'blur(10px)', 
   };
 
-  // Function to close the collapsible navbar when a link is clicked
+  const brandStyle = {
+    fontFamily: 'Bebas Neue', 
+    fontSize: '2.5rem', 
+  };
+
   const closeNavbar = () => {
     const navbar = document.querySelector('.navbar-collapse');
     if (navbar.classList.contains('show')) {
@@ -16,28 +20,18 @@ function NavBar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark sticky-top navbar-with-background" style={navBarStyle}>
-      <a className="navbar-brand" href="#home">AS</a>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav" style={{ marginLeft: "0" }}>
-          <li className="nav-item">
-            <a className="nav-link" href="#home" id="home-link" onClick={closeNavbar}>Home</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#projects" id="projects-link" onClick={closeNavbar}>Portfolio</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#skills" id="skills-link" onClick={closeNavbar}>Skills</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#locations" id="locations-link" onClick={closeNavbar}>Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <Navbar expand="lg" className="navbar-with-background" sticky="top" style={navBarStyle}>
+      <Navbar.Brand href="#home" style={brandStyle}>AS</Navbar.Brand>
+      <Navbar.Toggle aria-controls="navbarNav" />
+      <Navbar.Collapse id="navbarNav">
+        <Nav className="ml-auto">
+          <Nav.Link href="#home" onClick={closeNavbar}>Home</Nav.Link>
+          <Nav.Link href="#projects" onClick={closeNavbar}>Portfolio</Nav.Link>
+          <Nav.Link href="#skills" onClick={closeNavbar}>Skills</Nav.Link>
+          <Nav.Link href="#locations" onClick={closeNavbar}>Contact</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 

@@ -1,6 +1,6 @@
 {
   "background": {
-    "color": "#FF3C38"
+    "color": "#000"
   },
   "interactivity": {
     "events": {
@@ -16,7 +16,7 @@
     },
     "modes": {
       "push": {
-        "quantity": 4
+        "quantity": 2
       },
       "repulse": {
         "distance": 200,
@@ -45,7 +45,7 @@
         "default": "bounce"
       },
       "random": false,
-      "speed": 6,
+      "speed": 2,
       "straight": false
     },
     "number": {

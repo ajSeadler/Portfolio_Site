@@ -58,8 +58,19 @@ function ProjectsSection() {
     transition: "opacity 3s ease-in-out",
   };
 
+  const fadeInStyle3 = {
+    opacity: inView ? 1 : 0,
+    transition: "opacity 3s ease-in-out",
+  };
+
+  const fadeInStyle4 = {
+    opacity: inView ? 1 : 0,
+    transition: "opacity 3s ease-in-out",
+  };
+
   const projectDescriptionStyle = {
     // background: "rgba(0, 0, 0, 0.5)",
+    backdropFilter:'blur(10px)',
     color:'white',
     textAlign:'left'
   };
@@ -130,11 +141,11 @@ function ProjectsSection() {
                   </p>
                   <div className="hyper-links">
                     <a
-                      href="https://github.com/ajSeadler/Fork-It-Repo"
+                      href="https://github.com/ajSeadler/Fork-It"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <i className="fab fa-github-square" style={{color:'white'}}></i> GitHub Repository
+                      <i className="fab fa-github" style={{color:'white'}}></i> GitHub Repository
                     </a>
                     <a
                       href="#projects"
@@ -222,7 +233,7 @@ function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <i className="fab fa-github-square"></i> GitHub Repository
+                      <i className="fab fa-github"></i> GitHub Repository
                     </a>
                     <a
                       href="#projects"
@@ -301,11 +312,19 @@ function ProjectsSection() {
                     JavaScript
                   </p>
                   <a
-                    href="https://github.com/ajSeadler/Disco-Stranger-Site"
+                    href="https://github.com/ajSeadler/discoband"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <i className="fab fa-github"></i> GitHub Repository
+                  </a>
+                  <a
+                    href="https://discostrangermusic.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{margin:'10px'}}
+                  >
+                    <i class="fa fa-hand-point-right"></i> discostrangermusic.com
                   </a>
                   <p>
                     Created a website for the rock band "Disco Stranger" to

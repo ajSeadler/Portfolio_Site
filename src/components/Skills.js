@@ -27,8 +27,8 @@ function Skills() {
           team.
         </p>
         <div className="row">
-          <div className="col-md-6 mx-auto text-center">
-            <h3 className="text-muted">Proficient in:</h3>
+          <div className="col-md-6 mx-auto">
+            {/* <h3 className="text-muted">Proficient in:</h3> */}
             <ul className="list-group">
               <li className="list-group-item">Node.js</li>
               <li className="list-group-item">JavaScript</li>

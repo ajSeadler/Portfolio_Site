@@ -101,7 +101,7 @@ function ProjectsSection() {
             <i className="fab fa-github fa-2x"></i>
           </a>
         </div>
-        <h2 className="text-center mb-4">PORTFOLIO</h2>
+        <h2 className="text-center" style={{fontSize:'2.2rem'}}>PORTFOLIO</h2>
         <div className="row">
           <div className="col-md-12 mb-4 sty">
             <div
@@ -391,7 +391,7 @@ function ProjectsSection() {
                   <iframe
                     width="560"
                     height="315"
-                    src="https://www.youtube.com/embed/qOcs1PvMBGo?si=g2N2hOqceS30XcJc"
+                    src="https://www.youtube.com/embed/T7IlewTZkws?si=Fr-kBKNUalD4GVWy"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

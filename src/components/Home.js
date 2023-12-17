@@ -35,11 +35,11 @@ const Home = () => {
         />
         <motion.h1
           className="mt-0"
-          style={{ color: "white" }}
+          style={{ color: "white", fontFamily:'Bebas Neue'}}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 0.8, ease: "easeOut" } }}
         >
-          ANTHONY SEADLER
+          <h1 style={{fontSize:'3rem', marginTop:'15px'}}>ANTHONY SEADLER</h1>
         </motion.h1>
 
         <motion.div
@@ -54,7 +54,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 2, duration: 0.8, ease: "easeOut" } }}
         >
-          Full Stack Web Developer
+          <h2>Full Stack Developer</h2>
         </motion.h3>
       </motion.div>
 

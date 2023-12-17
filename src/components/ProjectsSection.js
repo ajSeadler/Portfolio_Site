@@ -146,7 +146,7 @@ function ProjectsSection() {
                       ></i>{" "}
                       GitHub Repository
                     </a>
-                    <a href="#projects" onClick={toggleModal1}>
+                    <a href="#projects" onClick={toggleModal}>
                       <i
                         className="fa fa-hand-point-right"
                         style={{ color: "white" }}
@@ -221,10 +221,24 @@ function ProjectsSection() {
                 isOpen={showModal}
                 onRequestClose={toggleModal}
                 contentLabel="Video Demo Modal"
+                className="ReactModal__Content" // Use the correct class name here
+                overlayClassName="ReactModal__Overlay" // Use the correct class name here
               >
-                <button onClick={toggleModal}>Close Modal</button>
+                <div className="ReactModal__CloseButton" onClick={toggleModal}>
+                  <i className="fas fa-times"></i>
+                </div>
                 {/* Add the video player component here */}
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/qOcs1PvMBGo?si=HoVSMisOwNNCk0L4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div className="video-container">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/qOcs1PvMBGo?si=g2N2hOqceS30XcJc"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
               </ReactModal>
             </div>
           </div>
@@ -260,7 +274,7 @@ function ProjectsSection() {
                   <h5 className="card-title">Weather or Not</h5>
                   <p className="card-text">
                     | Full Stack Developer | December 2023 <br />| Python,
-                    Flask, HTML, Bootstrap 5
+                    Flask, HTML, Boostrap 5
                   </p>
                   <div className="hyper-links">
                     <a
@@ -366,11 +380,24 @@ function ProjectsSection() {
                 isOpen={showModal1}
                 onRequestClose={toggleModal1}
                 contentLabel="Video Demo Modal"
-                
+                className="ReactModal__Content" // Use the correct class name here
+                overlayClassName="ReactModal__Overlay" // Use the correct class name here
               >
-                <button onClick={toggleModal1}>Close Modal</button>
+                <div className="ReactModal__CloseButton" onClick={toggleModal1}>
+                  <i className="fas fa-times"></i>
+                </div>
                 {/* Add the video player component here */}
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qOcs1PvMBGo?si=HoVSMisOwNNCk0L4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div className="video-container">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/qOcs1PvMBGo?si=g2N2hOqceS30XcJc"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
               </ReactModal>
             </div>
           </div>

@@ -1,4 +1,6 @@
 /* CSS (Custom Styles) */
+
+
 body {
   margin: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -161,14 +163,59 @@ body {
   
 }
 
+
+
 #skills {
   margin-top: -3%;
 }
 
 
+
 #projects h2 {
   color: white;
 }
+
+/* VideoModal.css */
+
+/* Overlay styles */
+.ReactModal__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content styles */
+.ReactModal__Content {
+  position: relative;
+  background-color: transparent; /* Make the background transparent */
+  border: none; /* Remove border */
+  box-shadow: none; /* Remove box shadow */
+  outline: none;
+  padding: 20px;
+  width: 100%; /* Adjust the width as needed */
+  max-width: 700px; /* Maximum width of the modal */
+}
+
+/* Close button styles */
+.ReactModal__CloseButton {
+  position: absolute;
+  top: -2px;
+  right: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #000000; /* Change the close button color to white */
+}
+
+/* Add any additional styles as needed */
+
 
 .hero {
   height: 100vh;
@@ -202,8 +249,6 @@ body {
 #skills h1 {
   color: white;
 }
-
-
 
 .navbar-toggler {
   background-color: #7E8D85;
@@ -250,4 +295,22 @@ body {
     width: 100%;
   }
 
+  .ReactModal__Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: auto;
+    width: 90%;
+  }
+
+  .video-container {
+    width: 100%; /* Adjust the width as needed for mobile */
+  }
+
+  .video-container iframe {
+    width: 100%; /* Make the iframe width 100% for mobile */
+  }
+
+  
 }

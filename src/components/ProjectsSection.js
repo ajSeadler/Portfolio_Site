@@ -260,7 +260,7 @@ function ProjectsSection() {
                   <h5 className="card-title">Weather or Not</h5>
                   <p className="card-text">
                     | Full Stack Developer | December 2023 <br />| Python,
-                    Flask, HTML, Boostrap 5
+                    Flask, HTML, Bootstrap 5
                   </p>
                   <div className="hyper-links">
                     <a
@@ -366,10 +366,11 @@ function ProjectsSection() {
                 isOpen={showModal1}
                 onRequestClose={toggleModal1}
                 contentLabel="Video Demo Modal"
+                
               >
                 <button onClick={toggleModal1}>Close Modal</button>
                 {/* Add the video player component here */}
-                <iframe width="50%" height="50%" src="https://www.youtube.com/embed/qOcs1PvMBGo?si=HoVSMisOwNNCk0L4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qOcs1PvMBGo?si=HoVSMisOwNNCk0L4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </ReactModal>
             </div>
           </div>

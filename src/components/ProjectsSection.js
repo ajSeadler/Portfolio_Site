@@ -4,11 +4,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
 import ReactModal from "react-modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+
 
 const ProjectsSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [showDescription1, setShowDescription1] = useState(false);
   const [showDescription2, setShowDescription2] = useState(false);
+  const [showDescription3, setShowDescription3] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showModal1, setShowModal1] = useState(false);
 
@@ -23,12 +28,21 @@ const ProjectsSection = () => {
   const toggleDescription1 = () => {
     setShowDescription1(!showDescription1);
     setShowDescription2(false);
+    setShowDescription3(false);
     setShowModal(false);
   };
 
   const toggleDescription2 = () => {
     setShowDescription2(!showDescription2);
     setShowDescription1(false);
+    setShowDescription3(false);
+  };
+
+  const toggleDescription3 = () => {
+    setShowDescription3(!showDescription3);
+    setShowDescription1(false);
+    setShowDescription2(false);
+    setShowModal(false);
   };
 
   const projectDescriptionStyle = {
@@ -43,15 +57,20 @@ const ProjectsSection = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
+    centerMode: true,
+    centerPadding: "15%", // Adjust this value to control the visibility of the next slide
   };
 
   return (
     <div id="projects" className="">
       <div className="container">
-      <div className="coding-divider">
-          {/* Add your social link or other content here */}
+        <div className="coding-divider">
+        <FontAwesomeIcon icon={faGithub} style={{fontSize:'3rem'}}/>
         </div>
-        <h2 className="text-center" style={{ fontSize: '2.2rem' }}>PORTFOLIO</h2>
+        <h2 className="text-center" style={{ fontSize: "2.2rem" }}>
+          PORTFOLIO
+        </h2>
 
         <Slider {...sliderSettings}>
           <div>
@@ -60,7 +79,7 @@ const ProjectsSection = () => {
                 className="card"
                 style={{ background: "transparent", border: "none" }}
               >
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center pro">
                   <motion.div>
                     <img
                       src="/fork-it.png"
@@ -74,7 +93,7 @@ const ProjectsSection = () => {
 
                 {showDescription1 && (
                   <div className="card-body" style={projectDescriptionStyle}>
-                    <h5 className="card-title">Project 1 Placeholder</h5>
+                    <h5 className="card-title">Fork It (Reviews Website)</h5>
                     <p className="card-text">
                       | Placeholder Description | Placeholder Tech Stack
                     </p>
@@ -131,7 +150,7 @@ const ProjectsSection = () => {
 
                 {showDescription2 && (
                   <div className="card-body" style={projectDescriptionStyle}>
-                    <h5 className="card-title">Project 2 Placeholder</h5>
+                    <h5 className="card-title">Weather or Not App</h5>
                     <p className="card-text">
                       | Placeholder Description | Placeholder Tech Stack
                     </p>
@@ -165,7 +184,6 @@ const ProjectsSection = () => {
                   </div>
                 </ReactModal>
               </div>
-              
             </div>
           </div>
           <div>
@@ -177,52 +195,24 @@ const ProjectsSection = () => {
                 <div class="d-flex justify-content-between align-items-center">
                   <motion.div>
                     <img
-                      src="/weather_app.png"
+                      src="/dsband.png"
                       className="card-img-top mx-auto clickable-image"
                       alt="Project 2"
-                      onClick={toggleDescription2}
+                      onClick={toggleDescription3}
                       style={{ cursor: "pointer", maxWidth: "70%" }}
                     />
                   </motion.div>
                 </div>
 
-                {showDescription2 && (
+                {showDescription3 && (
                   <div className="card-body" style={projectDescriptionStyle}>
-                    <h5 className="card-title">Project 2 Placeholder</h5>
+                    <h5 className="card-title">Disco Stranger Band Website</h5>
                     <p className="card-text">
                       | Placeholder Description | Placeholder Tech Stack
                     </p>
                   </div>
                 )}
-
-                <ReactModal
-                  isOpen={showModal1}
-                  onRequestClose={toggleModal1}
-                  contentLabel="Video Demo Modal"
-                  className="ReactModal__Content"
-                  overlayClassName="ReactModal__Overlay"
-                >
-                  <div
-                    className="ReactModal__CloseButton"
-                    onClick={toggleModal1}
-                  >
-                    <i className="fas fa-times"></i>
-                  </div>
-                  <div className="video-container">
-                    {/* Add the video player component here */}
-                    <iframe
-                      width="560"
-                      height="315"
-                      src="https://www.youtube.com/embed/T7IlewTZkws?si=Fr-kBKNUalD4GVWy"
-                      title="YouTube video player"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                </ReactModal>
               </div>
-              
             </div>
           </div>
         </Slider>

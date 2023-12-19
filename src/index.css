@@ -126,6 +126,16 @@ h2, h3 {
 }
 
 
+.card img {
+  max-width: 200%;
+  width: 130%;
+  height: auto;
+}
+
+.coding-divider i {
+  font-size: 3%;
+}
+
 
 /* .card {
   border: none;

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 const Skills = () => {
   const titleStyle = {
@@ -45,7 +47,8 @@ const Skills = () => {
     <div id="skills" className="container-fluid py-5" ref={ref}>
       <div className="container p-4 rounded">
         <div className="coding-divider">
-          <i className="fa fa-cogs fa-3x fa-fw"></i>
+        <FontAwesomeIcon icon={faCode} style={{fontSize:'3rem'}} />
+
         </div>
         <motion.h2
           className="text-center"

@@ -146,6 +146,24 @@ h2, h3 {
   color: black;
 }
 
+.close-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.close-button:hover {
+  background-color: #45a049;
+}
+
 .hyper-links {
   display: flex;
   gap: 10px;
@@ -156,6 +174,22 @@ h2, h3 {
   color: #fff;
 }
 
+.slick-dots {
+  bottom: 20px; /* Adjust the position of the dots */
+}
+
+.slick-dots li button::before {
+  color: white; /* Set dot color to white */
+}
+
+.white-dot {
+  width: 10px; /* Adjust the width of the white dot */
+  height: 10px; /* Adjust the height of the white dot */
+  background-color: white; /* Set the background color to white */
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px; /* Adjust the margin between dots */
+}
   
 .features li {
   margin: 10px;
@@ -311,6 +345,12 @@ h2, h3 {
     width: 100%;
   }
 
+  .port-title {
+    margin-top:15vh !important;
+  }
+
+ 
+
   .ReactModal__Content {
     display: flex;
     justify-content: center;
@@ -326,6 +366,10 @@ h2, h3 {
 
   .video-container iframe {
     width: 100%; /* Make the iframe width 100% for mobile */
+  }
+
+  .des-body {
+    width: 20%;
   }
 
   

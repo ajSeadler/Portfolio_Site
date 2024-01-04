@@ -313,7 +313,7 @@ const ProjectsSection = () => {
                     <div className="card-body des" style={projectDescriptionStyle}>
                       <h5 className="card-title">Solar Project</h5>
                       <p className="card-text">
-                        | Placeholder Description | Your description for Project 4 goes here.
+                        | Three.JS, React.JS, Node.JS, Vite, Material UI | Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system, explore their details, and enjoy a visually stunning experience. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design.
                       </p>
                     </div>
                     <button className="close-button" onClick={toggleDescription4}>

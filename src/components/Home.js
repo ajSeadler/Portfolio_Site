@@ -3,6 +3,8 @@ import { motion, useAnimation } from "framer-motion";
 import ProjectsSection from "./ProjectsSection";
 import Skills from "./Skills";
 import Locations from "./Locations";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const controls = useAnimation();
@@ -47,7 +49,7 @@ const Home = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1, transition: { delay: 1.5, duration: 0.8, ease: "easeOut" } }}
         >
-          <i className="fa fa-code fa-2x"></i>
+          <FontAwesomeIcon icon={faLaptopCode} style={{fontSize:'3rem'}} />
         </motion.div>
         <motion.h3
           className="text-white"

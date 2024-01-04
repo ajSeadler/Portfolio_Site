@@ -10,6 +10,7 @@ import Skills from "./components/Skills";
 import Locations from "./components/Locations";
 import AboutMe from "./components/AboutMe";
 import Home from "./components/Home";
+import ProjectGrid from "./components/ProjectGrid";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -37,7 +38,7 @@ function App() {
           
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<ProjectsSection />} />
+            <Route path="/projects" element={<ProjectGrid />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/locations" element={<Locations />} />
             {/* <Route path="/about" element={<AboutMe />} /> */}

@@ -28,15 +28,20 @@ const projectsData = [
     technologies: ["HTML", "CSS", "React.js", "JS", "Node.js", "MUI"],
     description:
       "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.",
+      link: 'https://discostrangermusic.com'
   },
+
   {
     id: 4,
-    title: "Solar Project",
+    title: "3D Planet Viewer",
     image: "/solar.jpg",
-    technologies: ["Placeholder Technology"],
+    technologies: ["Three.js, React.js, Node.js, Vite, Material UI"],
     description:
-      "Placeholder Description. Your detailed description for Project 4 goes here.",
-  },
+      "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system, explore their details, and enjoy a visually stunning experience. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design.",
+      link: 'https://solarsys1.netlify.app'
+  }
+  
+
   // Add more projects as needed
 ];
 
@@ -56,11 +61,7 @@ const ProjectGrid = () => {
 
   const renderDescription = (description) => {
     const maxLength = 80; // Set your desired maximum length
-    return (
-      <>
-        
-      </>
-    );
+    return <></>;
   };
 
   return (
@@ -69,14 +70,24 @@ const ProjectGrid = () => {
         <div className="coding-divider">
           <FontAwesomeIcon icon={faGithub} style={{ fontSize: "3rem" }} />
         </div>
-        <h2 className="text-center" style={{ fontSize: "2.2rem", color: "white" }}>
+        <h2
+          className="text-center"
+          style={{ fontSize: "2.2rem", color: "white" }}
+        >
           PORTFOLIO
         </h2>
 
         <div className="row">
           {projectsData.map((project) => (
             <div key={project.id} className="col-md-6 mb-4">
-              <div className="card" style={{ height: "100%", background: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(5px)" }}>
+              <div
+                className="card"
+                style={{
+                  height: "100%",
+                  background: "rgba(255, 255, 255, 0.1)",
+                  backdropFilter: "blur(5px)",
+                }}
+              >
                 <div className="d-flex justify-content-center align-items-center">
                   <motion.div>
                     <img
@@ -84,12 +95,19 @@ const ProjectGrid = () => {
                       className="card-img-top mx-auto clickable-image"
                       alt={project.title}
                       onClick={() => openModal(project)}
-                      style={{ cursor: "pointer", width: "100%", maxHeight: "100%", objectFit: "cover" }}
+                      style={{
+                        cursor: "pointer",
+                        width: "100%",
+                        maxHeight: "100%",
+                        objectFit: "cover",
+                      }}
                     />
                   </motion.div>
                 </div>
                 <div className="card-body text-center">
-                  <h5 className="card-title" style={{ color: "white" }}>{project.title}</h5>
+                  <h5 className="card-title" style={{ color: "white" }}>
+                    {project.title}
+                  </h5>
                   <p className="card-text" style={{ color: "white" }}>
                     {renderDescription(project.description)}
                   </p>

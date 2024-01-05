@@ -9,20 +9,22 @@ const Skills = () => {
     color: "white",
     fontSize: "2rem",
     marginBottom: "2rem",
-    marginTop:'0%'
+    marginTop: "0%",
   };
 
   const paragraphStyle = {
     color: "white",
     fontSize: "1.1rem",
     marginBottom: "3rem",
+    textAlign:"center"
   };
 
-  const skillsListStyle = {
-    listStyle: "none",
-    width: "80%", // Adjusted width for larger screens
-    padding: 0,
+  const skillsContainerStyle = {
+    background: "rgba(255, 255, 255, 0.1)", // Semi-transparent white background
+    borderRadius: "8px",
+    padding: "20px", // Adjust padding as needed
     margin: "auto",
+    textAlign: "center",
   };
 
   const listItemVariants = {
@@ -43,12 +45,35 @@ const Skills = () => {
     }
   }, [controls, inView]);
 
+  const listItemStyle = {
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    color: "#fff",
+    marginBottom: "10px",
+    textAlign:"center"
+  };
+
+  const skills = [
+    "Node.js",
+    "JavaScript",
+    "React / Redux",
+    "Express",
+    "Python",
+    "Flask",
+    "Git",
+    "HTML5",
+    "CSS",
+    "GitHub",
+    "Bootstrap",
+    "Material UI",
+    // Add more skills as needed
+  ];
+
   return (
     <div id="skills" className="container-fluid py-5" ref={ref}>
-      <div className="container p-4 rounded">
+      <div className="container p-5 rounded">
         <div className="coding-divider">
-        <FontAwesomeIcon icon={faCode} style={{fontSize:'3rem'}} />
-
+          <FontAwesomeIcon icon={faCode} style={{ fontSize: '3rem' }} />
         </div>
         <motion.h2
           className="text-center"
@@ -72,43 +97,27 @@ const Skills = () => {
           well-equipped to make meaningful contributions to your projects and
           team.
         </motion.p>
-        <motion.ul
+        <motion.div
           id="skills"
           className="list-group"
-          style={skillsListStyle}
+          style={skillsContainerStyle}
           initial="hidden"
           animate={controls}
         >
           {skills.map((skill, index) => (
-            <motion.li
+            <motion.div
               key={index}
-              className="list-group-item"
+              style={listItemStyle}
               variants={listItemVariants}
               transition={{ duration: 2.0, ease: "anticipate" }}
             >
               {skill}
-            </motion.li>
+            </motion.div>
           ))}
-        </motion.ul>
+        </motion.div>
       </div>
     </div>
   );
 };
-
-const skills = [
-  "Node.js",
-  "JavaScript",
-  "React / Redux",
-  "Express",
-  "Python",
-  "Flask",
-  "Git",
-  "HTML5",
-  "CSS",
-  "GitHub",
-  "Bootstrap",
-  "Material UI",
-  // Add more skills as needed
-];
 
 export default Skills;

@@ -102,7 +102,7 @@ const ProjectsSection = () => {
           <FontAwesomeIcon icon={faGithub} style={{ fontSize: '3rem' }} />
         </div>
         <h2 className="text-center" style={{ fontSize: "2.2rem" }}>
-          PORTFOLIO
+          FEATURED PROJECTS
         </h2>
 
         <Slider {...sliderSettings}>
@@ -135,7 +135,7 @@ const ProjectsSection = () => {
                     <div className="card-body des" style={projectDescriptionStyle}>
                       <h5 className="card-title">Fork It (Reviews Website)</h5>
                       <p className="card-text">
-                        | Postgres, Express.js, react.js, node.js | Fork It is a collaborative platform for exploring and reviewing various restaurants. Leveraging technologies like Postgres, Express.js, React.js, and Node.js, the web application caters to diverse user roles. From regular users to administrators, each role enjoys tailored functionalities. My contributions centered around backend development, including database table creation and API route implementation. Additionally, I played a role in building React components, showcasing a versatile skill set in web development.
+                      <strong>Tech Stack: </strong> | <i>Postgres, Express.js, Node.js, React.js, Material UI</i> | <br></br><br></br>Fork It is a collaborative platform for exploring and reviewing various restaurants. Leveraging technologies like Postgres, Express.js, React.js, and Node.js, the web application caters to diverse user roles. From regular users to administrators, each role enjoys tailored functionalities. My contributions centered around backend development, including database table creation and API route implementation. Additionally, I played a role in building React components, showcasing a versatile skill set in web development.
                       </p>
                     </div>
                     <button className="close-button" onClick={toggleDescription1}>
@@ -203,7 +203,7 @@ const ProjectsSection = () => {
                     <div className="card-body des" style={projectDescriptionStyle}>
                       <h5 className="card-title">Weather or Not (Live weather updates)</h5>
                       <p className="card-text">
-                        | Python, Flask, Bootstrap 5 | Experience real-time weather forecasts with Weather or Not, a dynamic application powered by Python and Flask. Users can easily retrieve single-day forecasts for cities, states, or countries. Furthermore, the app offers a 6-day forecast feature for desired locations. The blend of Python, Flask, and Bootstrap 5 ensures a seamless and visually appealing weather exploration experience. 
+                      <strong>Tech Stack: </strong> | <i>Python, Flask, Bootstrap 5</i> | <br></br><br></br> Experience real-time weather forecasts with Weather or Not, a dynamic application powered by Python and Flask. Users can easily retrieve single-day forecasts for cities, states, or countries. Furthermore, the app offers a 6-day forecast feature for desired locations. The blend of Python, Flask, and Bootstrap 5 ensures a seamless and visually appealing weather exploration experience. 
                       </p>
                     </div>
                     <button className="close-button" onClick={toggleDescription2}>
@@ -271,7 +271,7 @@ const ProjectsSection = () => {
                     <div className="card-body des" style={projectDescriptionStyle}>
                       <h5 className="card-title">Disco Stranger (Band Website)</h5>
                       <p className="card-text">
-                        | HTML, CSS, React.js, JS, Node.js, MUI | Created a website for the rock band "Disco Stranger" to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.
+                      <strong>Tech Stack: </strong> | <i> React.JS, Node.JS, Vite, Material UI</i> | <br></br><br></br> Created a website for the rock band "Disco Stranger" to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.
                       </p>
                     </div>
                     <button className="close-button" onClick={toggleDescription3}>
@@ -313,7 +313,7 @@ const ProjectsSection = () => {
                     <div className="card-body des" style={projectDescriptionStyle}>
                       <h5 className="card-title">Solar Project</h5>
                       <p className="card-text">
-                        | Three.JS, React.JS, Node.JS, Vite, Material UI | Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system, explore their details, and enjoy a visually stunning experience. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design.
+                      <strong>Tech Stack: </strong> | <i>Three.JS, React.JS, Node.JS, Vite, Material UI</i> | <br></br><br></br>  Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system, explore their details, and enjoy a visually stunning experience. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design.
                       </p>
                     </div>
                     <button className="close-button" onClick={toggleDescription4}>

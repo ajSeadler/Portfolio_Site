@@ -108,6 +108,7 @@ const ProjectGrid = () => {
                   <h5 className="card-title" style={{ color: "white" }}>
                     {project.title}
                   </h5>
+                 
                   <p className="card-text" style={{ color: "white" }}>
                     {renderDescription(project.description)}
                   </p>

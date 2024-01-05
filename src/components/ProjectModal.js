@@ -9,12 +9,13 @@ const ProjectModal = ({ isOpen, onRequestClose, project }) => {
       margin: "auto",
       backgroundColor: "#1a1a1a",
       borderRadius: "8px",
+      border:'none',
       padding: "20px",
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
-      maxHeight: "50vh",
+      maxHeight: "37vh",
       overflowY: "auto",
     },
     overlay: {
@@ -32,10 +33,10 @@ const ProjectModal = ({ isOpen, onRequestClose, project }) => {
   };
 
   const closeButtonStyle = {
-    marginTop: "auto",
+    marginTop: "0",
     backgroundColor: "#4CAF50",
     color: "white",
-    padding: "10px 15px",
+    padding: "10px 0px",
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
@@ -54,6 +55,7 @@ const ProjectModal = ({ isOpen, onRequestClose, project }) => {
           <strong>Technologies:</strong>{" "}
           <i>{project.technologies.join(", ")}</i>
           <br />
+          <br></br>
           <strong>Description:</strong> {project.description}
           <br />
           <a href={project.link} target="_blank" rel="noopener noreferrer">

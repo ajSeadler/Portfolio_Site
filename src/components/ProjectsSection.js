@@ -90,8 +90,9 @@ const ProjectsSection = () => {
       },
     ],
     customPaging: function (i) {
-      return <div className="white-dot"></div>; // Custom white dot styling
+      return <div className={`white-dot ${i === activeSlide ? 'active' : ''}`}></div>; // Custom dot styling
     },
+    beforeChange: (current, next) => setActiveSlide(next),
   };
 
   

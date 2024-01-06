@@ -60,12 +60,12 @@ function Locations() {
           <div className="col-md-12">
             <h3 className="h4"></h3>
             <div className="resume-download">
-              <button
+              {/* <button
                 className="btn btn-custom btn-lg"
                 onClick={openResumeInNewWindow}
               >
                 View Resume
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

@@ -7,7 +7,6 @@ import ReactModal from "react-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-
 const ProjectsSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [showDescription1, setShowDescription1] = useState(false);
@@ -90,17 +89,18 @@ const ProjectsSection = () => {
       },
     ],
     customPaging: function (i) {
-      return <div className={`white-dot ${i === activeSlide ? 'active' : ''}`}></div>; // Custom dot styling
+      return (
+        <div className={`white-dot ${i === activeSlide ? "active" : ""}`}></div>
+      ); // Custom dot styling
     },
     beforeChange: (current, next) => setActiveSlide(next),
   };
 
-  
   return (
     <div id="projects" className="">
       <div className="container port-title">
         <div className="coding-divider">
-          <FontAwesomeIcon icon={faGithub} style={{ fontSize: '3rem' }} />
+          <FontAwesomeIcon icon={faGithub} style={{ fontSize: "3rem" }} />
         </div>
         <h2 className="text-center" style={{ fontSize: "2.2rem" }}>
           FEATURED PROJECTS
@@ -113,7 +113,7 @@ const ProjectsSection = () => {
                 className="card"
                 style={{ background: "transparent", border: "none" }}
               >
-                <div class="d-flex justify-content-between align-items-center pro">
+                <div className="d-flex justify-content-between align-items-center pro">
                   <motion.div>
                     <img
                       src="/fork-it.png"
@@ -133,13 +133,32 @@ const ProjectsSection = () => {
                     className="ReactModal__Content"
                     overlayClassName="ReactModal__Overlay"
                   >
-                    <div className="card-body des" style={projectDescriptionStyle}>
+                    <div
+                      className="card-body des"
+                      style={projectDescriptionStyle}
+                    >
                       <h5 className="card-title">Fork It (Reviews Website)</h5>
                       <p className="card-text">
-                      <strong>Tech Stack: </strong> | <i>Postgres, Express.js, Node.js, React.js, Material UI</i> | <br></br><br></br>Fork It is a collaborative platform for exploring and reviewing various restaurants. Leveraging technologies like Postgres, Express.js, React.js, and Node.js, the web application caters to diverse user roles. From regular users to administrators, each role enjoys tailored functionalities. My contributions centered around backend development, including database table creation and API route implementation. Additionally, I played a role in building React components, showcasing a versatile skill set in web development.
+                        <strong>Tech Stack: </strong> |{" "}
+                        <i>
+                          Postgres, Express.js, Node.js, React.js, Material UI
+                        </i>{" "}
+                        | <br></br>
+                        <br></br>Fork It is a reviews web app where users can create an account to leave a review for a certain restaurant. Users can rate restaurants, review restaurants, and comment on other users reviews. The app also includes admin user roles, where an admin is able to create, edit, or delete any infomation in the database. Fork It is a collaborative project between myself and a few others. As a full stack developer, my role consisted of building database tables, building API routes, and building React components.
                       </p>
+                      <a
+                        href="https://github.com/ajSeadler/Fork-it"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fab fa-github"></i> GitHub Repository
+                      </a>
                     </div>
-                    <button className="close-button" onClick={toggleDescription1}>
+
+                    <button
+                      className="close-button"
+                      onClick={toggleDescription1}
+                    >
                       Close
                     </button>
                   </ReactModal>
@@ -181,7 +200,7 @@ const ProjectsSection = () => {
                 className="card"
                 style={{ background: "transparent", border: "none" }}
               >
-                <div class="d-flex justify-content-between align-items-center">
+                <div className="d-flex justify-content-between align-items-center">
                   <motion.div>
                     <img
                       src="/weather_app.png"
@@ -201,13 +220,30 @@ const ProjectsSection = () => {
                     className="ReactModal__Content"
                     overlayClassName="ReactModal__Overlay"
                   >
-                    <div className="card-body des" style={projectDescriptionStyle}>
-                      <h5 className="card-title">Weather or Not (Live weather updates)</h5>
+                    <div
+                      className="card-body des"
+                      style={projectDescriptionStyle}
+                    >
+                      <h5 className="card-title">
+                        Weather or Not (Live weather updates)
+                      </h5>
                       <p className="card-text">
-                      <strong>Tech Stack: </strong> | <i>Python, Flask, Bootstrap 5</i> | <br></br><br></br> Experience real-time weather forecasts with Weather or Not, a dynamic application powered by Python and Flask. Users can easily retrieve single-day forecasts for cities, states, or countries. Furthermore, the app offers a 6-day forecast feature for desired locations. The blend of Python, Flask, and Bootstrap 5 ensures a seamless and visually appealing weather exploration experience. 
+                        <strong>Tech Stack: </strong> |{" "}
+                        <i>Python, Flask, Bootstrap 5</i> | <br></br>
+                        <br></br> Weather or Not is a live weather forecasting app built with Python and Flask. The app features a current forecast, followed by a 7 day forecast - obtained from the Open Weather Map API. The users current location's forecast will display on the home page.
                       </p>
+                      <a
+                        href="https://github.com/ajSeadler/Weather-or-Not"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fab fa-github"></i> GitHub Repository
+                      </a>
                     </div>
-                    <button className="close-button" onClick={toggleDescription2}>
+                    <button
+                      className="close-button"
+                      onClick={toggleDescription2}
+                    >
                       Close
                     </button>
                   </ReactModal>
@@ -249,7 +285,7 @@ const ProjectsSection = () => {
                 className="card"
                 style={{ background: "transparent", border: "none" }}
               >
-                <div class="d-flex justify-content-between align-items-center">
+                <div className="d-flex justify-content-between align-items-center">
                   <motion.div>
                     <img
                       src="/dsband.png"
@@ -269,13 +305,44 @@ const ProjectsSection = () => {
                     className="ReactModal__Content"
                     overlayClassName="ReactModal__Overlay"
                   >
-                    <div className="card-body des" style={projectDescriptionStyle}>
-                      <h5 className="card-title">Disco Stranger (Band Website)</h5>
+                    <div
+                      className="card-body des"
+                      style={projectDescriptionStyle}
+                    >
+                      <h5 className="card-title">
+                        Disco Stranger (Band Website)
+                      </h5>
                       <p className="card-text">
-                      <strong>Tech Stack: </strong> | <i> React.JS, Node.JS, Vite, Material UI</i> | <br></br><br></br> Created a website for the rock band "Disco Stranger" to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.
+                        <strong>Tech Stack: </strong> |{" "}
+                        <i> React.JS, Node.JS, Vite, Material UI</i> | <br></br>
+                        <br></br> Created a website for the rock band "Disco
+                        Stranger" to enhance their online presence and engage
+                        with their audience. Built with React.js and Node.js.
+                        This was my first real website! It is a mobile
+                        responsive website that showcases the band's music,
+                        videos, and upcoming events. The site also features an
+                        animated 'blob' in the hero section.
                       </p>
+                      <a
+                        href="https://github.com/ajSeadler/discoband"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fab fa-github"></i> GitHub Repository
+                      </a>
+                      <a
+                        href="https://discostrangermusic.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{marginLeft:'10px'}}
+                      >
+                        <i className="fas fa-globe"></i> Disco Stranger Website
+                      </a>
                     </div>
-                    <button className="close-button" onClick={toggleDescription3}>
+                    <button
+                      className="close-button"
+                      onClick={toggleDescription3}
+                    >
                       Close
                     </button>
                   </ReactModal>
@@ -291,10 +358,10 @@ const ProjectsSection = () => {
                 className="card"
                 style={{ background: "transparent", border: "none" }}
               >
-                <div class="d-flex justify-content-between align-items-center">
+                <div className="d-flex justify-content-between align-items-center">
                   <motion.div>
                     <img
-                      src="/solar.jpg" 
+                      src="/solar.jpg"
                       className="card-img-top mx-auto clickable-image"
                       alt="Project 4"
                       onClick={toggleDescription4}
@@ -311,13 +378,45 @@ const ProjectsSection = () => {
                     className="ReactModal__Content"
                     overlayClassName="ReactModal__Overlay"
                   >
-                    <div className="card-body des" style={projectDescriptionStyle}>
+                    <div
+                      className="card-body des"
+                      style={projectDescriptionStyle}
+                    >
                       <h5 className="card-title">Solar Project</h5>
                       <p className="card-text">
-                      <strong>Tech Stack: </strong> | <i>Three.JS, React.JS, Node.JS, Vite, Material UI</i> | <br></br><br></br>  Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system, explore their details, and enjoy a visually stunning experience. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design.
+                        <strong>Tech Stack: </strong> |{" "}
+                        <i>Three.JS, React.JS, Node.JS, Vite, Material UI</i> |{" "}
+                        <br></br>
+                        <br></br> Designed and developed a 3D planet viewing
+                        website. Users can view 3D models of planets in our
+                        solar system and explore their details. The project utilizes
+                        Three.js for 3D rendering, React.js for the user
+                        interface, Node.js for backend functionality, Vite for
+                        fast development, and Material UI for a clean and
+                        responsive design.
                       </p>
+                      <a
+                        href="https://github.com/ajSeadler/SolarSystem"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fab fa-github"></i> GitHub Repository
+                      </a>
+
+                      <a
+                        href="https://solarsys1.netlify.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{marginLeft:'10px'}}
+                      >
+                        <i className="fas fa-globe"></i> Live Demo
+                      </a>
+                      
                     </div>
-                    <button className="close-button" onClick={toggleDescription4}>
+                    <button
+                      className="close-button"
+                      onClick={toggleDescription4}
+                    >
                       Close
                     </button>
                   </ReactModal>
@@ -345,7 +444,6 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
-
         </Slider>
 
         {/* Add additional projects as needed with similar structure */}

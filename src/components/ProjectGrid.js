@@ -11,7 +11,7 @@ const projectsData = [
     image: "/fork-it.png",
     technologies: ["Postgres", "Express.js", "React.js", "Node.js"],
     description:
-      "Fork It is a collaborative platform for exploring and reviewing various restaurants. Leveraging technologies like Postgres, Express.js, React.js, and Node.js, the web application caters to diverse user roles. From regular users to administrators, each role enjoys tailored functionalities. My contributions centered around backend development, including database table creation and API route implementation. Additionally, I played a role in building React components, showcasing a versatile skill set in web development.",
+      "Fork It is a reviews web app where users can create an account to leave a review for  a certain restaurant. Users can rate restaurants, review restaurants, and comment on other users reviews. Fork It is a collaborative project between myself and a few others. As a full stack developer, my role consisted of building database tables, building API routes, and building React components.",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projectsData = [
     image: "/weather_app.png",
     technologies: ["Python", "Flask", "Bootstrap 5"],
     description:
-      "Experience real-time weather forecasts with Weather or Not, a dynamic application powered by Python and Flask. Users can easily retrieve single-day forecasts for cities, states, or countries. Furthermore, the app offers a 6-day forecast feature for desired locations. The blend of Python, Flask, and Bootstrap 5 ensures a seamless and visually appealing weather exploration experience.",
+      "Weather or Not is a live weather forecasting app built with Python and Flask. The app features a current forecast, followed by a 7 day forecast - obtained from the Open Weather Map API. The users current location's forecast will display on the home page.",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const projectsData = [
     image: "/solar.jpg",
     technologies: ["Three.js, React.js, Node.js, Vite, Material UI"],
     description:
-      "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system, explore their details, and enjoy a visually stunning experience. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design.",
+    "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system and explore their details. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design",
       link: 'https://solarsys1.netlify.app'
   }
   

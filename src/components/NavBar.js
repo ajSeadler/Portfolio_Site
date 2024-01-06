@@ -39,7 +39,7 @@ function NavBar() {
             to="/"
             onClick={closeNavbar}
             style={navLinkStyle}
-            activeStyle={activeLinkStyle}
+            activestyle={activeLinkStyle}
           >
             Home
           </Nav.Link>
@@ -48,7 +48,7 @@ function NavBar() {
             to="/projects"
             onClick={closeNavbar}
             style={navLinkStyle}
-            activeStyle={activeLinkStyle}
+            activestyle={activeLinkStyle}
           >
             Portfolio
           </Nav.Link>
@@ -57,7 +57,7 @@ function NavBar() {
             to="/skills"
             onClick={closeNavbar}
             style={navLinkStyle}
-            activeStyle={activeLinkStyle}
+            activestyle={activeLinkStyle}
           >
             Skills
           </Nav.Link>
@@ -66,19 +66,19 @@ function NavBar() {
             to="/locations"
             onClick={closeNavbar}
             style={navLinkStyle}
-            activeStyle={activeLinkStyle}
+            activestyle={activeLinkStyle}
           >
             Contact
           </Nav.Link>
-          {/* <Nav.Link
+          <Nav.Link
             as={NavLink}
             to="/about"
             onClick={closeNavbar}
             style={navLinkStyle}
-            activeStyle={activeLinkStyle}
+            activestyle={activeLinkStyle}
           >
             About Me
-          </Nav.Link> */}
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

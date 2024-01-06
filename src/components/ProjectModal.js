@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactModal from "react-modal";
 
 const ProjectModal = ({ isOpen, onRequestClose, project }) => {
+  useEffect(() => {
+    ReactModal.setAppElement('#root');
+  }, []);
   const modalStyle = {
     content: {
       width: "80%",

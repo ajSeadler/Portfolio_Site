@@ -4,6 +4,41 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import ProjectModal from "./ProjectModal"; // Assuming you have a ProjectModal component
 
+const subHeadingStyle = {
+  color: "#45a049",
+  textAlign: 'left',
+  marginTop: "20px",
+  marginBottom: "10px",
+  marginLeft: "10%",
+};
+
+const projectListStyle = {
+  listStyleType: "none",
+  color:'white',
+  padding: "0",
+  marginTop: "10px",
+  margin: 'auto',
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+};
+
+const projectItemStyle = {
+  marginBottom: "10px",
+  display: "flex",
+  textAlign:'left',
+  marginLeft:'15px',
+  justifyContent: "space-between",
+  alignItems: "flex-start",
+};
+
+const projectVideoStyle = {
+  width: "30%",
+  height: "auto",
+  borderRadius: "20px",
+  marginRight: '10%',
+};
+
 const projectsData = [
   {
     id: 1,
@@ -60,7 +95,7 @@ const ProjectGrid = () => {
   };
 
   const renderDescription = (description) => {
-    const maxLength = 80; // Set your desired maximum length
+    // const maxLength = 80; // Set your desired maximum length
     return <></>;
   };
 
@@ -116,6 +151,29 @@ const ProjectGrid = () => {
               </div>
             </div>
           ))}
+          <h3 style={subHeadingStyle}>Continuing to Learn</h3>
+
+<ul style={projectListStyle}>
+  <li style={projectItemStyle}>
+    <div style={{ flex: "1" }}>
+      <strong>Flutter: News Article Hub</strong>
+      <p>Retrieves World, Sports, and Space news</p>
+      <p style={{textAlign:'left'}}>
+        <strong >What I learned:</strong>
+        <ul>
+          <li style={{textAlign:'left', marginBottom:'5px'}}>Asychronous programming in Flutter</li>
+          <li style={{textAlign:'left', marginBottom:'5px'}}>Data model structures</li>
+          <li style={{textAlign:'left', marginBottom:'5px'}}>Flutter state management </li>
+        </ul>
+      </p>
+    </div>
+    <video style={projectVideoStyle} controls>
+      <source src="flutterdemo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </li>
+  {/* Add more projects as needed */}
+</ul>
         </div>
 
         {selectedProject && (

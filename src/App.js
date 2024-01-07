@@ -5,12 +5,13 @@ import { loadFull } from "tsparticles";
 import "./App.css";
 import particlesOptions from "./particles.json";
 import NavBar from "./components/NavBar";
-import ProjectsSection from "./components/ProjectsSection";
+// import ProjectsSection from "./components/ProjectsSection";
 import Skills from "./components/Skills";
 import Locations from "./components/Locations";
 import AboutMe from "./components/AboutMe";
 import Home from "./components/Home";
 import ProjectGrid from "./components/ProjectGrid";
+import AsteroidGame from "./components/AsteroidGame";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -42,6 +43,7 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/locations" element={<Locations />} />
             <Route path="/about" element={<AboutMe />} />
+            <Route path="/asteroids" element={<AsteroidGame />} />
           </Routes>
         </div>
       </Router>

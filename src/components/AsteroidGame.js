@@ -220,12 +220,12 @@ const AsteroidGame = () => {
     <div>
       <canvas
         ref={canvasRef}
-        width={800}
-        height={600}
+        width={1680}
+        height={700}
         style={{ background: "rgba(128, 128, 128, 0.2)", border: "1px solid white" }}
       />
       <p style={{ color: "white", textAlign: "center" }}>
-        Use arrow keys to accelerate, left and right arrows to rotate, spacebar to shoot
+        Use arrow keys to accelerate, left and right arrows to rotate, spacebar to shoot (if you found this page, awesome! Im working on bugs right now..)
       </p>
     </div>
   );

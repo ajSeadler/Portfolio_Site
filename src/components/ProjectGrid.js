@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import ProjectModal from "./ProjectModal"; // Assuming you have a ProjectModal component
+import ProjectModal from "./ProjectModal";
 
 const subHeadingStyle = {
   color: "#45a049",
@@ -14,7 +14,7 @@ const subHeadingStyle = {
 
 const projectListStyle = {
   listStyleType: "none",
-  color:'white',
+  color: 'white',
   padding: "0",
   marginTop: "10px",
   margin: 'auto',
@@ -26,17 +26,17 @@ const projectListStyle = {
 const projectItemStyle = {
   marginBottom: "10px",
   display: "flex",
-  textAlign:'left',
-  marginLeft:'15px',
+  textAlign: 'left',
+  marginLeft: '15px',
   justifyContent: "space-between",
   alignItems: "flex-start",
 };
 
 const projectVideoStyle = {
-  width: "30%",
+  width: "100%",
+  maxWidth: "400px", // Set a maximum width for the video on small screens
   height: "auto",
   borderRadius: "20px",
-  marginRight: '10%',
 };
 
 const projectsData = [
@@ -46,7 +46,7 @@ const projectsData = [
     image: "/fork-it.png",
     technologies: ["Postgres", "Express.js", "React.js", "Node.js"],
     description:
-      "Fork It is a reviews web app where users can create an account to leave a review for  a certain restaurant. Users can rate restaurants, review restaurants, and comment on other users reviews. Fork It is a collaborative project between myself and a few others. As a full stack developer, my role consisted of building database tables, building API routes, and building React components.",
+      "Fork It is a reviews web app where users can create an account to leave a review for a certain restaurant. Users can rate restaurants, review restaurants, and comment on other users' reviews. Fork It is a collaborative project between myself and a few others. As a full-stack developer, my role consisted of building database tables, building API routes, and building React components.",
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ const projectsData = [
     image: "/weather_app.png",
     technologies: ["Python", "Flask", "Bootstrap 5"],
     description:
-      "Weather or Not is a live weather forecasting app built with Python and Flask. The app features a current forecast, followed by a 7 day forecast - obtained from the Open Weather Map API. The users current location's forecast will display on the home page.",
+      "Weather or Not is a live weather forecasting app built with Python and Flask. The app features a current forecast, followed by a 7-day forecast - obtained from the Open Weather Map API. The user's current location's forecast will display on the home page.",
   },
   {
     id: 3,
@@ -62,21 +62,18 @@ const projectsData = [
     image: "/dsband.png",
     technologies: ["HTML", "CSS", "React.js", "JS", "Node.js", "MUI"],
     description:
-      "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.",
-      link: 'https://discostrangermusic.com'
+      "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile-responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.",
+    link: 'https://discostrangermusic.com'
   },
-
   {
     id: 4,
     title: "3D Planet Viewer",
     image: "/solar.jpg",
     technologies: ["Three.js, React.js, Node.js, Vite, Material UI"],
     description:
-    "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system and explore their details. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design",
-      link: 'https://solarsys1.netlify.app'
+      "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system and explore their details. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design",
+    link: 'https://solarsys1.netlify.app'
   }
-  
-
   // Add more projects as needed
 ];
 
@@ -95,7 +92,6 @@ const ProjectGrid = () => {
   };
 
   const renderDescription = (description) => {
-    // const maxLength = 80; // Set your desired maximum length
     return <></>;
   };
 
@@ -143,7 +139,6 @@ const ProjectGrid = () => {
                   <h5 className="card-title" style={{ color: "white" }}>
                     {project.title}
                   </h5>
-                 
                   <p className="card-text" style={{ color: "white" }}>
                     {renderDescription(project.description)}
                   </p>
@@ -151,30 +146,32 @@ const ProjectGrid = () => {
               </div>
             </div>
           ))}
-          <h3 style={subHeadingStyle}>Continuing to Learn</h3>
-
-<ul style={projectListStyle}>
-  <li style={projectItemStyle}>
-    <div style={{ flex: "1" }}>
-      <strong>Flutter: News Article Hub</strong>
-      <p>Retrieves World, Sports, and Space news</p>
-      <p style={{textAlign:'left'}}>
-        <strong >What I learned:</strong>
-        <ul>
-          <li style={{textAlign:'left', marginBottom:'5px'}}>Asychronous programming in Flutter</li>
-          <li style={{textAlign:'left', marginBottom:'5px'}}>Data model structures</li>
-          <li style={{textAlign:'left', marginBottom:'5px'}}>Flutter state management </li>
-        </ul>
-      </p>
-    </div>
-    <video style={projectVideoStyle} controls>
-      <source src="flutterdemo.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </li>
-  {/* Add more projects as needed */}
-</ul>
         </div>
+
+        <h3 style={subHeadingStyle}>Continuing to Learn</h3>
+
+        <ul style={projectListStyle}>
+          <li style={projectItemStyle}>
+            <div style={{ flex: "1" }}>
+              <strong>Flutter: News Article Hub</strong>
+              <p>Retrieves World, Sports, and Space news</p>
+              <p style={{ textAlign: 'left' }}>
+                <strong >What I learned:</strong>
+                <ul>
+                  <li style={{ textAlign: 'left', marginBottom: '5px' }}>Asynchronous programming in Flutter</li>
+                  <li style={{ textAlign: 'left', marginBottom: '5px' }}>Data model structures</li>
+                  <li style={{ textAlign: 'left', marginBottom: '5px' }}>Flutter state management </li>
+                </ul>
+              </p>
+            </div>
+            <div style={{ flex: "1", marginLeft: "20px" }}>
+              <video style={projectVideoStyle} controls>
+                <source src="flutterdemo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </li>
+        </ul>
 
         {selectedProject && (
           <ProjectModal

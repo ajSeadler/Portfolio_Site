@@ -79,6 +79,15 @@ function NavBar() {
           >
             About Me
           </Nav.Link>
+          {/* <Nav.Link
+            as={NavLink}
+            to="/asteroids"
+            onClick={closeNavbar}
+            style={navLinkStyle}
+            activestyle={activeLinkStyle}
+          >
+            Asteroids
+          </Nav.Link> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

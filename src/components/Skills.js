@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faDesktop, faServer, faTools } from "@fortawesome/free-solid-svg-icons"; // Add appropriate icons
 
 const Skills = () => {
   const titleStyle = {
@@ -16,7 +16,7 @@ const Skills = () => {
     color: "white",
     fontSize: "1.1rem",
     marginBottom: "3rem",
-    textAlign:"center"
+    textAlign: "center",
   };
 
   const skillsContainerStyle = {
@@ -25,11 +25,37 @@ const Skills = () => {
     padding: "20px", // Adjust padding as needed
     margin: "auto",
     textAlign: "center",
+    display: "flex",
+    flexDirection:'row',
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+  };
+
+  const listContainerStyle = {
+    flex: "1",
+    minWidth: "250px",
+    marginRight: "20px",
+  };
+
+  const categoryTitleStyle = {
+    fontSize: "1.5rem",
+    fontWeight: "bold",
+    textDecoration:'underline',
+    color: "#fff",
+    marginBottom: "10px",
+  };
+
+  const listItemStyle = {
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    color: "#fff",
+    marginBottom: "10px",
+    textAlign: "center",
   };
 
   const listItemVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const controls = useAnimation();
@@ -45,35 +71,18 @@ const Skills = () => {
     }
   }, [controls, inView]);
 
-  const listItemStyle = {
-    fontSize: "1.2rem",
-    fontWeight: "bold",
-    color: "#fff",
-    marginBottom: "10px",
-    textAlign:"center"
-  };
-
-  const skills = [
-    "Node.js",
-    "JavaScript",
-    "React / Redux",
-    "Express",
-    "Python",
-    "Flask",
-    "Git",
-    "HTML5",
-    "CSS",
-    "GitHub",
-    "Bootstrap",
-    "Material UI",
+  const skillsData = {
+    frontend: ["JavaScript", "React.js","Three.js","HTML5", "CSS", "Bootstrap", "Material UI"],
+    backend: ["Node.js", "Express.js", "Python", "Flask", "MongoDB", "PostgreSQL","MySQL"],
+    tools: ["Git", "GitHub", "VS Code", "XCode", "Eclipse","Insomnia","Postico"],
     // Add more skills as needed
-  ];
+  };
 
   return (
     <div id="skills" className="container-fluid py-5" ref={ref}>
       <div className="container p-5 rounded">
         <div className="coding-divider">
-          <FontAwesomeIcon icon={faCode} style={{ fontSize: '3rem' }} />
+          <FontAwesomeIcon icon={faCode} style={{ fontSize: "3rem" }} />
         </div>
         <motion.h2
           className="text-center"
@@ -89,13 +98,9 @@ const Skills = () => {
           style={paragraphStyle}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 3.5 }}
+          transition={{ duration: 1.5 }}
         >
-          My knowledge of these technologies and tools allows me to contribute
-          to the development of efficient and user-friendly web applications.
-          <br /> With experience in various web development technologies, I am
-          well-equipped to make meaningful contributions to your projects and
-          team.
+          My knowledge of these technologies and tools allows me to contribute to the development of efficient and user-friendly web applications. <br /> With experience in various web development technologies, I am well-equipped to make meaningful contributions to your projects and team.
         </motion.p>
         <motion.div
           id="skills"
@@ -104,16 +109,54 @@ const Skills = () => {
           initial="hidden"
           animate={controls}
         >
-          {skills.map((skill, index) => (
-            <motion.div
-              key={index}
-              style={listItemStyle}
-              variants={listItemVariants}
-              transition={{ duration: 2.0, ease: "anticipate" }}
-            >
-              {skill}
+          <div style={listContainerStyle}>
+            <motion.div style={categoryTitleStyle}>
+              <FontAwesomeIcon icon={faDesktop} style={{ marginRight: "5px", color:'#FF6F59' }} />
+              Front End
             </motion.div>
-          ))}
+            {skillsData.frontend.map((skill, index) => (
+              <motion.div
+                key={index}
+                style={listItemStyle}
+                variants={listItemVariants}
+                transition={{ duration: 2.0, ease: "anticipate" }}
+              >
+                {skill}
+              </motion.div>
+            ))}
+          </div>
+          <div style={listContainerStyle}>
+            <motion.div style={categoryTitleStyle}>
+              <FontAwesomeIcon icon={faServer} style={{ marginRight: "5px", color:'#FF6F59' }} />
+              Back End
+            </motion.div>
+            {skillsData.backend.map((skill, index) => (
+              <motion.div
+                key={index}
+                style={listItemStyle}
+                variants={listItemVariants}
+                transition={{ duration: 2.0, ease: "anticipate" }}
+              >
+                {skill}
+              </motion.div>
+            ))}
+          </div>
+          <div style={listContainerStyle}>
+            <motion.div style={categoryTitleStyle}>
+              <FontAwesomeIcon icon={faTools} style={{ marginRight: "5px", color:'#FF6F59' }} />
+              Tools
+            </motion.div>
+            {skillsData.tools.map((skill, index) => (
+              <motion.div
+                key={index}
+                style={listItemStyle}
+                variants={listItemVariants}
+                transition={{ duration: 2.0, ease: "anticipate" }}
+              >
+                {skill}
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </div>

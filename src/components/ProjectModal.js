@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactModal from "react-modal";
 
 const ProjectModal = ({ isOpen, onRequestClose, project }) => {
+  useEffect(() => {
+    ReactModal.setAppElement("#root");
+  }, []);
+
   const modalStyle = {
     content: {
       width: "80%",
@@ -9,7 +13,7 @@ const ProjectModal = ({ isOpen, onRequestClose, project }) => {
       margin: "auto",
       backgroundColor: "#1a1a1a",
       borderRadius: "8px",
-      border:'none',
+      border: "none",
       padding: "20px",
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       display: "flex",
@@ -51,16 +55,19 @@ const ProjectModal = ({ isOpen, onRequestClose, project }) => {
     >
       <div className="card-body des" style={projectDescriptionStyle}>
         <h5 className="card-title">{project.title}</h5>
+        {project.link && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer" style={{margin:'auto'}}>
+              Check it Out Here!
+            </a>
+          )}
         <p className="card-text">
-          <strong>Technologies:</strong>{" "}
+          <strong>Tech Stack:</strong>{" "}
           <i>{project.technologies.join(", ")}</i>
           <br />
           <br></br>
-          <strong>Description:</strong> {project.description}
+          {project.description}
           <br />
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
-            {project.link}
-          </a>
+          
         </p>
       </div>
       <button className="close-button" style={closeButtonStyle} onClick={onRequestClose}>

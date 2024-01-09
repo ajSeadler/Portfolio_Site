@@ -2,46 +2,94 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import ProjectModal from "./ProjectModal"; // Assuming you have a ProjectModal component
+import ProjectModal from "./ProjectModal";
+
+// const subHeadingStyle = {
+//   color: "#45a049",
+//   textAlign: 'left',
+//   marginTop: "20px",
+//   marginBottom: "10px",
+//   marginLeft: "10%",
+// };
+
+const projectListStyle = {
+  listStyleType: "none",
+  color: 'white',
+  padding: "0",
+  marginTop: "10px",
+  margin: 'auto',
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+};
+
+const projectItemStyle = {
+  marginBottom: "10px",
+  display: "flex",
+  textAlign: 'left',
+  marginLeft: '15px',
+  justifyContent: "space-between",
+  alignItems: "flex-start",
+};
+
+const projectVideoStyle = {
+  width: "100%",
+  maxWidth: "400px", // Set a maximum width for the video on small screens
+  height: "auto",
+  borderRadius: "20px",
+};
 
 const projectsData = [
   {
     id: 1,
-    title: "Fork It (Reviews Website)",
+    title: "Fork It - Reviews Website",
     image: "/fork-it.png",
     technologies: ["Postgres", "Express.js", "React.js", "Node.js"],
     description:
-      "Fork It is a collaborative platform for exploring and reviewing various restaurants. Leveraging technologies like Postgres, Express.js, React.js, and Node.js, the web application caters to diverse user roles. From regular users to administrators, each role enjoys tailored functionalities. My contributions centered around backend development, including database table creation and API route implementation. Additionally, I played a role in building React components, showcasing a versatile skill set in web development.",
+      "Fork It is a reviews web app where users can create an account to leave a review for a certain restaurant. Users can rate restaurants, review restaurants, and comment on other users' reviews. Fork It is a collaborative project between myself and a few others. As a full-stack developer, my role consisted of building database tables, building API routes, and building React components.",
+      status: "Demo Only",
+      link:"https://github.com/ajSeadler/Fork-it"
   },
   {
     id: 2,
-    title: "Weather or Not (Live weather updates)",
+    title: "Weather or Not - Live weather updates",
     image: "/weather_app.png",
     technologies: ["Python", "Flask", "Bootstrap 5"],
     description:
-      "Experience real-time weather forecasts with Weather or Not, a dynamic application powered by Python and Flask. Users can easily retrieve single-day forecasts for cities, states, or countries. Furthermore, the app offers a 6-day forecast feature for desired locations. The blend of Python, Flask, and Bootstrap 5 ensures a seamless and visually appealing weather exploration experience.",
+      "Weather or Not is a live weather forecasting app built with Python and Flask. The app features a current forecast, followed by a 7-day forecast - obtained from the Open Weather Map API. The user's current location's forecast will display on the home page.",
+      status:"Demo Only",
+      link:"https://github.com/ajSeadler/Weather-or-Not"
   },
   {
     id: 3,
-    title: "Disco Stranger (Band Website)",
+    title: "Disco Stranger - Band Website",
     image: "/dsband.png",
-    technologies: ["HTML", "CSS", "React.js", "JS", "Node.js", "MUI"],
+    technologies: [ "React.js", "Node.js", "HTML", "CSS", "MUI"],
     description:
-      "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.",
-      link: 'https://discostrangermusic.com'
+      "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile-responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.",
+      status:"Active",
+    link: 'https://discostrangermusic.com'
   },
-
   {
     id: 4,
     title: "3D Planet Viewer",
     image: "/solar.jpg",
     technologies: ["Three.js, React.js, Node.js, Vite, Material UI"],
     description:
-      "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system, explore their details, and enjoy a visually stunning experience. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design.",
-      link: 'https://solarsys1.netlify.app'
+      "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system and explore their details. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design",
+      status:"Active",
+    link: 'https://solarsys1.netlify.app'
+  },
+  {
+    id:5,
+    title:"Stunning Realty",
+    image:"/realty.png",
+    technologies:["Postgres", "Express.js", "React.js", "Node.js"],
+    description: "Stunning Realty is a demo project I created to enhance my PostgreSQL skills. The app features homes for sale or rent, each with a personal real estate agent. Users can favorite homes, view agent info, and even list their own property. Fake data is implemented with Faker.js to give a more realistic demo.",
+    
+    status:"Demo Only",
+    link:"https://github.com/ajSeadler/realty"
   }
-  
-
   // Add more projects as needed
 ];
 
@@ -60,7 +108,6 @@ const ProjectGrid = () => {
   };
 
   const renderDescription = (description) => {
-    const maxLength = 80; // Set your desired maximum length
     return <></>;
   };
 
@@ -76,6 +123,7 @@ const ProjectGrid = () => {
         >
           PORTFOLIO
         </h2>
+        
 
         <div className="row">
           {projectsData.map((project) => (
@@ -84,8 +132,8 @@ const ProjectGrid = () => {
                 className="card"
                 style={{
                   height: "100%",
-                  background: "rgba(255, 255, 255, 0.1)",
                   backdropFilter: "blur(5px)",
+                  backgroundColor:'transparent',
                 }}
               >
                 <div className="d-flex justify-content-center align-items-center">
@@ -100,15 +148,30 @@ const ProjectGrid = () => {
                         width: "100%",
                         maxHeight: "100%",
                         objectFit: "cover",
+                        borderTopLeftRadius: "20px",
+                        borderTopRightRadius: "20px",
                       }}
                     />
                   </motion.div>
                 </div>
                 <div className="card-body text-center">
                   <h5 className="card-title" style={{ color: "white" }}>
-                    {project.title}
+                    {project.title} {project.status && (
+                    <span
+                    style={{
+                      display: "inline-block",
+                      padding: "5px 10px",
+                      borderRadius: "20px",
+                      backgroundColor: getStatusColor(project.status),
+                      color: "white",
+                      marginLeft: "10px",
+                    }}
+                  >
+                    {project.status}
+                  </span>
+                  )}
                   </h5>
-                 
+                  
                   <p className="card-text" style={{ color: "white" }}>
                     {renderDescription(project.description)}
                   </p>
@@ -117,6 +180,28 @@ const ProjectGrid = () => {
             </div>
           ))}
         </div>
+
+        
+
+        <ul style={projectListStyle}>
+          <li style={projectItemStyle}>
+            <div style={{ flex: "1", marginTop:'20%' }}>
+              <strong>Flutter: News Article Hub</strong>
+              <p>Retrieves World, Sports, and Space news</p>
+              
+              <strong style={{ textAlign: 'left' }}>What I learned:</strong>
+              <ul>
+                <li style={{ textAlign: 'left', marginBottom: '5px' }}>Asynchronous programming in Flutter</li>
+                <li style={{ textAlign: 'left', marginBottom: '5px' }}>Data model structures</li>
+                <li style={{ textAlign: 'left', marginBottom: '5px' }}>Flutter state management </li>
+              </ul>
+            </div>
+
+            <div style={{ flex: "1", marginLeft: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <img style={{ ...projectVideoStyle, maxWidth: "80%", marginTop:'35%' }} src="flutterdemo.gif" alt="Flutter Demo" />
+            </div>
+          </li>
+        </ul>
 
         {selectedProject && (
           <ProjectModal
@@ -129,5 +214,20 @@ const ProjectGrid = () => {
     </div>
   );
 };
+
+const getStatusColor = (status) => {
+  switch (status.toLowerCase()) {
+    case "complete":
+      return "blue";
+    case "demo only":
+      return "orange";
+    case "active":
+      return "green";
+    default:
+      return "gray";
+  }
+};
+
+
 
 export default ProjectGrid;

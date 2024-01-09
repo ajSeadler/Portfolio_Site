@@ -330,7 +330,7 @@ h2, h3 {
 
 .navbar-collapse {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .mobile-icon {
@@ -386,7 +386,15 @@ h2, h3 {
   }
 
   .des-body {
-    width: 20%;
+    width: 90%;
+  }
+
+  .des {
+    width: 100%;
+  }
+
+  .ReactModal__Content {
+    width: 95%;
   }
 
   

@@ -37,11 +37,11 @@ const Home = () => {
         />
         <motion.h1
           className="mt-0"
-          style={{ color: "white", fontFamily:'Bebas Neue'}}
+          style={{ color: "white", fontFamily:'Bebas Neue', fontSize:'3rem', marginTop:'15px'}}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 0.8, ease: "easeOut" } }}
         >
-          <h1 style={{fontSize:'3rem', marginTop:'15px'}}>ANTHONY SEADLER</h1>
+          ANTHONY SEADLER
         </motion.h1>
 
         <motion.div
@@ -51,13 +51,13 @@ const Home = () => {
         >
           <FontAwesomeIcon icon={faLaptopCode} style={{fontSize:'3rem'}} />
         </motion.div>
-        <motion.h3
+        <motion.h2
           className="text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 2, duration: 0.8, ease: "easeOut" } }}
         >
-          <h2>Full Stack Developer</h2>
-        </motion.h3>
+          Full Stack Developer
+        </motion.h2>
       </motion.div>
 
       <div className="proj-home">

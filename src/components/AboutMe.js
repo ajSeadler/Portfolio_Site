@@ -1,63 +1,93 @@
 import React from "react";
 
-const aboutMeStyle = {
-  color: "white", // Set text color to white
-  backgroundColor: "#6565658d", // Set background color to transparent black
-  backdropFilter: "blur(10px)", // Apply a blur effect to the background
-  padding: "20px", // Add padding for spacing
-  borderRadius: "10px", // Add rounded corners
+const aboutMeContainerStyle = {
+  color: "white",
+  backgroundColor: "rgba(0, 0, 0, .9)",
+  padding: "20px",
+  borderRadius: "10px",
+  margin: "20px auto",
+  textAlign: "center",
+  maxWidth: "800px",
+  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
 };
 
-const imageStyle = {
-  maxWidth: "100%", // Ensure the image doesn't exceed its parent container
-  height: "auto", // Maintain the aspect ratio of the image
-  objectFit: "cover", // Resize the image while maintaining its aspect ratio
+// const headingStyle = {
+//   color: "#45a049",
+//   marginBottom: "10px",
+// };
+
+const subHeadingStyle = {
+  color: "#45a049",
+  textAlign: 'left',
+  marginTop: "20px",
+  marginBottom: "10px",
+  marginLeft: "10%",
 };
+
+const circleImageStyle = {
+  width: "200px",
+  height: "200px",
+  objectFit: "cover",
+  borderRadius: "50%",
+  margin: "20px auto 0",
+};
+
+const paragraphStyle = {
+  marginBottom: "10px",
+  width: '70%',
+  margin: 'auto',
+  textAlign: 'left',
+};
+
+const spotifyIFrameStyle = {
+  width: "100%",
+  height: "400px",
+  marginTop: "20px",
+};
+
+
 
 function AboutMe() {
   return (
-    <div className="container" style={aboutMeStyle}>
-      <h2 className="text-center mb-4">About Me</h2>
+    <div className="container" style={aboutMeContainerStyle}>
+      {/* <h2 style={headingStyle}>About Me</h2> */}
 
-      <div className="row">
-        <div className="col-md-6">
-          <img
-            src="/guitar-pic.JPEG"
-            alt="Guitar"
-            className="img-fluid rounded"
-            style={imageStyle}
-          />
-        </div>
-        <div className="col-md-6">
-          <p>
-            Welcome to my portfolio! I am a passionate full-stack web developer
-            with expertise in technologies such as Node.js, React, and more.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget
-            felis sed libero sagittis mattis. Curabitur vel justo vitae lacus
-            varius sollicitudin.
-          </p>
-        </div>
-      </div>
+      <img
+        src="/guitar-pic.JPEG"
+        alt="Guitar"
+        className="img-fluid rounded-circle"
+        style={circleImageStyle}
+      />
 
-      <div className="row mt-4">
-        <div className="col-md-6 order-md-2">
-          <img
-            src="/aj-opolis.jpg"
-            alt="AJ Opolis"
-            className="img-fluid rounded"
-            style={imageStyle}
-          />
-        </div>
-        <div className="col-md-6 order-md-1">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget
-            felis sed libero sagittis mattis. Curabitur vel justo vitae lacus
-            varius sollicitudin. Phasellus vel erat in dui blandit interdum nec
-            vitae metus. Sed nec est vel sem facilisis bibendum. Proin ut
-            vehicula justo. Fusce ut fermentum arcu. Proin id sagittis ex.
-          </p>
-        </div>
-      </div>
+      <h3 style={subHeadingStyle}>Who Am I?</h3>
+
+      <p style={paragraphStyle}>
+        Hi! My name is Anthony, but most people call me AJ. I am 27 years old and I really enjoy coding. I am a full stack engineer living in Oklahoma City, Oklahoma. In December of 2023, I completed a Full Stack Software Engineering certificate from The University of Oklahoma, University Outreach - associated with Fullstack Academy.
+      </p>
+      <br></br>
+      <p style={paragraphStyle}>These days, I find myself bulding projects with the PERN (PostgreSQL, Express.js, React.js and Node.js) tech stack. However, I keep it a personal goal to continue to learn new tech and code each day.</p>
+      <br></br>
+      <p style={paragraphStyle}>Aside from coding, I enjoy traveling with my wife and dogs and playing music around OKC and the surrounding areas.</p>
+
+      
+
+      <h3 style={subHeadingStyle}>Music</h3>
+
+      <p style={paragraphStyle}>
+        Want to know more about my music? Check out my band Disco Stranger and our latest tracks on Spotify!
+      </p>
+
+      <iframe
+        style={spotifyIFrameStyle}
+        title="iframe"
+        src="https://open.spotify.com/embed/artist/3SwSE7OtWzLOrc32Eq54gO?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameBorder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
     </div>
   );
 }

@@ -4,13 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import ProjectModal from "./ProjectModal";
 
-const subHeadingStyle = {
-  color: "#45a049",
-  textAlign: 'left',
-  marginTop: "20px",
-  marginBottom: "10px",
-  marginLeft: "10%",
-};
+// const subHeadingStyle = {
+//   color: "#45a049",
+//   textAlign: 'left',
+//   marginTop: "20px",
+//   marginBottom: "10px",
+//   marginLeft: "10%",
+// };
 
 const projectListStyle = {
   listStyleType: "none",
@@ -107,6 +107,7 @@ const ProjectGrid = () => {
         >
           PORTFOLIO
         </h2>
+        
 
         <div className="row">
           {projectsData.map((project) => (
@@ -148,28 +149,27 @@ const ProjectGrid = () => {
           ))}
         </div>
 
-        <h3 style={subHeadingStyle}>Continuing to Learn</h3>
+        
 
         <ul style={projectListStyle}>
           <li style={projectItemStyle}>
             <div style={{ flex: "1" }}>
               <strong>Flutter: News Article Hub</strong>
               <p>Retrieves World, Sports, and Space news</p>
-              <p style={{ textAlign: 'left' }}>
-                <strong >What I learned:</strong>
+               
+                <strong style={{ textAlign: 'left' }}>What I learned:</strong>
                 <ul>
                   <li style={{ textAlign: 'left', marginBottom: '5px' }}>Asynchronous programming in Flutter</li>
                   <li style={{ textAlign: 'left', marginBottom: '5px' }}>Data model structures</li>
                   <li style={{ textAlign: 'left', marginBottom: '5px' }}>Flutter state management </li>
                 </ul>
-              </p>
+              
             </div>
-            <div style={{ flex: "1", marginLeft: "20px" }}>
-              <video style={projectVideoStyle} controls>
-                <source src="flutterdemo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
+            
+<div style={{ flex: "1", marginLeft: "20px" }}>
+  <img style={projectVideoStyle} src="flutterdemo.gif" alt="Flutter Demo" />
+</div>
+
           </li>
         </ul>
 

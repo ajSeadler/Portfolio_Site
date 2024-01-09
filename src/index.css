@@ -389,6 +389,10 @@ h2, h3 {
     width: 20%;
   }
 
+  .des {
+    width: 100%;
+  }
+
   .ReactModal__Content {
     width: 95%;
   }

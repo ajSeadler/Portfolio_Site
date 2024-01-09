@@ -153,6 +153,14 @@ const ProjectsSection = () => {
                       >
                         <i className="fab fa-github"></i> GitHub Repository
                       </a>
+                      <a
+                        href="https://youtu.be/qOcs1PvMBGo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{marginLeft:'5px'}}
+                      >
+                        <i className="fab fa-youtube"></i> Video Demo
+                      </a>
                     </div>
 
                     <button
@@ -238,6 +246,14 @@ const ProjectsSection = () => {
                         rel="noopener noreferrer"
                       >
                         <i className="fab fa-github"></i> GitHub Repository
+                      </a>
+                      <a
+                        href="https://youtu.be/T7IlewTZkws"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{marginLeft:'5px'}}
+                      >
+                        <i className="fab fa-youtube"></i> Video Demo
                       </a>
                     </div>
                     <button

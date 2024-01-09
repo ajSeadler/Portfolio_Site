@@ -1,6 +1,16 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function NavBar() {
   const navBarStyle = {
@@ -29,68 +39,62 @@ function NavBar() {
   };
 
   return (
-    <Navbar expand="lg" className="navbar-with-background" sticky="top" style={navBarStyle}>
-      <Navbar.Brand as={NavLink} to="/" style={brandStyle}>AS</Navbar.Brand>
-      <Navbar.Toggle aria-controls="navbarNav" />
-      <Navbar.Collapse id="navbarNav">
-        <Nav className="ml-auto">
-          <Nav.Link
-            as={NavLink}
-            to="/"
-            onClick={closeNavbar}
-            style={navLinkStyle}
-            activestyle={activeLinkStyle}
-          >
-            Home
-          </Nav.Link>
-          <Nav.Link
-            as={NavLink}
-            to="/projects"
-            onClick={closeNavbar}
-            style={navLinkStyle}
-            activestyle={activeLinkStyle}
-          >
-            Portfolio
-          </Nav.Link>
-          <Nav.Link
-            as={NavLink}
-            to="/skills"
-            onClick={closeNavbar}
-            style={navLinkStyle}
-            activestyle={activeLinkStyle}
-          >
-            Skills
-          </Nav.Link>
-          <Nav.Link
-            as={NavLink}
-            to="/locations"
-            onClick={closeNavbar}
-            style={navLinkStyle}
-            activestyle={activeLinkStyle}
-          >
-            Contact
-          </Nav.Link>
-          <Nav.Link
-            as={NavLink}
-            to="/about"
-            onClick={closeNavbar}
-            style={navLinkStyle}
-            activestyle={activeLinkStyle}
-          >
-            About Me
-          </Nav.Link>
-          {/* <Nav.Link
-            as={NavLink}
-            to="/asteroids"
-            onClick={closeNavbar}
-            style={navLinkStyle}
-            activestyle={activeLinkStyle}
-          >
-            Asteroids
-          </Nav.Link> */}
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <>
+      <ScrollToTop />
+      <Navbar expand="lg" className="navbar-with-background" sticky="top" style={navBarStyle}>
+        <Navbar.Brand as={NavLink} to="/" style={brandStyle}>AS</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarNav" />
+        <Navbar.Collapse id="navbarNav">
+          <Nav className="ml-auto">
+            <Nav.Link
+              as={NavLink}
+              to="/"
+              onClick={closeNavbar}
+              style={navLinkStyle}
+              activestyle={activeLinkStyle}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/projects"
+              onClick={closeNavbar}
+              style={navLinkStyle}
+              activestyle={activeLinkStyle}
+            >
+              Portfolio
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/skills"
+              onClick={closeNavbar}
+              style={navLinkStyle}
+              activestyle={activeLinkStyle}
+            >
+              Skills
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/locations"
+              onClick={closeNavbar}
+              style={navLinkStyle}
+              activestyle={activeLinkStyle}
+            >
+              Contact
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/about"
+              onClick={closeNavbar}
+              style={navLinkStyle}
+              activestyle={activeLinkStyle}
+            >
+              About Me
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </>
   );
 }
 

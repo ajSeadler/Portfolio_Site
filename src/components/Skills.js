@@ -98,7 +98,7 @@ const Skills = () => {
           style={paragraphStyle}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 3.5 }}
+          transition={{ duration: 1.5 }}
         >
           My knowledge of these technologies and tools allows me to contribute to the development of efficient and user-friendly web applications. <br /> With experience in various web development technologies, I am well-equipped to make meaningful contributions to your projects and team.
         </motion.p>

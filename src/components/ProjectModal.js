@@ -3,12 +3,12 @@ import ReactModal from "react-modal";
 
 const ProjectModal = ({ isOpen, onRequestClose, project }) => {
   useEffect(() => {
-    ReactModal.setAppElement('#root');
+    ReactModal.setAppElement("#root");
   }, []);
 
   const modalStyle = {
     content: {
-      width: "80%", // Default width for larger screens
+      width: "80%",
       maxWidth: "600px",
       margin: "auto",
       backgroundColor: "#1a1a1a",
@@ -27,14 +27,6 @@ const ProjectModal = ({ isOpen, onRequestClose, project }) => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-    },
-  };
-
-  // Media query for screens with a maximum width of 767px (typical mobile devices)
-  const mobileModalStyle = {
-    content: {
-      width: "80%", // Adjusted width for smaller screens
-      maxWidth: "100%", // Full width on small screens
     },
   };
 
@@ -59,20 +51,23 @@ const ProjectModal = ({ isOpen, onRequestClose, project }) => {
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel={`Project ${project.id} Description Modal`}
-      style={window.innerWidth <= 767 ? { ...modalStyle, ...mobileModalStyle } : modalStyle}
+      style={modalStyle}
     >
       <div className="card-body des" style={projectDescriptionStyle}>
         <h5 className="card-title">{project.title}</h5>
+        {project.link && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer" style={{margin:'auto'}}>
+              Check it Out Here!
+            </a>
+          )}
         <p className="card-text">
-          <strong>Technologies:</strong>{" "}
+          <strong>Tech Stack:</strong>{" "}
           <i>{project.technologies.join(", ")}</i>
           <br />
           <br></br>
-          <strong>Description:</strong> {project.description}
+          {project.description}
           <br />
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
-            {project.link}
-          </a>
+          
         </p>
       </div>
       <button className="close-button" style={closeButtonStyle} onClick={onRequestClose}>

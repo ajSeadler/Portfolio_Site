@@ -2,7 +2,7 @@ import React from "react";
 
 const aboutMeContainerStyle = {
   color: "white",
-  backgroundColor: "transparent",
+  backgroundColor: "rgba(0, 0, 0, .9)",
   padding: "20px",
   borderRadius: "10px",
   margin: "20px auto",
@@ -62,15 +62,19 @@ function AboutMe() {
       <h3 style={subHeadingStyle}>Who Am I?</h3>
 
       <p style={paragraphStyle}>
-        I'm a dedicated full-stack web developer navigating the ever-evolving landscape of software engineering. Here you will find information about any projects I have contributed to or designed.
+        Hi! My name is Anthony, but most people call me AJ. I am 27 years old and I really enjoy coding. I am a full stack engineer living in Oklahoma City, Oklahoma. In December of 2023, I completed a Full Stack Software Engineering certificate from The University of Oklahoma, University Outreach - associated with Fullstack Academy.
       </p>
+      <br></br>
+      <p style={paragraphStyle}>These days, I find myself bulding projects with the PERN (PostgreSQL, Express.js, React.js and Node.js) tech stack. However, I keep it a personal goal to continue to learn new tech and code each day.</p>
+      <br></br>
+      <p style={paragraphStyle}>Aside from coding, I enjoy traveling with my wife and dogs and playing music around OKC and the surrounding areas.</p>
 
       
 
       <h3 style={subHeadingStyle}>Music</h3>
 
       <p style={paragraphStyle}>
-        Aside from coding, music is also a huge part of my life! Check out my band Disco Stranger and our latest tracks on Spotify.
+        Want to know more about my music? Check out my band Disco Stranger and our latest tracks on Spotify!
       </p>
 
       <iframe

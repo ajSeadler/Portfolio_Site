@@ -19,7 +19,7 @@ function Locations() {
             rel="noopener noreferrer"
             className=""
           >
-            <FontAwesomeIcon icon={faUser} size="2x" style={{ color: '#45a049'}}/>
+            <FontAwesomeIcon icon={faUser} size="2x" style={{ color: '#fff'}}/>
           </a>
         </div>
         <h2 className="display-7 mb-4">CONTACT</h2>

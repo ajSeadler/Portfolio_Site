@@ -42,27 +42,32 @@ const projectVideoStyle = {
 const projectsData = [
   {
     id: 1,
-    title: "Fork It (Reviews Website)",
+    title: "Fork It - Reviews Website",
     image: "/fork-it.png",
     technologies: ["Postgres", "Express.js", "React.js", "Node.js"],
     description:
       "Fork It is a reviews web app where users can create an account to leave a review for a certain restaurant. Users can rate restaurants, review restaurants, and comment on other users' reviews. Fork It is a collaborative project between myself and a few others. As a full-stack developer, my role consisted of building database tables, building API routes, and building React components.",
+      status: "Demo Only",
+      link:"https://github.com/ajSeadler/Fork-it"
   },
   {
     id: 2,
-    title: "Weather or Not (Live weather updates)",
+    title: "Weather or Not - Live weather updates",
     image: "/weather_app.png",
     technologies: ["Python", "Flask", "Bootstrap 5"],
     description:
       "Weather or Not is a live weather forecasting app built with Python and Flask. The app features a current forecast, followed by a 7-day forecast - obtained from the Open Weather Map API. The user's current location's forecast will display on the home page.",
+      status:"Demo Only",
+      link:"https://github.com/ajSeadler/Weather-or-Not"
   },
   {
     id: 3,
-    title: "Disco Stranger (Band Website)",
+    title: "Disco Stranger - Band Website",
     image: "/dsband.png",
-    technologies: ["HTML", "CSS", "React.js", "JS", "Node.js", "MUI"],
+    technologies: [ "React.js", "Node.js", "HTML", "CSS", "MUI"],
     description:
       "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile-responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.",
+      status:"Active",
     link: 'https://discostrangermusic.com'
   },
   {
@@ -72,7 +77,18 @@ const projectsData = [
     technologies: ["Three.js, React.js, Node.js, Vite, Material UI"],
     description:
       "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system and explore their details. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design",
+      status:"Active",
     link: 'https://solarsys1.netlify.app'
+  },
+  {
+    id:5,
+    title:"Stunning Realty",
+    image:"/realty.png",
+    technologies:["Postgres", "Express.js", "React.js", "Node.js"],
+    description: "Stunning Realty is a demo project I created to enhance my PostgreSQL skills. The app features homes for sale or rent, each with a personal real estate agent. Users can favorite homes, view agent info, and even list their own property. Fake data is implemented with Faker.js to give a more realistic demo.",
+    
+    status:"Demo Only",
+    link:"https://github.com/ajSeadler/realty"
   }
   // Add more projects as needed
 ];
@@ -116,8 +132,8 @@ const ProjectGrid = () => {
                 className="card"
                 style={{
                   height: "100%",
-                  background: "rgba(255, 255, 255, 0.1)",
                   backdropFilter: "blur(5px)",
+                  backgroundColor:'transparent',
                 }}
               >
                 <div className="d-flex justify-content-center align-items-center">
@@ -132,14 +148,30 @@ const ProjectGrid = () => {
                         width: "100%",
                         maxHeight: "100%",
                         objectFit: "cover",
+                        borderTopLeftRadius: "20px",
+                        borderTopRightRadius: "20px",
                       }}
                     />
                   </motion.div>
                 </div>
                 <div className="card-body text-center">
                   <h5 className="card-title" style={{ color: "white" }}>
-                    {project.title}
+                    {project.title} {project.status && (
+                    <span
+                    style={{
+                      display: "inline-block",
+                      padding: "5px 10px",
+                      borderRadius: "20px",
+                      backgroundColor: getStatusColor(project.status),
+                      color: "white",
+                      marginLeft: "10px",
+                    }}
+                  >
+                    {project.status}
+                  </span>
+                  )}
                   </h5>
+                  
                   <p className="card-text" style={{ color: "white" }}>
                     {renderDescription(project.description)}
                   </p>
@@ -153,23 +185,21 @@ const ProjectGrid = () => {
 
         <ul style={projectListStyle}>
           <li style={projectItemStyle}>
-            <div style={{ flex: "1" }}>
+            <div style={{ flex: "1", marginTop:'20%' }}>
               <strong>Flutter: News Article Hub</strong>
               <p>Retrieves World, Sports, and Space news</p>
-               
-                <strong style={{ textAlign: 'left' }}>What I learned:</strong>
-                <ul>
-                  <li style={{ textAlign: 'left', marginBottom: '5px' }}>Asynchronous programming in Flutter</li>
-                  <li style={{ textAlign: 'left', marginBottom: '5px' }}>Data model structures</li>
-                  <li style={{ textAlign: 'left', marginBottom: '5px' }}>Flutter state management </li>
-                </ul>
               
+              <strong style={{ textAlign: 'left' }}>What I learned:</strong>
+              <ul>
+                <li style={{ textAlign: 'left', marginBottom: '5px' }}>Asynchronous programming in Flutter</li>
+                <li style={{ textAlign: 'left', marginBottom: '5px' }}>Data model structures</li>
+                <li style={{ textAlign: 'left', marginBottom: '5px' }}>Flutter state management </li>
+              </ul>
             </div>
-            
-<div style={{ flex: "1", marginLeft: "20px" }}>
-  <img style={projectVideoStyle} src="flutterdemo.gif" alt="Flutter Demo" />
-</div>
 
+            <div style={{ flex: "1", marginLeft: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <img style={{ ...projectVideoStyle, maxWidth: "80%", marginTop:'35%' }} src="flutterdemo.gif" alt="Flutter Demo" />
+            </div>
           </li>
         </ul>
 
@@ -184,5 +214,20 @@ const ProjectGrid = () => {
     </div>
   );
 };
+
+const getStatusColor = (status) => {
+  switch (status.toLowerCase()) {
+    case "complete":
+      return "blue";
+    case "demo only":
+      return "orange";
+    case "active":
+      return "green";
+    default:
+      return "gray";
+  }
+};
+
+
 
 export default ProjectGrid;

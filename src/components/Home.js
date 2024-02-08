@@ -4,7 +4,7 @@ import ProjectsSection from "./ProjectsSection";
 import Skills from "./Skills";
 import Locations from "./Locations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import { faLaptopCode, faMouse } from "@fortawesome/free-solid-svg-icons"; // Import faMouse icon
 
 const Home = () => {
   const controls = useAnimation();
@@ -58,11 +58,18 @@ const Home = () => {
         >
           Full Stack Developer
         </motion.h2>
+
+        {/* Scroll Down Icon */}
+        <div class="mouse-icon">
+  <div class="left-click"></div>
+  <div class="wheel"></div>
+  <div class="right-click"></div>
+</div>
+
       </motion.div>
 
       <div className="proj-home">
-      <ProjectsSection />
-      
+        <ProjectsSection />
       </div>
       <Skills />
       <Locations />

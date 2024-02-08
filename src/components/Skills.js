@@ -93,7 +93,7 @@ const Skills = () => {
         >
           SKILLS
         </motion.h2>
-        <motion.p
+        {/* <motion.p
           className="text-center text-light"
           style={paragraphStyle}
           initial={{ opacity: 0, y: -20 }}
@@ -101,7 +101,7 @@ const Skills = () => {
           transition={{ duration: 1.5 }}
         >
           My knowledge of these technologies and tools allows me to contribute to the development of efficient and user-friendly web applications. <br /> With experience in various web development technologies, I am well-equipped to make meaningful contributions to your projects and team.
-        </motion.p>
+        </motion.p> */}
         <motion.div
           id="skills"
           className="list-group"

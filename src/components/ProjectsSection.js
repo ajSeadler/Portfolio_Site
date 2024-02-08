@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import ReactModal from "react-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { Swipeable } from "react-swipeable"; 
+import SwipeIcon from '@mui/icons-material/Swipe';
 
 const ProjectsSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -16,6 +18,8 @@ const ProjectsSection = () => {
   const [showModal, setShowModal] = useState(false);
   const [showModal1, setShowModal1] = useState(false);
   const [showModal4, setShowModal4] = useState(false);
+
+
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -75,6 +79,7 @@ const ProjectsSection = () => {
     arrows: false, // Disable arrows
     centerMode: true,
     centerPadding: "15%", // Adjust this value to control the visibility of the next slide
+    swipe: true,
     responsive: [
       {
         breakpoint: 768,
@@ -105,6 +110,8 @@ const ProjectsSection = () => {
         <h2 className="text-center" style={{ fontSize: "2.2rem" }}>
           FEATURED PROJECTS
         </h2>
+        
+        
 
         <Slider {...sliderSettings}>
           <div>
@@ -458,9 +465,17 @@ const ProjectsSection = () => {
                   </div>
                 </ReactModal>
               </div>
+              
             </div>
+            
           </div>
+          
         </Slider>
+        <div className="mobile-icon">
+  <SwipeIcon className="neon-glow icon" style={{fontSize:'2.5rem'}}/>
+</div>
+
+
 
         {/* Add additional projects as needed with similar structure */}
       </div>

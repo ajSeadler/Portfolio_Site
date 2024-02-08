@@ -28,7 +28,7 @@ function Locations() {
             <h2 className="h4">
               <FontAwesomeIcon icon={faEnvelope} size="1x" style={{ color: '#45a049' }} /> Email
             </h2>
-            <p>aj6287@gmail.com</p>
+            <p>anthonyseadler@gmail.com</p>
           </div>
           <div className="col-md-12 mb-4">
             <h2 className="h4">

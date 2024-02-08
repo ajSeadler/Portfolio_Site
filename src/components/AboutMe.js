@@ -2,7 +2,7 @@ import React from "react";
 
 const aboutMeContainerStyle = {
   color: "white",
-  backgroundColor: "rgba(0, 0, 0, .9)",
+  backgroundColor: "rgba(0, 0, 0, .7)",
   padding: "20px",
   borderRadius: "10px",
   margin: "20px auto",
@@ -68,6 +68,45 @@ function AboutMe() {
       <p style={paragraphStyle}>These days, I find myself bulding projects with the PERN (PostgreSQL, Express.js, React.js and Node.js) tech stack. However, I keep it a personal goal to continue to learn new tech and code each day.</p>
       <br></br>
       <p style={paragraphStyle}>Aside from coding, I enjoy traveling with my wife and dogs and playing music around OKC and the surrounding areas.</p>
+
+
+      <h3 style={subHeadingStyle}>My Journey in Web Development</h3>
+
+      <div class="certificate-container">
+    <div class="centered-image">
+        <img
+            src='./WebDevCert.jpg'
+            alt="LinkedIn Python Certificate"
+        />
+    </div>
+    <div class="side-by-side-images">
+        <img
+            src='./linkedinSSR.jpeg'
+            alt="LinkedIn Python Certificate"
+        />
+        <img
+            src='./linkedinpython.jpeg'
+            alt="LinkedIn SSR Certificate"
+        />
+        {/* <img
+            src='./linkedinSSR.jpeg'
+            alt="LinkedIn Python Certificate"
+        />
+        <img
+            src='./linkedinpython.jpeg'
+            alt="LinkedIn SSR Certificate"
+        />
+        <img
+            src='./linkedinSSR.jpeg'
+            alt="LinkedIn Python Certificate"
+        />
+        <img
+            src='./linkedinpython.jpeg'
+            alt="LinkedIn SSR Certificate"
+        /> */}
+    </div>
+</div>
+
 
       
 

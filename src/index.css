@@ -498,7 +498,7 @@ h2, h3 {
 .wheel {
   margin: auto;
   transform: translateX(-50%);
-  width: 12%;
+  width: 10.5%;
   height: 25%;
   background-color: #b1916e;
   border-radius: 50%;

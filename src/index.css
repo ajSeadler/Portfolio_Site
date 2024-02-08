@@ -419,7 +419,7 @@ h2, h3 {
     position: relative;
     margin-top: 15%;
     margin-bottom: -10%;
-    background-color: #b1916ede; /* Taupe Gold Color */
+    /* background-color: #b1916ede; */
     border-radius: 50%;
 }
 
@@ -511,6 +511,27 @@ h2, h3 {
   }
   100% {
     transform: translateY(-10px);
+  }
+}
+
+.swipe-icon {
+  position: relative;
+  margin-top: 15%;
+  margin-bottom: -10%;
+  border-radius: 50%;
+  color: #b1916e; /* Taupe Gold Color */
+  animation: swipeAnimation 2s infinite linear alternate;
+}
+
+@keyframes swipeAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 

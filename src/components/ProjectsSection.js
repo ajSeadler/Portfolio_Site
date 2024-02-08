@@ -7,7 +7,7 @@ import ReactModal from "react-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Swipeable } from "react-swipeable"; 
-import SwipeIcon from '@mui/icons-material/Swipe';
+import SwipeOutlinedIcon from '@mui/icons-material/SwipeOutlined';
 
 const ProjectsSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -472,7 +472,7 @@ const ProjectsSection = () => {
           
         </Slider>
         <div className="mobile-icon">
-  <SwipeIcon className="neon-glow icon" style={{fontSize:'2.5rem'}}/>
+  <SwipeOutlinedIcon className="swipe-icon" style={{fontSize:'2.5rem', color: '#b1916e'}}/>
 </div>
 
 

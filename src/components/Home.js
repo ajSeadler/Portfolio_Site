@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import ProjectsSection from "./ProjectsSection";
 import Skills from "./Skills";
 import Locations from "./Locations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptopCode, faMouse } from "@fortawesome/free-solid-svg-icons"; // Import faMouse icon
+import { faLaptopCode, faMouse } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const controls = useAnimation();
+  const [showScrollIcon, setShowScrollIcon] = useState(true);
 
   const homeVariants = {
     hidden: { opacity: 0, y: -50, scale: 0.8 },
@@ -17,6 +18,16 @@ const Home = () => {
   useEffect(() => {
     // Start animation controls when component mounts
     controls.start("visible");
+
+    // Hide scroll down icon when user starts scrolling
+    const handleScroll = () => {
+      setShowScrollIcon(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [controls]);
 
   return (
@@ -37,7 +48,7 @@ const Home = () => {
         />
         <motion.h1
           className="mt-0"
-          style={{ color: "white", fontFamily:'Bebas Neue', fontSize:'3rem', marginTop:'15px'}}
+          style={{ color: "white", fontFamily: 'Bebas Neue', fontSize: '3rem', marginTop: '15px' }}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 0.8, ease: "easeOut" } }}
         >
@@ -49,7 +60,7 @@ const Home = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1, transition: { delay: 1.5, duration: 0.8, ease: "easeOut" } }}
         >
-          <FontAwesomeIcon icon={faLaptopCode} style={{fontSize:'3rem'}} />
+          <FontAwesomeIcon icon={faLaptopCode} style={{ fontSize: '3rem' }} />
         </motion.div>
         <motion.h2
           className="text-white"
@@ -60,11 +71,18 @@ const Home = () => {
         </motion.h2>
 
         {/* Scroll Down Icon */}
-        <div class="mouse-icon">
-  <div class="left-click"></div>
-  <div class="wheel"></div>
-  <div class="right-click"></div>
-</div>
+        {showScrollIcon && (
+          <motion.div
+            className="mouse-icon"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 3, duration: 0.5 } }}
+            exit={{ opacity: 0, transition: { duration: 0.5 } }} // Exit animation for fade out
+          >
+            <div className="left-click"></div>
+            <div className="wheel"></div>
+            <div className="right-click"></div>
+          </motion.div>
+        )}
 
       </motion.div>
 

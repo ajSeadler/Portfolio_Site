@@ -26,7 +26,29 @@
 .App-link {
     color: #61dafb;
 }
-
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the container full height of the viewport */
+  }
+  
+  .spinner {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-left-color: gold; /* Change to your desired color */
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
 
 
 @keyframes App-logo-spin {

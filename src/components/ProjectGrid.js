@@ -1,16 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import ProjectModal from "./ProjectModal";
-
-// const subHeadingStyle = {
-//   color: "#45a049",
-//   textAlign: 'left',
-//   marginTop: "20px",
-//   marginBottom: "10px",
-//   marginLeft: "10%",
-// };
 
 const projectListStyle = {
   listStyleType: "none",
@@ -34,7 +26,7 @@ const projectItemStyle = {
 
 const projectVideoStyle = {
   width: "100%",
-  maxWidth: "400px", // Set a maximum width for the video on small screens
+  maxWidth: "400px",
   height: "auto",
   borderRadius: "20px",
 };
@@ -47,8 +39,8 @@ const projectsData = [
     technologies: ["Postgres", "Express.js", "React.js", "Node.js"],
     description:
       "Fork It is a reviews web app where users can create an account to leave a review for a certain restaurant. Users can rate restaurants, review restaurants, and comment on other users' reviews. Fork It is a collaborative project between myself and a few others. As a full-stack developer, my role consisted of building database tables, building API routes, and building React components.",
-      status: "Demo Only",
-      link:"https://github.com/ajSeadler/Fork-it"
+    status: "Demo Only",
+    link:"https://github.com/ajSeadler/Fork-it"
   },
   {
     id: 2,
@@ -57,8 +49,8 @@ const projectsData = [
     technologies: ["Python", "Flask", "Bootstrap 5"],
     description:
       "Weather or Not is a live weather forecasting app built with Python and Flask. The app features a current forecast, followed by a 7-day forecast - obtained from the Open Weather Map API. The user's current location's forecast will display on the home page.",
-      status:"Demo Only",
-      link:"https://github.com/ajSeadler/Weather-or-Not"
+    status:"Demo Only",
+    link:"https://github.com/ajSeadler/Weather-or-Not"
   },
   {
     id: 3,
@@ -67,7 +59,7 @@ const projectsData = [
     technologies: [ "React.js", "Node.js", "HTML", "CSS", "MUI"],
     description:
       "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile-responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.",
-      status:"Active",
+    status:"Active",
     link: 'https://discostrangermusic.com'
   },
   {
@@ -77,7 +69,7 @@ const projectsData = [
     technologies: ["Three.js, React.js, Node.js, Vite, Material UI"],
     description:
       "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system and explore their details. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design",
-      status:"Active",
+    status:"Active",
     link: 'https://solarsys1.netlify.app'
   },
   {
@@ -86,16 +78,23 @@ const projectsData = [
     image:"/realty.png",
     technologies:["Postgres", "Express.js", "React.js", "Node.js"],
     description: "Stunning Realty is a demo project I created to enhance my PostgreSQL skills. The app features homes for sale or rent, each with a personal real estate agent. Users can favorite homes, view agent info, and even list their own property. Fake data is implemented with Faker.js to give a more realistic demo.",
-    
     status:"Demo Only",
     link:"https://github.com/ajSeadler/realty"
   }
-  // Add more projects as needed
 ];
 
 const ProjectGrid = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [contentLoaded, setContentLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setContentLoaded(true);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -111,7 +110,27 @@ const ProjectGrid = () => {
     return <></>;
   };
 
-  return (
+  const getStatusColor = (status) => {
+    switch (status.toLowerCase()) {
+      case "complete":
+        return "blue";
+      case "demo only":
+        return "orange";
+      case "active":
+        return "green";
+      default:
+        return "gray";
+    }
+  };
+
+  return !contentLoaded ? (
+    <div className="spinner-container">
+    <div className="spinner">
+      {/* Optionally, you can add text below the spinner */}
+      
+    </div>
+  </div>
+  ) : (
     <div id="projects" className="">
       <div className="container port-title">
         <div className="coding-divider">
@@ -123,7 +142,6 @@ const ProjectGrid = () => {
         >
           PORTFOLIO
         </h2>
-        
 
         <div className="row">
           {projectsData.map((project) => (
@@ -171,7 +189,7 @@ const ProjectGrid = () => {
                   </span>
                   )}
                   </h5>
-                  
+
                   <p className="card-text" style={{ color: "white" }}>
                     {renderDescription(project.description)}
                   </p>
@@ -181,14 +199,12 @@ const ProjectGrid = () => {
           ))}
         </div>
 
-        
-
         <ul style={projectListStyle}>
           <li style={projectItemStyle}>
             <div style={{ flex: "1", marginTop:'20%' }}>
               <strong>Flutter: News Article Hub</strong>
               <p>Retrieves World, Sports, and Space news</p>
-              
+
               <strong style={{ textAlign: 'left' }}>What I learned:</strong>
               <ul>
                 <li style={{ textAlign: 'left', marginBottom: '5px' }}>Asynchronous programming in Flutter</li>
@@ -214,20 +230,5 @@ const ProjectGrid = () => {
     </div>
   );
 };
-
-const getStatusColor = (status) => {
-  switch (status.toLowerCase()) {
-    case "complete":
-      return "blue";
-    case "demo only":
-      return "orange";
-    case "active":
-      return "green";
-    default:
-      return "gray";
-  }
-};
-
-
 
 export default ProjectGrid;

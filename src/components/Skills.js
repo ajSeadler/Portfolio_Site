@@ -72,9 +72,9 @@ const Skills = () => {
   }, [controls, inView]);
 
   const skillsData = {
-    frontend: ["JavaScript", "React.js","Three.js","HTML5", "CSS", "Bootstrap", "Material UI"],
-    backend: ["Node.js", "Express.js", "Python", "Flask", "MongoDB", "PostgreSQL","MySQL"],
-    tools: ["Git", "GitHub", "VS Code", "XCode", "Eclipse","Insomnia","Postico"],
+    frontend: ["JavaScript", "React.js","HTML5", "CSS", "Bootstrap", "Material UI"],
+    backend: ["Node.js", "Express.js", "Python", "Flask", "MongoDB", "SQL", "PostgreSQL",],
+    tools: ["Git", "GitHub", "VS Code", "Insomnia","Postico"],
     // Add more skills as needed
   };
 

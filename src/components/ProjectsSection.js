@@ -311,7 +311,7 @@ const ProjectsSection = () => {
                 <div className="d-flex justify-content-between align-items-center">
                   <motion.div>
                     <img
-                      src="/dsband.png"
+                      src="/bandsitenew.jpg"
                       className="card-img-top mx-auto clickable-image"
                       alt="Project 3"
                       onClick={toggleDescription3}

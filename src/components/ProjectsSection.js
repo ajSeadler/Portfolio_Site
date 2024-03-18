@@ -6,8 +6,7 @@ import { motion } from "framer-motion";
 import ReactModal from "react-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { Swipeable } from "react-swipeable"; 
-import SwipeOutlinedIcon from '@mui/icons-material/SwipeOutlined';
+import SwipeOutlinedIcon from "@mui/icons-material/SwipeOutlined";
 
 const ProjectsSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -18,8 +17,6 @@ const ProjectsSection = () => {
   const [showModal, setShowModal] = useState(false);
   const [showModal1, setShowModal1] = useState(false);
   const [showModal4, setShowModal4] = useState(false);
-
-
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -110,8 +107,6 @@ const ProjectsSection = () => {
         <h2 className="text-center" style={{ fontSize: "2.2rem" }}>
           FEATURED PROJECTS
         </h2>
-        
-        
 
         <Slider {...sliderSettings}>
           <div>
@@ -151,7 +146,16 @@ const ProjectsSection = () => {
                           Postgres, Express.js, Node.js, React.js, Material UI
                         </i>{" "}
                         | <br></br>
-                        <br></br>Fork It is a reviews web app where users can create an account to leave a review for a certain restaurant. Users can rate restaurants, review restaurants, and comment on other users reviews. The app also includes admin user roles, where an admin is able to create, edit, or delete any infomation in the database. Fork It is a collaborative project between myself and a few others. As a full stack developer, my role consisted of building database tables, building API routes, and building React components.
+                        <br></br>Fork It is a reviews web app where users can
+                        create an account to leave a review for a certain
+                        restaurant. Users can rate restaurants, review
+                        restaurants, and comment on other users reviews. The app
+                        also includes admin user roles, where an admin is able
+                        to create, edit, or delete any infomation in the
+                        database. Fork It is a collaborative project between
+                        myself and a few others. As a full stack developer, my
+                        role consisted of building database tables, building API
+                        routes, and building React components.
                       </p>
                       <a
                         href="https://github.com/ajSeadler/Fork-it"
@@ -164,7 +168,7 @@ const ProjectsSection = () => {
                         href="https://youtu.be/qOcs1PvMBGo"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{marginLeft:'5px'}}
+                        style={{ marginLeft: "5px" }}
                       >
                         <i className="fab fa-youtube"></i> Video Demo
                       </a>
@@ -245,7 +249,12 @@ const ProjectsSection = () => {
                       <p className="card-text">
                         <strong>Tech Stack: </strong> |{" "}
                         <i>Python, Flask, Bootstrap 5</i> | <br></br>
-                        <br></br> Weather or Not is a live weather forecasting app built with Python and Flask. The app features a current forecast, followed by a 7 day forecast - obtained from the Open Weather Map API. The users current location's forecast will display on the home page.
+                        <br></br> Weather or Not is a live weather forecasting
+                        app built with Python and Flask. The app features a
+                        current forecast, followed by a 7 day forecast -
+                        obtained from the Open Weather Map API. The users
+                        current location's forecast will display on the home
+                        page.
                       </p>
                       <a
                         href="https://github.com/ajSeadler/Weather-or-Not"
@@ -258,7 +267,7 @@ const ProjectsSection = () => {
                         href="https://youtu.be/T7IlewTZkws"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{marginLeft:'5px'}}
+                        style={{ marginLeft: "5px" }}
                       >
                         <i className="fab fa-youtube"></i> Video Demo
                       </a>
@@ -286,7 +295,6 @@ const ProjectsSection = () => {
                     <i className="fas fa-times"></i>
                   </div>
                   <div className="video-container">
-                    {/* Add the video player component here */}
                     <iframe
                       width="560"
                       height="315"
@@ -343,8 +351,7 @@ const ProjectsSection = () => {
                         with their audience. Built with React.js and Node.js.
                         This was my first real website! It is a mobile
                         responsive website that showcases the band's music,
-                        videos, and upcoming events. The site also features an
-                        animated 'blob' in the hero section.
+                        videos, and upcoming events.
                       </p>
                       <a
                         href="https://github.com/ajSeadler/discoband"
@@ -357,7 +364,7 @@ const ProjectsSection = () => {
                         href="https://discostrangermusic.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{marginLeft:'10px'}}
+                        style={{ marginLeft: "10px" }}
                       >
                         <i className="fas fa-globe"></i> Disco Stranger Website
                       </a>
@@ -373,8 +380,6 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
-
-          {/* Add the new Project 4 */}
           <div>
             <div className="col-md-12 mb-4">
               <div
@@ -412,10 +417,10 @@ const ProjectsSection = () => {
                         <br></br>
                         <br></br> Designed and developed a 3D planet viewing
                         website. Users can view 3D models of planets in our
-                        solar system and explore their details. The project utilizes
-                        Three.js for 3D rendering, React.js for the user
-                        interface, Node.js for backend functionality, Vite for
-                        fast development, and Material UI for a clean and
+                        solar system and explore their details. The project
+                        utilizes Three.js for 3D rendering, React.js for the
+                        user interface, Node.js for backend functionality, Vite
+                        for fast development, and Material UI for a clean and
                         responsive design.
                       </p>
                       <a
@@ -430,11 +435,10 @@ const ProjectsSection = () => {
                         href="https://solarsys1.netlify.app"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{marginLeft:'10px'}}
+                        style={{ marginLeft: "10px" }}
                       >
                         <i className="fas fa-globe"></i> Live Demo
                       </a>
-                      
                     </div>
                     <button
                       className="close-button"
@@ -465,17 +469,15 @@ const ProjectsSection = () => {
                   </div>
                 </ReactModal>
               </div>
-              
             </div>
-            
           </div>
-          
         </Slider>
         <div className="mobile-icon">
-  <SwipeOutlinedIcon className="swipe-icon" style={{fontSize:'2.5rem', color: '#b1916e'}}/>
-</div>
-
-
+          <SwipeOutlinedIcon
+            className="swipe-icon"
+            style={{ fontSize: "2.5rem", color: "#b1916e" }}
+          />
+        </div>
 
         {/* Add additional projects as needed with similar structure */}
       </div>

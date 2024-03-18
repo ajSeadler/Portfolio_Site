@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaTimes } from "react-icons/fa";
 import styled from "styled-components";
 
 const FooterContainer = styled.footer`
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: transparent;
   color: #fff;
   padding: 20px;
   display: flex;

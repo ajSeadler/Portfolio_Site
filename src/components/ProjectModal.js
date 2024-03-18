@@ -8,25 +8,32 @@ const ProjectModal = ({ isOpen, onRequestClose, project }) => {
 
   const modalStyle = {
     content: {
-      width: "80%",
-      maxWidth: "600px",
-      margin: "auto",
+      margin:'0px',
+      width: "90%",
+      maxWidth: "700px",
+      height:"auto",
+      margin:'auto',
+      top:'0',
+      left:'0',
+      right:'0',
       backgroundColor: "#1a1a1a",
       borderRadius: "8px",
       border: "none",
       padding: "20px",
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       display: "flex",
+      alignItems:'center',
       flexDirection: "column",
       justifyContent: "space-between",
-      maxHeight: "37vh",
+      maxHeight: "70vh",
       overflowY: "auto",
     },
     overlay: {
-      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      backgroundColor: "transparent",
       display: "flex",
-      alignItems: "center",
+      flexDirection:'column',
       justifyContent: "center",
+     
     },
   };
 
@@ -40,6 +47,7 @@ const ProjectModal = ({ isOpen, onRequestClose, project }) => {
     marginTop: "0",
     backgroundColor: "#4CAF50",
     color: "white",
+    width:'75%',
     padding: "10px 0px",
     border: "none",
     borderRadius: "4px",

@@ -1,18 +1,17 @@
-/* CSS (Custom Styles) */
 * {
   margin: 0px;
   padding: 0px;
 }
 
-
 body {
   margin: 0;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-
-h2, h3 {
-  font-family: 'Bebas Neue';
+h2,
+h3 {
+  font-family: "Bebas Neue";
 }
 
 .sticky-top {
@@ -28,14 +27,13 @@ h2, h3 {
 }
 
 .navbar a:hover {
-  color: #A3B4A2;
+  color: #a3b4a2;
 }
 
 .navbar-with-background .navbar-nav .nav-link.active,
 .navbar-with-background .navbar-nav .nav-link:active {
   color: lightgrey !important;
 }
-
 
 .navbar {
   background-color: #00000091;
@@ -67,10 +65,9 @@ h2, h3 {
   color: #fff;
 }
 
-
 .coding-divider::before,
 .coding-divider::after {
-  content: '';
+  content: "";
   display: inline-block;
   margin-bottom: 15px;
   width: 20%;
@@ -80,7 +77,6 @@ h2, h3 {
 
 .coding-divider::before {
   margin-right: 10px;
-  
 }
 
 .coding-divider::after {
@@ -106,7 +102,7 @@ h2, h3 {
 
 .coding-divider1::before,
 .coding-divider1::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 20%;
   margin-bottom: 15px;
@@ -129,7 +125,6 @@ h2, h3 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow on hover */
 }
 
-
 .card img {
   max-width: 200%;
   width: 130%;
@@ -139,7 +134,6 @@ h2, h3 {
 .coding-divider i {
   font-size: 3%;
 }
-
 
 /* .card {
   border: none;
@@ -151,7 +145,7 @@ h2, h3 {
 }
 
 .close-button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -189,13 +183,17 @@ h2, h3 {
   height: 13px;
   border-radius: 50%;
   margin: 0 5px;
+  transition: all 0.3s ease;
 }
 
 .white-dot.active {
-  background-color: #333;
+  background-color: transparent;
+  border: 2px solid white; /* Adjust the border width as needed */
+  width: 20px; /* Adjust the width for the oval-like shape */
+  height: 13px; /* Adjust the height for the oval-like shape */
+  border-radius: 10px; /* Adjust the border-radius for the oval-like shape */
 }
 
-  
 .features li {
   margin: 10px;
 }
@@ -212,6 +210,7 @@ h2, h3 {
   color: white;
 }
 
+
 #home {
   margin-top: auto;
   margin-bottom: auto;
@@ -220,16 +219,11 @@ h2, h3 {
 #projects {
   background-color: transparent;
   margin-top: 0%;
-  
 }
-
-
 
 #skills {
   margin-top: -3%;
 }
-
-
 
 #projects h2 {
   color: white;
@@ -255,46 +249,39 @@ h2, h3 {
 }
 
 .side-by-side-images img {
-  max-width: 48%; /* Adjust as needed based on the desired layout for larger screens */
+  max-width: 48%;
   margin: 5px;
 }
 
 @media only screen and (min-width: 600px) {
   .side-by-side-images img {
-      max-width: 48%; /* Adjust as needed based on the desired layout for larger screens */
+    max-width: 48%;
   }
 }
 
-
-
-/* VideoModal.css */
-
-/* Overlay styles */
 .ReactModal__Overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Content styles */
 .ReactModal__Content {
   position: relative;
-  background-color: transparent; /* Make the background transparent */
-  border: none; /* Remove border */
-  box-shadow: none; /* Remove box shadow */
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
   outline: none;
   padding: 20px;
-  width: 100%; /* Adjust the width as needed */
-  max-width: 700px; /* Maximum width of the modal */
+  width: 80%;
+  max-width: 100%;
 }
 
-/* Close button styles */
 .ReactModal__CloseButton {
   position: absolute;
   top: -2px;
@@ -314,21 +301,19 @@ h2, h3 {
   margin-top: 5%;
 }
 
-
 .profile-pic {
-  margin-top: 10%; /* Adjust the value as needed */
+  margin-top: 10%;
 }
 
-/* Your CSS stylesheet */
 .btn-custom {
-  background-color: #7E8D85; /* Set the background color to #7E8D85 */
-  color: #fff; /* Set the text color to white */
-  border-color: #000000; /* Set the border color to #7E8D85 */
+  background-color: #7e8d85;
+  color: #fff;
+  border-color: #000000;
 }
 
 .btn-custom:hover {
-  background-color: #6C7A70; /* Change the background color on hover to a slightly darker shade */
-  border-color: #6C7A70; /* Change the border color on hover to a slightly darker shade */
+  background-color: #6c7a70;
+  border-color: #6c7a70;
 }
 
 .ReactModal__Content {
@@ -358,7 +343,7 @@ h2, h3 {
 }
 
 .navbar-toggler {
-  background-color: #7E8D85;
+  background-color: #7e8d85;
 }
 
 .navbar-collapse {
@@ -378,14 +363,11 @@ h2, h3 {
   margin-top: 20%;
 }
 
-
-
-/* CSS for mobile view (max-width: 768px) */
 @media (max-width: 768px) {
   .mobile-icon {
-    display: inline; /* Display the icons in mobile view */
+    display: inline;
   }
-  
+
   .hero2 {
     margin-top: 34%;
   }
@@ -397,161 +379,162 @@ h2, h3 {
   .proj-home {
     margin-top: auto;
   }
-  
+
   .skillz li {
     width: 100%;
   }
 
   .port-title {
-    margin-top:15vh !important;
+    margin-top: 15vh !important;
   }
 
   .mobile-icon {
     color: #fff;
-    font-size: '4rem';
+    font-size: "4rem";
     margin-top: 10%;
-    
   }
 
-
-
- .icon {
+  .icon {
     position: relative;
     margin-top: 15%;
     margin-bottom: -10%;
     /* background-color: #b1916ede; */
     border-radius: 50%;
-}
+  }
 
-.neon-glow {
-    animation: neon-glow .5s ease-in-out infinite alternate;
-    text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e; /* Adjusted shadow color */
-}
+  .neon-glow {
+    animation: neon-glow 0.5s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
+      0 0 40px #b1916e, 0 0 50px #b1916e;
+  }
 
-@keyframes neon-glow {
+  @keyframes neon-glow {
     0% {
-        text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e;
-        box-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e;
+      text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
+        0 0 40px #b1916e, 0 0 50px #b1916e;
+      box-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
+        0 0 40px #b1916e, 0 0 50px #b1916e;
     }
     100% {
-        text-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e, 0 0 60px #b1916e;
-        box-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e, 0 0 60px #b1916e;
+      text-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
+        0 0 50px #b1916e, 0 0 60px #b1916e;
+      box-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
+        0 0 50px #b1916e, 0 0 60px #b1916e;
     }
-}
-
-.mouse-glow {
-  animation: mouse-glow-animation .5s ease-in-out infinite alternate;
-  text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e;
-}
-
-@keyframes mouse-glow-animation {
-  0% {
-    text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e;
-    box-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e;
   }
-  100% {
-    text-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e, 0 0 60px #b1916e;
-    box-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e, 0 0 60px #b1916e;
+
+  .mouse-glow {
+    animation: mouse-glow-animation 0.5s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
+      0 0 40px #b1916e, 0 0 50px #b1916e;
   }
-}
 
-.m-icon {
-  position: relative;
-  max-width: 10%;
-  margin: 15% auto -10%;
-  background-color: #b1916ede; /* Taupe Gold Color */
-  border-radius: 50%;
-  animation: mouse-down 1s ease-in-out infinite alternate, neon-glow 1s ease-in-out infinite alternate; /* Combine animations */
-}
-
-@keyframes mouse-down {
-  0% {
-    transform: translateY(0); /* Start from current position */
+  @keyframes mouse-glow-animation {
+    0% {
+      text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
+        0 0 40px #b1916e, 0 0 50px #b1916e;
+      box-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
+        0 0 40px #b1916e, 0 0 50px #b1916e;
+    }
+    100% {
+      text-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
+        0 0 50px #b1916e, 0 0 60px #b1916e;
+      box-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
+        0 0 50px #b1916e, 0 0 60px #b1916e;
+    }
   }
-  100% {
-    transform: translateY(20px); /* Move downward by 20px */
+
+  .m-icon {
+    position: relative;
+    max-width: 10%;
+    margin: 15% auto -10%;
+    background-color: #b1916ede;
+    border-radius: 50%;
+    animation: mouse-down 1s ease-in-out infinite alternate,
+      neon-glow 1s ease-in-out infinite alternate; /* Combine animations */
   }
-}
 
-@keyframes neon-glow {
-  0% {
-      text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e;
-      box-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e;
+  @keyframes mouse-down {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(20px);
+    }
   }
-  100% {
-      text-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e, 0 0 60px #b1916e;
-      box-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e, 0 0 50px #b1916e, 0 0 60px #b1916e;
+
+  @keyframes neon-glow {
+    0% {
+      text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
+        0 0 40px #b1916e, 0 0 50px #b1916e;
+      box-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
+        0 0 40px #b1916e, 0 0 50px #b1916e;
+    }
+    100% {
+      text-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
+        0 0 50px #b1916e, 0 0 60px #b1916e;
+      box-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
+        0 0 50px #b1916e, 0 0 60px #b1916e;
+    }
   }
-}
 
-.mouse-icon {
-  position: relative;
-  width: 30px;
-  height: 50px;
-  border: 3px solid #b1916e;
-  border-radius: 15px;
-  background-color: transparent;
-  display: flex;
-  align-items: flex-end;
-}
-
-.wheel {
-  margin: auto;
-  transform: translateX(-50%);
-  width: 10.5%;
-  height: 25%;
-  background-color: #b1916e;
-  border-radius: 50%;
-  animation: wheel-move 1s ease-in-out infinite alternate;
-}
-
-@keyframes wheel-move {
-  0% {
-    transform: translateY(0);
+  .mouse-icon {
+    position: relative;
+    width: 30px;
+    height: 50px;
+    border: 3px solid #b1916e;
+    border-radius: 15px;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-end;
   }
-  100% {
-    transform: translateY(-10px);
+
+  .wheel {
+    margin: auto;
+    transform: translateX(-50%);
+    width: 10.5%;
+    height: 25%;
+    background-color: #b1916e;
+    border-radius: 50%;
+    animation: wheel-move 1s ease-in-out infinite alternate;
   }
-}
 
-.swipe-icon {
-  position: relative;
-  margin-top: 15%;
-  margin-bottom: -10%;
-  border-radius: 50%;
-  color: #b1916e; /* Taupe Gold Color */
-  animation: swipeAnimation 2s infinite linear alternate;
-}
-
-@keyframes swipeAnimation {
-  0% {
-    transform: translateX(0);
+  @keyframes wheel-move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
   }
-  50% {
-    transform: translateX(10px);
+
+  .swipe-icon {
+    position: relative;
+    margin-top: 15%;
+    margin-bottom: -10%;
+    border-radius: 50%;
+    color: #b1916e;
+    animation: swipeAnimation 2s infinite linear alternate;
   }
-  100% {
-    transform: translateX(0);
+
+  @keyframes swipeAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
-}
-
-
-
-
-
-
-
-
- 
-
-  
 
   .video-container {
-    width: 100%; /* Adjust the width as needed for mobile */
+    width: 100%;
   }
 
   .video-container iframe {
-    width: 100%; /* Make the iframe width 100% for mobile */
+    width: 100%;
   }
 
   .des-body {
@@ -565,6 +548,4 @@ h2, h3 {
   .ReactModal__Content {
     width: 95%;
   }
-
-  
 }

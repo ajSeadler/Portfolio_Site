@@ -58,7 +58,7 @@ const projectsData = [
     image: "/bandsitenew.jpg",
     technologies: [ "React.js", "Node.js", "HTML", "CSS", "MUI"],
     description:
-      "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile-responsive website that showcases the band's music, videos, and upcoming events. The site also features an animated 'blob' in the hero section.",
+      "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile-responsive website that showcases the band's music, videos, and upcoming events.",
     status:"Active",
     link: 'https://discostrangermusic.com'
   },

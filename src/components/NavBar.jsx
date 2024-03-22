@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button, Container, IconButton, Drawer, useMediaQuery } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Container, IconButton, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -16,6 +17,24 @@ function ScrollToTop() {
 function NavBar() {
   const isMobile = useMediaQuery('(max-width: 600px)');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isNavBarVisible, setIsNavBarVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isVisible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
+
+      setIsNavBarVisible(isVisible);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
 
   const handleMobileMenuOpen = () => {
     setIsMobileMenuOpen(true);
@@ -25,9 +44,15 @@ function NavBar() {
     setIsMobileMenuOpen(false);
   };
 
+  const handleTabClick = () => {
+    setIsMobileMenuOpen(false); // Close the mobile menu when a tab is clicked
+  };
+
   const navBarStyle = {
     background: 'rgba(0, 0, 0, 0.8)',
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
+    transition: 'transform 0.3s ease',
+    transform: isNavBarVisible ? 'translateY(0)' : 'translateY(-100%)',
   };
 
   const brandStyle = {
@@ -40,34 +65,31 @@ function NavBar() {
 
   const navLinksContainerStyle = {
     display: 'flex',
-    flexWrap: 'wrap', // Allow links to wrap to the next line
-    justifyContent: isMobile ? 'center' : 'flex-end', // Center links on mobile, align to right on larger screens
-    marginTop: isMobile ? '10px' : '0', // Add top margin on mobile for spacing
+    flexWrap: 'wrap',
+    justifyContent: isMobile ? 'center' : 'flex-end',
+    marginTop: isMobile ? '10px' : '0',
   };
   
   const navLinkStyle = {
     color: 'white',
     fontFamily: 'Bebas Neue',
     textDecoration: 'none',
-    margin: '5px', // Add margin around each link for spacing
+    margin: '5px',
     whiteSpace: 'nowrap',
     fontSize: '1.3rem',
     '&:hover': {
       color: 'lightgrey',
     },
   };
-  
 
   const mobileMenuStyle = {
+    position: 'fixed',
+    top: isMobileMenuOpen ? '0' : '-100%', // Slide down animation
+    left: 0,
     width: '100%',
     background:'#333',
-    whiteSpace: 'nowrap',
-    '& .MuiButton-root': {
-      display: isMobile ? 'block' : 'none',
-      width: '100%',
-      textAlign: 'left',
-      paddingLeft: '0px',
-    },
+    zIndex: 999,
+    transition: 'top 0.3s ease',
   };
 
   return (
@@ -97,45 +119,48 @@ function NavBar() {
                   <Button color="inherit" component={NavLink} to="/locations" sx={navLinkStyle}>
                     Contact
                   </Button>
-                  
                 </>
               )}
             </div>
             <IconButton
               color="inherit"
-              onClick={handleMobileMenuOpen}
+              onClick={isMobileMenuOpen ? handleMobileMenuClose : handleMobileMenuOpen}
               sx={{ display: { xs: 'block', sm: 'none' } }}
             >
-              <MenuIcon />
+              {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
             </IconButton>
           </Toolbar>
         </Container>
-
-        <Drawer
-          anchor="top"
-          open={isMobileMenuOpen}
-          onClose={handleMobileMenuClose}
-          sx={{ '& .MuiDrawer-paper': mobileMenuStyle }}
-        >
-          <div onClick={handleMobileMenuClose}>
-            <Button color="inherit" component={NavLink} to="/" sx={navLinkStyle}>
-              Home
-            </Button>
-            <Button color="inherit" component={NavLink} to="/projects" sx={navLinkStyle}>
-              Portfolio
-            </Button>
-            <Button color="inherit" component={NavLink} to="/skills" sx={navLinkStyle}>
-              Skills
-            </Button>
-            <Button color="inherit" component={NavLink} to="/locations" sx={navLinkStyle}>
-              Contact
-            </Button>
-            <Button color="inherit" component={NavLink} to="/about" sx={navLinkStyle}>
-              About Me
-            </Button>
-          </div>
-        </Drawer>
       </AppBar>
+
+      {isMobile && (
+        <div style={mobileMenuStyle}>
+          <Container maxWidth="lg">
+            <div style={{ textAlign: 'right', margin: '10px 0' }}>
+              <IconButton color="inherit" onClick={handleMobileMenuClose}>
+                <CloseIcon />
+              </IconButton>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <Button color="inherit" component={NavLink} to="/" sx={navLinkStyle} onClick={handleTabClick}>
+                Home
+              </Button>
+              <Button color="inherit" component={NavLink} to="/about" sx={navLinkStyle} onClick={handleTabClick}>
+                About Me
+              </Button>
+              <Button color="inherit" component={NavLink} to="/projects" sx={navLinkStyle} onClick={handleTabClick}>
+                Portfolio
+              </Button>
+              <Button color="inherit" component={NavLink} to="/skills" sx={navLinkStyle} onClick={handleTabClick}>
+                Skills
+              </Button>
+              <Button color="inherit" component={NavLink} to="/locations" sx={navLinkStyle} onClick={handleTabClick}>
+                Contact
+              </Button>
+            </div>
+          </Container>
+        </div>
+      )}
     </>
   );
 }

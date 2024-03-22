@@ -14,10 +14,46 @@ h3 {
   font-family: "Bebas Neue";
 }
 
+
+
 .sticky-top {
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.scroll-downs {
+  position: absolute;
+  bottom: 4%;
+  left: 4%;
+  width: 34px;
+  height: 55px;
+  margin: 0;
+}
+
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
 }
 
 .navbar a {
@@ -222,7 +258,7 @@ h3 {
 }
 
 #skills {
-  margin-top: -3%;
+  margin-top: auto;
 }
 
 #projects h2 {
@@ -362,6 +398,15 @@ h3 {
 .proj-home {
   margin-top: 20%;
 }
+
+@media (max-width: 768px) {
+  /* Adjust button styles for mobile devices */
+  .button-container button {
+    font-size: 0.5rem;
+    padding: 8px 8px;
+  }
+}
+
 
 @media (max-width: 768px) {
   .mobile-icon {
@@ -549,3 +594,11 @@ h3 {
     width: 95%;
   }
 }
+
+@media (max-width: 768px) {
+  .button-container button {
+    font-size: 1rem;
+    margin: -3px;
+    padding: 0px;
+   
+  }}

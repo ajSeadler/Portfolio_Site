@@ -26,13 +26,13 @@ function Locations() {
         <div className="row">
           <div className="col-md-12 mb-4">
             <h2 className="h4">
-              <FontAwesomeIcon icon={faEnvelope} size="1x" style={{ color: '#45a049' }} /> Email
+              <FontAwesomeIcon icon={faEnvelope} size="1x" style={{ color: '#b1916e' }} /> Email
             </h2>
             <p>anthonyseadler@gmail.com</p>
           </div>
           <div className="col-md-12 mb-4">
             <h2 className="h4">
-              <FontAwesomeIcon icon={faMapMarkerAlt} size="1x" style={{ color: '#45a049' }} /> Location
+              <FontAwesomeIcon icon={faMapMarkerAlt} size="1x" style={{ color: '#b1916e' }} /> Location
             </h2>
             <p>Oklahoma City, OK</p>
           </div>
@@ -45,7 +45,7 @@ function Locations() {
                 rel="noopener noreferrer"
                 className="social-link"
               >
-                <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ marginRight: '15px', color: '#45a049' }} />
+                <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ marginRight: '15px', color: '#b1916e' }} />
               </a>
               <a
                 href="https://github.com/ajSeadler"
@@ -53,7 +53,7 @@ function Locations() {
                 rel="noopener noreferrer"
                 className="social-link"
               >
-                <FontAwesomeIcon icon={faGithubSquare} size="2x" style={{ color: '#45a049'}} />
+                <FontAwesomeIcon icon={faGithubSquare} size="2x" style={{ color: '#b1916e'}} />
               </a>
             </div>
           </div>

@@ -166,8 +166,7 @@ const ProjectGrid = () => {
                         width: "100%",
                         maxHeight: "100%",
                         objectFit: "cover",
-                        borderTopLeftRadius: "20px",
-                        borderTopRightRadius: "20px",
+                        
                       }}
                     />
                   </motion.div>
@@ -199,7 +198,7 @@ const ProjectGrid = () => {
           ))}
         </div>
 
-        <ul style={projectListStyle}>
+        {/* <ul style={projectListStyle}>
           <li style={projectItemStyle}>
             <div style={{ flex: "1", marginTop:'20%' }}>
               <strong>Flutter: News Article Hub</strong>
@@ -217,7 +216,7 @@ const ProjectGrid = () => {
               <img style={{ ...projectVideoStyle, maxWidth: "80%", marginTop:'35%' }} src="flutterdemo.gif" alt="Flutter Demo" />
             </div>
           </li>
-        </ul>
+        </ul> */}
 
         {selectedProject && (
           <ProjectModal

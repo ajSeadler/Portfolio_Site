@@ -4,11 +4,12 @@ import ProjectsSection from "./ProjectsSection";
 import Skills from "./Skills";
 import Locations from "./Locations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptopCode, faMouse } from "@fortawesome/free-solid-svg-icons";
+import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const controls = useAnimation();
   const [showScrollIcon, setShowScrollIcon] = useState(true);
+  const [scrolling, setScrolling] = useState(false);
 
   const homeVariants = {
     hidden: { opacity: 0, y: -50, scale: 0.8 },
@@ -19,16 +20,27 @@ const Home = () => {
     // Start animation controls when component mounts
     controls.start("visible");
 
+    // Show scroll down icon when user is not scrolling
+    const showIconTimeout = setTimeout(() => {
+      if (!scrolling) {
+        setShowScrollIcon(true);
+      }
+    }, 2000);
+
     // Hide scroll down icon when user starts scrolling
     const handleScroll = () => {
       setShowScrollIcon(false);
+      setScrolling(true);
+      clearTimeout(showIconTimeout);
+      window.removeEventListener("scroll", handleScroll); // Remove event listener once icon is hidden
     };
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      clearTimeout(showIconTimeout);
     };
-  }, [controls]);
+  }, [controls, scrolling]);
 
   return (
     <div id="home">
@@ -67,23 +79,8 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 2, duration: 0.8, ease: "easeOut" } }}
         >
-          Full Stack Developer
+          Full Stack Web Developer
         </motion.h2>
-
-        {/* Scroll Down Icon */}
-        {showScrollIcon && (
-          <motion.div
-            className="mouse-icon"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 3, duration: 0.5 } }}
-            exit={{ opacity: 0, transition: { duration: 0.5 } }} // Exit animation for fade out
-          >
-            <div className="left-click"></div>
-            <div className="wheel"></div>
-            <div className="right-click"></div>
-          </motion.div>
-        )}
-
       </motion.div>
 
       <div className="proj-home">
@@ -91,6 +88,16 @@ const Home = () => {
       </div>
       <Skills />
       <Locations />
+
+      {/* Scroll Down Icon */}
+      <motion.div
+        className="scroll-downs"
+        animate={{ opacity: showScrollIcon ? 1 : 0, transition: { duration: 0.5 } }}
+      >
+        <div className="mousey">
+          <div className="scroller"></div>
+        </div>
+      </motion.div>
     </div>
   );
 };

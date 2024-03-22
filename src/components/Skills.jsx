@@ -1,18 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faDesktop, faServer, faTools, faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { useMediaQuery } from '@mui/material';
+import { faCode, faDesktop, faServer, faTools, } from "@fortawesome/free-solid-svg-icons";
 const Skills = () => {
   const [activeTab, setActiveTab] = useState('frontend');
-  const [showArrows, setShowArrows] = useState(true);
-  
 // lets change the tabs to Languages, frameworks/libraries, and tools 
   const skillsData = {
     frontend: ["JavaScript", "React.js", "HTML5", "CSS", "Bootstrap", "Material UI"],
     backend: ["Node.js", "Express.js", "Python", "Flask", "MongoDB", "SQL", "PostgreSQL"],
     tools: ["Git", "GitHub", "VS Code", "Insomnia", "Postico"],
-    // Add more skills as needed
   };
 
   const listItemStyle = {
@@ -26,12 +22,10 @@ const Skills = () => {
   const buttonContainerStyle = {
     display: "flex",
     justifyContent: "center",
-    marginBottom: "20px",
   };
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
-    setShowArrows(false);
   };
 
   return (
@@ -55,11 +49,13 @@ const Skills = () => {
               <motion.button
                 style={{
                   background: "#0d1117",
+                  display:'flex',
                   border: `2px solid ${activeTab === tab ? "#fff" : "transparent"}`,
                   color: "#fff",
                   fontSize: "1rem",
-                  maxWidth:'100%',
-                  width:'auto',
+                  width:'150px',
+                  alignItems:'center',
+                  textAlign:'center',
                   margin:'5px',
                   fontWeight: "bold",
                   padding: "15px 20px",
@@ -69,31 +65,14 @@ const Skills = () => {
                 }}
                 whileHover={{ scale: 1.1, backgroundColor: "#0d1117" }}
                 onClick={() => handleTabClick(tab)}
+                className="skills-buttons"
               >
                 <FontAwesomeIcon
                   icon={tab === "frontend" ? faDesktop : tab === "backend" ? faServer : faTools}
-                  style={{ marginRight: "0px", color:'#b1916e', fontSize:'1rem' }} //hey dumy thid si ehere you problem was
+                  style={{ marginRight: "0px", color:'#b1916e', fontSize:'1rem', margin:'5px' }} //hey dumy thid si ehere you problem was
                 />
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </motion.button>
-              {showArrows && (
-                <motion.div
-                  key={`arrow-${index}`}
-                  initial={{ y: 10 }}
-                  animate={{ y: -10 }}
-                  transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
-                  style={{
-                    position: "absolute",
-                    left: "45%",
-                    bottom: "-7vh",
-                    transform: "translateX(-50%)",
-                    fontSize: "1.5rem",
-                    color: "#fff",
-                  }}
-                >
-                  {/* <FontAwesomeIcon icon={faArrowUp} /> */}
-                </motion.div>
-              )}
             </div>
           ))}
         </div>

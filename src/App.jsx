@@ -5,7 +5,6 @@ import { loadFull } from "tsparticles";
 import "./App.css";
 import particlesOptions from "./particles.json";
 import NavBar from "./components/NavBar";
-// import ProjectsSection from "./components/ProjectsSection";
 import Skills from "./components/Skills";
 import Locations from "./components/Locations";
 import AboutMe from "./components/AboutMe";

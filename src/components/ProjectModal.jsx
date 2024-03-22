@@ -8,7 +8,6 @@ const ProjectModal = ({ isOpen, onRequestClose, project }) => {
 
   const modalStyle = {
     content: {
-      margin:'0px',
       width: "90%",
       maxWidth: "700px",
       height:"auto",

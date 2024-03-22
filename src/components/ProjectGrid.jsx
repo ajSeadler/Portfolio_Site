@@ -4,33 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import ProjectModal from "./ProjectModal";
 
-const projectListStyle = {
-  listStyleType: "none",
-  color: 'white',
-  padding: "0",
-  marginTop: "10px",
-  margin: 'auto',
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-start",
-};
-
-const projectItemStyle = {
-  marginBottom: "10px",
-  display: "flex",
-  textAlign: 'left',
-  marginLeft: '15px',
-  justifyContent: "space-between",
-  alignItems: "flex-start",
-};
-
-const projectVideoStyle = {
-  width: "100%",
-  maxWidth: "400px",
-  height: "auto",
-  borderRadius: "20px",
-};
-
 const projectsData = [
   {
     id: 1,

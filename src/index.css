@@ -14,8 +14,6 @@ h3 {
   font-family: "Bebas Neue";
 }
 
-
-
 .sticky-top {
   position: sticky;
   top: 0;
@@ -155,10 +153,10 @@ h3 {
 }
 
 .clickable-image:hover {
-  transform: scale(1.05); /* Increase the size slightly on hover */
-  transition: transform 0.2s; /* Add a smooth transition effect */
-  cursor: pointer; /* Change the cursor to a pointer hand */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow on hover */
+  transform: scale(1.05); 
+  transition: transform 0.2s; 
+  cursor: pointer; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .card img {
@@ -170,11 +168,6 @@ h3 {
 .coding-divider i {
   font-size: 3%;
 }
-
-/* .card {
-  border: none;
-  background-color: #7E8D85;
-} */
 
 .card-title {
   color: black;
@@ -194,6 +187,8 @@ h3 {
   cursor: pointer;
   border-radius: 4px;
 }
+
+
 
 .close-button:hover {
   background-color: #45a049;
@@ -446,113 +441,7 @@ h3 {
     /* background-color: #b1916ede; */
     border-radius: 50%;
   }
-
-  .neon-glow {
-    animation: neon-glow 0.5s ease-in-out infinite alternate;
-    text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
-      0 0 40px #b1916e, 0 0 50px #b1916e;
-  }
-
-  @keyframes neon-glow {
-    0% {
-      text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
-        0 0 40px #b1916e, 0 0 50px #b1916e;
-      box-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
-        0 0 40px #b1916e, 0 0 50px #b1916e;
-    }
-    100% {
-      text-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
-        0 0 50px #b1916e, 0 0 60px #b1916e;
-      box-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
-        0 0 50px #b1916e, 0 0 60px #b1916e;
-    }
-  }
-
-  .mouse-glow {
-    animation: mouse-glow-animation 0.5s ease-in-out infinite alternate;
-    text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
-      0 0 40px #b1916e, 0 0 50px #b1916e;
-  }
-
-  @keyframes mouse-glow-animation {
-    0% {
-      text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
-        0 0 40px #b1916e, 0 0 50px #b1916e;
-      box-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
-        0 0 40px #b1916e, 0 0 50px #b1916e;
-    }
-    100% {
-      text-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
-        0 0 50px #b1916e, 0 0 60px #b1916e;
-      box-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
-        0 0 50px #b1916e, 0 0 60px #b1916e;
-    }
-  }
-
-  .m-icon {
-    position: relative;
-    max-width: 10%;
-    margin: 15% auto -10%;
-    background-color: #b1916ede;
-    border-radius: 50%;
-    animation: mouse-down 1s ease-in-out infinite alternate,
-      neon-glow 1s ease-in-out infinite alternate; /* Combine animations */
-  }
-
-  @keyframes mouse-down {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(20px);
-    }
-  }
-
-  @keyframes neon-glow {
-    0% {
-      text-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
-        0 0 40px #b1916e, 0 0 50px #b1916e;
-      box-shadow: 0 0 10px #b1916e, 0 0 20px #b1916e, 0 0 30px #b1916e,
-        0 0 40px #b1916e, 0 0 50px #b1916e;
-    }
-    100% {
-      text-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
-        0 0 50px #b1916e, 0 0 60px #b1916e;
-      box-shadow: 0 0 20px #b1916e, 0 0 30px #b1916e, 0 0 40px #b1916e,
-        0 0 50px #b1916e, 0 0 60px #b1916e;
-    }
-  }
-
-  .mouse-icon {
-    position: relative;
-    width: 30px;
-    height: 50px;
-    border: 3px solid #b1916e;
-    border-radius: 15px;
-    background-color: transparent;
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .wheel {
-    margin: auto;
-    transform: translateX(-50%);
-    width: 10.5%;
-    height: 25%;
-    background-color: #b1916e;
-    border-radius: 50%;
-    animation: wheel-move 1s ease-in-out infinite alternate;
-  }
-
-  @keyframes wheel-move {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-10px);
-    }
-  }
-
+  
   .swipe-icon {
     position: relative;
     margin-top: 15%;
@@ -596,9 +485,19 @@ h3 {
 }
 
 @media (max-width: 768px) {
-  .button-container button {
+  .button-container  {
     font-size: 1rem;
-    margin: -3px;
-    padding: 0px;
+    padding: 0;
    
-  }}
+  }
+
+  .skills-buttons {
+   width: auto !important;
+   max-width: 85px;
+   margin: 0;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+  }
+
+}

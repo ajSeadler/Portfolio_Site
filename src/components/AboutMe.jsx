@@ -57,6 +57,7 @@ function AboutMe() {
         alt="Guitar"
         className="img-fluid rounded-circle"
         style={circleImageStyle}
+        loading="lazy"
       />
 
       <h3 style={subHeadingStyle}>Who Am I?</h3>
@@ -97,7 +98,6 @@ function AboutMe() {
         src="https://open.spotify.com/embed/artist/3SwSE7OtWzLOrc32Eq54gO?utm_source=generator&theme=0"
         width="100%"
         height="352"
-        frameBorder="0"
         allowfullscreen=""
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"

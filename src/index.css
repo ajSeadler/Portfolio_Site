@@ -394,6 +394,67 @@ h3 {
   margin-top: 20%;
 }
 
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.icon-wrapper > * {
+  margin: 0 10px;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.icon-wrapper > *:hover {
+  color: #7e8d85;
+}
+.blob-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh; /* Adjust the margin from the top */
+}
+
+.blob {
+  background-image: url('/public/portrait.jpg');
+  width: 380px;
+  height: 380px;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center center;
+  box-shadow: 0 5px 5px 5px rgba(13, 110, 253, 0.2);
+  animation: animate 5s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+  border-radius: 50%; /* Ensure the blob is circular */
+}
+
+@keyframes animate {
+  0%, 100%{
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50%{
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .blob {
+    width: 250px; /* Adjust for smaller screens */
+    height: 250px; /* Adjust for smaller screens */
+  }
+
+  .blob-container {
+    margin-top: 5vh; /* Adjust the margin from the top for mobile */
+  }
+}
+
+
+
+
+
+
 @media (max-width: 768px) {
   /* Adjust button styles for mobile devices */
   .button-container button {

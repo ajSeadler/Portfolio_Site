@@ -1,3 +1,5 @@
+// ProjectGrid.js
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +15,7 @@ const projectsData = [
     description:
       "Fork It is a reviews web app where users can create an account to leave a review for a certain restaurant. Users can rate restaurants, review restaurants, and comment on other users' reviews. Fork It is a collaborative project between myself and a few others. As a full-stack developer, my role consisted of building database tables, building API routes, and building React components.",
     status: "Demo Only",
-    link:"https://github.com/ajSeadler/Fork-it"
+    link: "https://github.com/ajSeadler/Fork-it"
   },
   {
     id: 2,
@@ -22,37 +24,38 @@ const projectsData = [
     technologies: ["Python", "Flask", "Bootstrap 5"],
     description:
       "Weather or Not is a live weather forecasting app built with Python and Flask. The app features a current forecast, followed by a 7-day forecast - obtained from the Open Weather Map API. The user's current location's forecast will display on the home page.",
-    status:"Demo Only",
-    link:"https://github.com/ajSeadler/Weather-or-Not"
+    status: "Demo Only",
+    link: "https://github.com/ajSeadler/Weather-or-Not"
   },
   {
     id: 3,
     title: "Disco Stranger - Band Website",
-    image: "/bandsitenew.jpg",
-    technologies: [ "React.js", "Node.js", "HTML", "CSS", "MUI"],
+    image: "/bandsitenew.png",
+    technologies: ["React.js", "Node.js", "HTML", "CSS", "MUI"],
     description:
       "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile-responsive website that showcases the band's music, videos, and upcoming events.",
-    status:"Active",
-    link: 'https://discostrangermusic.com'
+    status: "Active",
+    link: "https://discostrangermusic.com"
   },
   {
     id: 4,
     title: "3D Planet Viewer",
-    image: "/solar.jpg",
+    image: "/solar.png",
     technologies: ["Three.js, React.js, Node.js, Vite, Material UI"],
     description:
       "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system and explore their details. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design",
-    status:"Active",
-    link: 'https://solarsys1.netlify.app'
+    status: "Active",
+    link: "https://solarsys1.netlify.app"
   },
   {
-    id:5,
-    title:"Stunning Realty",
-    image:"/realty.png",
-    technologies:["Postgres", "Express.js", "React.js", "Node.js"],
-    description: "Stunning Realty is a demo project I created to enhance my PostgreSQL skills. The app features homes for sale or rent, each with a personal real estate agent. Users can favorite homes, view agent info, and even list their own property. Fake data is implemented with Faker.js to give a more realistic demo.",
-    status:"Demo Only",
-    link:"https://github.com/ajSeadler/realty"
+    id: 5,
+    title: "Stunning Realty",
+    image: "/realty-min.png",
+    technologies: ["Postgres", "Express.js", "React.js", "Node.js"],
+    description:
+      "Stunning Realty is a demo project I created to enhance my PostgreSQL skills. The app features homes for sale or rent, each with a personal real estate agent. Users can favorite homes, view agent info, and even list their own property. Fake data is implemented with Faker.js to give a more realistic demo.",
+    status: "Demo Only",
+    link: "https://github.com/ajSeadler/realty"
   }
 ];
 
@@ -96,14 +99,9 @@ const ProjectGrid = () => {
     }
   };
 
-  return !contentLoaded ? (
-    <div className="spinner-container">
-    <div className="spinner">
-      {/* Optionally, you can add text below the spinner */}
-      
-    </div>
-  </div>
-  ) : (
+  return  ( <>
+    
+  
     <div id="projects" className="">
       <div className="container port-title">
         <div className="coding-divider">
@@ -124,7 +122,7 @@ const ProjectGrid = () => {
                 style={{
                   height: "100%",
                   backdropFilter: "blur(5px)",
-                  backgroundColor:'transparent',
+                  backgroundColor: "transparent"
                 }}
               >
                 <div className="d-flex justify-content-center align-items-center">
@@ -134,32 +132,33 @@ const ProjectGrid = () => {
                       className="card-img-top mx-auto clickable-image"
                       alt={project.title}
                       onClick={() => openModal(project)}
+                      loading="lazy"
                       style={{
                         cursor: "pointer",
                         width: "100%",
                         maxHeight: "100%",
-                        objectFit: "cover",
-                        
+                        objectFit: "cover"
                       }}
                     />
                   </motion.div>
                 </div>
                 <div className="card-body text-center">
                   <h5 className="card-title" style={{ color: "white" }}>
-                    {project.title} {project.status && (
-                    <span
-                    style={{
-                      display: "inline-block",
-                      padding: "5px 10px",
-                      borderRadius: "20px",
-                      backgroundColor: getStatusColor(project.status),
-                      color: "white",
-                      marginLeft: "10px",
-                    }}
-                  >
-                    {project.status}
-                  </span>
-                  )}
+                    {project.title}{" "}
+                    {project.status && (
+                      <span
+                        style={{
+                          display: "inline-block",
+                          padding: "5px 10px",
+                          borderRadius: "20px",
+                          backgroundColor: getStatusColor(project.status),
+                          color: "white",
+                          marginLeft: "10px"
+                        }}
+                      >
+                        {project.status}
+                      </span>
+                    )}
                   </h5>
 
                   <p className="card-text" style={{ color: "white" }}>
@@ -171,26 +170,6 @@ const ProjectGrid = () => {
           ))}
         </div>
 
-        {/* <ul style={projectListStyle}>
-          <li style={projectItemStyle}>
-            <div style={{ flex: "1", marginTop:'20%' }}>
-              <strong>Flutter: News Article Hub</strong>
-              <p>Retrieves World, Sports, and Space news</p>
-
-              <strong style={{ textAlign: 'left' }}>What I learned:</strong>
-              <ul>
-                <li style={{ textAlign: 'left', marginBottom: '5px' }}>Asynchronous programming in Flutter</li>
-                <li style={{ textAlign: 'left', marginBottom: '5px' }}>Data model structures</li>
-                <li style={{ textAlign: 'left', marginBottom: '5px' }}>Flutter state management </li>
-              </ul>
-            </div>
-
-            <div style={{ flex: "1", marginLeft: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <img style={{ ...projectVideoStyle, maxWidth: "80%", marginTop:'35%' }} src="flutterdemo.gif" alt="Flutter Demo" />
-            </div>
-          </li>
-        </ul> */}
-
         {selectedProject && (
           <ProjectModal
             isOpen={showModal}
@@ -200,6 +179,7 @@ const ProjectGrid = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

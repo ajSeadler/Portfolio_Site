@@ -78,7 +78,7 @@ function NavBar() {
     whiteSpace: 'nowrap',
     fontSize: '1.3rem',
     '&:hover': {
-      color: 'lightgrey',
+      color: '#b1916e',
     },
   };
 
@@ -87,10 +87,13 @@ function NavBar() {
     top: isMobileMenuOpen ? '0' : '-100%', // Slide down animation
     left: 0,
     width: '100%',
-    background:'#333',
     zIndex: 999,
     transition: 'top 0.3s ease',
-  };
+    color: '#000 !important',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Adjust the alpha value for transparency
+    backdropFilter: 'blur(5px) brightness(100%)', // Adjust blur and brightness as needed
+};
+
 
   return (
     <>
@@ -137,8 +140,7 @@ function NavBar() {
         <div style={mobileMenuStyle}>
           <Container maxWidth="lg">
             <div style={{ textAlign: 'right', margin: '10px 0' }}>
-              <IconButton color="inherit" onClick={handleMobileMenuClose}>
-                <CloseIcon />
+              <IconButton onClick={handleMobileMenuClose}>
               </IconButton>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

@@ -122,6 +122,7 @@ const ProjectsSection = () => {
                       className="card-img-top mx-auto clickable-image"
                       alt="Project 1"
                       onClick={toggleDescription1}
+                      loading="lazy"
                       style={{ cursor: "pointer", maxWidth: "70%" }}
                     />
                   </motion.div>
@@ -182,33 +183,6 @@ const ProjectsSection = () => {
                     </button>
                   </ReactModal>
                 )}
-
-                <ReactModal
-                  isOpen={showModal}
-                  onRequestClose={toggleModal}
-                  contentLabel="Video Demo Modal"
-                  className="ReactModal__Content"
-                  overlayClassName="ReactModal__Overlay"
-                >
-                  <div
-                    className="ReactModal__CloseButton"
-                    onClick={toggleModal}
-                  >
-                    <i className="fas fa-times"></i>
-                  </div>
-                  <div className="video-container">
-                    {/* Add the video player component here */}
-                    <iframe
-                      width="560"
-                      height="315"
-                      src="https://www.youtube.com/embed/qOcs1PvMBGo?si=g2N2hOqceS30XcJc"
-                      title="YouTube video player"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                </ReactModal>
               </div>
             </div>
           </div>
@@ -225,6 +199,7 @@ const ProjectsSection = () => {
                       src="/weather_app.png"
                       className="card-img-top mx-auto clickable-image"
                       alt="Project 2"
+                      loading="lazy"
                       onClick={toggleDescription2}
                       style={{ cursor: "pointer", maxWidth: "70%" }}
                     />
@@ -281,31 +256,7 @@ const ProjectsSection = () => {
                   </ReactModal>
                 )}
 
-                <ReactModal
-                  isOpen={showModal1}
-                  onRequestClose={toggleModal1}
-                  contentLabel="Video Demo Modal"
-                  className="ReactModal__Content"
-                  overlayClassName="ReactModal__Overlay"
-                >
-                  <div
-                    className="ReactModal__CloseButton"
-                    onClick={toggleModal1}
-                  >
-                    <i className="fas fa-times"></i>
-                  </div>
-                  <div className="video-container">
-                    <iframe
-                      width="560"
-                      height="315"
-                      src="https://www.youtube.com/embed/T7IlewTZkws?si=Fr-kBKNUalD4GVWy"
-                      title="YouTube video player"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                </ReactModal>
+                
               </div>
             </div>
           </div>
@@ -319,9 +270,10 @@ const ProjectsSection = () => {
                 <div className="d-flex justify-content-between align-items-center">
                   <motion.div>
                     <img
-                      src="/bandsitenew.jpg"
+                      src="/bandsitenew.png"
                       className="card-img-top mx-auto clickable-image"
                       alt="Project 3"
+                      loading="lazy"
                       onClick={toggleDescription3}
                       style={{ cursor: "pointer", maxWidth: "70%" }}
                     />
@@ -389,9 +341,10 @@ const ProjectsSection = () => {
                 <div className="d-flex justify-content-between align-items-center">
                   <motion.div>
                     <img
-                      src="/solar.jpg"
+                      src="/solar.png"
                       className="card-img-top mx-auto clickable-image"
                       alt="Project 4"
+                      loading="lazy"
                       onClick={toggleDescription4}
                       style={{ cursor: "pointer", maxWidth: "70%" }}
                     />

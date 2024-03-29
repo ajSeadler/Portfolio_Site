@@ -24,13 +24,6 @@ const subHeadingStyle = {
   marginLeft: "10%",
 };
 
-const circleImageStyle = {
-  width: "200px",
-  height: "200px",
-  objectFit: "cover",
-  borderRadius: "50%",
-  margin: "20px auto 0",
-};
 
 const paragraphStyle = {
   marginBottom: "10px",
@@ -52,13 +45,9 @@ function AboutMe() {
     <div className="container" style={aboutMeContainerStyle}>
       {/* <h2 style={headingStyle}>About Me</h2> */}
 
-      <img
-        src="/guitar-pic.JPEG"
-        alt="Guitar"
-        className="img-fluid rounded-circle"
-        style={circleImageStyle}
-        loading="lazy"
-      />
+      <div className="blob2-container">
+          <div class="blob2"></div>
+        </div>
 
       <h3 style={subHeadingStyle}>Who Am I?</h3>
 

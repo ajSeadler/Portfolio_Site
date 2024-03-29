@@ -1,185 +1,174 @@
-// ProjectGrid.js
-
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import ReactModal from "react-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import ProjectModal from "./ProjectModal";
-
-const projectsData = [
-  {
-    id: 1,
-    title: "Fork It - Reviews Website",
-    image: "/fork-it.png",
-    technologies: ["Postgres", "Express.js", "React.js", "Node.js"],
-    description:
-      "Fork It is a reviews web app where users can create an account to leave a review for a certain restaurant. Users can rate restaurants, review restaurants, and comment on other users' reviews. Fork It is a collaborative project between myself and a few others. As a full-stack developer, my role consisted of building database tables, building API routes, and building React components.",
-    status: "Demo Only",
-    link: "https://github.com/ajSeadler/Fork-it"
-  },
-  {
-    id: 2,
-    title: "Weather or Not - Live weather updates",
-    image: "/weather_app.png",
-    technologies: ["Python", "Flask", "Bootstrap 5"],
-    description:
-      "Weather or Not is a live weather forecasting app built with Python and Flask. The app features a current forecast, followed by a 7-day forecast - obtained from the Open Weather Map API. The user's current location's forecast will display on the home page.",
-    status: "Demo Only",
-    link: "https://github.com/ajSeadler/Weather-or-Not"
-  },
-  {
-    id: 3,
-    title: "Disco Stranger - Band Website",
-    image: "/bandsitenew.png",
-    technologies: ["React.js", "Node.js", "HTML", "CSS", "MUI"],
-    description:
-      "Created a website for the rock band 'Disco Stranger' to enhance their online presence and engage with their audience. Built with React.js and Node.js. This was my first real website! It is a mobile-responsive website that showcases the band's music, videos, and upcoming events.",
-    status: "Active",
-    link: "https://discostrangermusic.com"
-  },
-  {
-    id: 4,
-    title: "3D Planet Viewer",
-    image: "/solar.png",
-    technologies: ["Three.js, React.js, Node.js, Vite, Material UI"],
-    description:
-      "Designed and developed a 3D planet viewing website. Users can view 3D models of planets in our solar system and explore their details. The project utilizes Three.js for 3D rendering, React.js for the user interface, Node.js for backend functionality, Vite for fast development, and Material UI for a clean and responsive design",
-    status: "Active",
-    link: "https://solarsys1.netlify.app"
-  },
-  {
-    id: 5,
-    title: "Stunning Realty",
-    image: "/realty-min.png",
-    technologies: ["Postgres", "Express.js", "React.js", "Node.js"],
-    description:
-      "Stunning Realty is a demo project I created to enhance my PostgreSQL skills. The app features homes for sale or rent, each with a personal real estate agent. Users can favorite homes, view agent info, and even list their own property. Fake data is implemented with Faker.js to give a more realistic demo.",
-    status: "Demo Only",
-    link: "https://github.com/ajSeadler/realty"
-  }
-];
+import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import projectsData from "../projectsData";
 
 const ProjectGrid = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [contentLoaded, setContentLoaded] = useState(false);
+
+  const toggleModal = (project) => {
+    setSelectedProject(project);
+    setShowModal(!showModal);
+  };
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setContentLoaded(true);
-    }, 2000);
+    const handleScroll = () => {
+      const cards = document.querySelectorAll(".project-card");
 
-    return () => clearTimeout(timeout);
+      cards.forEach((card) => {
+        const bounding = card.getBoundingClientRect();
+
+        if (
+          bounding.top >= 0 &&
+          bounding.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight)
+        ) {
+          card.classList.add("bounce");
+        } else {
+          card.classList.remove("bounce");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  const openModal = (project) => {
-    setSelectedProject(project);
-    setShowModal(true);
+  const projectDescriptionStyle = {
+    backdropFilter: "blur(10px)",
+    color: "white",
+    textAlign: "left",
   };
 
-  const closeModal = () => {
-    setSelectedProject(null);
-    setShowModal(false);
+  const cardStyle = {
+    background: "rgba(100, 100, 100, 0.5)",
+    border: "none",
+    position: "relative",
+    overflow: "hidden",
+    borderRadius: "10px",
+    height: "auto",
+    zIndex: showModal ? "0" : "1",
   };
 
-  const renderDescription = (description) => {
-    return <></>;
+  const imageStyle = {
+    width: "100%",
+    height: "auto",
   };
 
-  const getStatusColor = (status) => {
-    switch (status.toLowerCase()) {
-      case "complete":
-        return "blue";
-      case "demo only":
-        return "orange";
-      case "active":
-        return "green";
-      default:
-        return "gray";
-    }
+  const projectNameStyle = {
+    position: "absolute",
+    bottom: "0",
+    left: "50%",
+    transform: "translateX(-50%)",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+    zIndex: "1",
+    background: "rgba(0, 0, 0, 0.7)",
+    width: "100%",
+    color: "white",
+    padding: "10px 0",
+    textAlign: "center",
   };
 
-  return  ( <>
-    
-  
-    <div id="projects" className="">
-      <div className="container port-title">
-        <div className="coding-divider">
+  return (
+    <div id="projects" className="container port2-title">
+      <div className="coding-divider">
           <FontAwesomeIcon icon={faGithub} style={{ fontSize: "3rem" }} />
         </div>
-        <h2
-          className="text-center"
-          style={{ fontSize: "2.2rem", color: "white" }}
-        >
-          PORTFOLIO
-        </h2>
+      <h2 className="text-center" style={{ fontSize: "2.2rem" }}>
+        PORTFOLIO
+      </h2>
 
-        <div className="row">
-          {projectsData.map((project) => (
-            <div key={project.id} className="col-md-6 mb-4">
+      
+
+      <div className="row">
+        {projectsData.map((project) => (
+          <div key={project.id} className="col-md-6 mb-4">
+            <div className="card project-card" style={cardStyle}>
               <div
-                className="card"
-                style={{
-                  height: "100%",
-                  backdropFilter: "blur(5px)",
-                  backgroundColor: "transparent"
-                }}
+                className="d-flex justify-content-center align-items-center"
+                onClick={() => toggleModal(project)}
               >
-                <div className="d-flex justify-content-center align-items-center">
-                  <motion.div>
-                    <img
-                      src={project.image}
-                      className="card-img-top mx-auto clickable-image"
-                      alt={project.title}
-                      onClick={() => openModal(project)}
-                      loading="lazy"
-                      style={{
-                        cursor: "pointer",
-                        width: "100%",
-                        maxHeight: "100%",
-                        objectFit: "cover"
-                      }}
-                    />
-                  </motion.div>
-                </div>
-                <div className="card-body text-center">
-                  <h5 className="card-title" style={{ color: "white" }}>
-                    {project.title}{" "}
-                    {project.status && (
-                      <span
-                        style={{
-                          display: "inline-block",
-                          padding: "5px 10px",
-                          borderRadius: "20px",
-                          backgroundColor: getStatusColor(project.status),
-                          color: "white",
-                          marginLeft: "10px"
-                        }}
-                      >
-                        {project.status}
-                      </span>
-                    )}
-                  </h5>
-
-                  <p className="card-text" style={{ color: "white" }}>
-                    {renderDescription(project.description)}
-                  </p>
-                </div>
+                <img
+                  src={project.image}
+                  className="card-img-top clickable-image"
+                  alt={project.name}
+                  style={imageStyle}
+                />
+                <div style={projectNameStyle}>{project.name}</div>
               </div>
             </div>
-          ))}
-        </div>
-
-        {selectedProject && (
-          <ProjectModal
-            isOpen={showModal}
-            onRequestClose={closeModal}
-            project={selectedProject}
-          />
-        )}
+          </div>
+        ))}
       </div>
+
+      {selectedProject && (
+        <ReactModal
+          isOpen={showModal}
+          onRequestClose={() => toggleModal(null)}
+          contentLabel={`${selectedProject.name} Description Modal`}
+          className="ReactModal__Content"
+          overlayClassName="ReactModal__Overlay"
+        >
+          <div className="card-body des" style={projectDescriptionStyle}>
+            <h5 className="card-title">{selectedProject.name}</h5>
+            <p className="card-text">
+              {/* <strong>Tech Stack: </strong> {" "}
+              <i>{selectedProject.techStack}</i>
+              <br />
+              <br /> */}
+              {selectedProject.description}
+            </p>
+            <a
+              href={selectedProject.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faGithub} /> GitHub Repository
+            </a>
+            {selectedProject.videoDemoLink && (
+              <a
+                href={selectedProject.videoDemoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginLeft: "5px" }}
+              >
+                <FontAwesomeIcon icon={faYoutube} /> Video Demo
+              </a>
+            )}
+            {selectedProject.websiteLink && (
+              <a
+                href={selectedProject.websiteLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginLeft: "10px" }}
+              >
+                <FontAwesomeIcon icon={faGlobe} /> Website
+              </a>
+            )}
+            {selectedProject.liveDemoLink && (
+              <a
+                href={selectedProject.liveDemoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginLeft: "10px" }}
+              >
+                <FontAwesomeIcon icon={faGlobe} /> Live Demo
+              </a>
+            )}
+          </div>
+          <button className="close-button" onClick={() => toggleModal(null)}>
+            Close
+          </button>
+        </ReactModal>
+      )}
     </div>
-    </>
   );
 };
 

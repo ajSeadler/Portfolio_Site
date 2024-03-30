@@ -69,7 +69,7 @@ const Skills = () => {
               >
                 <FontAwesomeIcon
                   icon={tab === "frontend" ? faDesktop : tab === "backend" ? faServer : faTools}
-                  style={{ marginRight: "0px", color:'#b1916e', fontSize:'1rem', margin:'5px' }} //hey dumy thid si ehere you problem was
+                  style={{ marginRight: "0px", color:'#EDDEA4', fontSize:'1rem', margin:'5px' }} //hey dumy thid si ehere you problem was
                 />
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </motion.button>

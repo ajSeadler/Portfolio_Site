@@ -31,7 +31,7 @@ const ProjectsSection = () => {
     slidesToScroll: 1,
     arrows: false,
     centerMode: true,
-    centerPadding: "15%",
+    centerPadding: "5%",
     swipe: true,
     responsive: [
       {

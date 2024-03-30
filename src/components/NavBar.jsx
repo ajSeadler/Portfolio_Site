@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button, Container, IconButton, useMediaQuery } from '@mui/material';
+import { Container, Drawer, List, ListItem, ListItemIcon, ListItemText, useMediaQuery, IconButton, useScrollTrigger, Slide } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import WorkIcon from '@mui/icons-material/Work';
+import CodeIcon from '@mui/icons-material/Code';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -14,155 +18,144 @@ function ScrollToTop() {
   return null;
 }
 
+function HideOnScroll({ children }) {
+  const trigger = useScrollTrigger();
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
 function NavBar() {
   const isMobile = useMediaQuery('(max-width: 600px)');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isNavBarVisible, setIsNavBarVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
       const isVisible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
-
+  
       setIsNavBarVisible(isVisible);
       setPrevScrollPos(currentScrollPos);
     };
-
+  
     window.addEventListener('scroll', handleScroll);
-
+  
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [prevScrollPos]);
-
-  const handleMobileMenuOpen = () => {
-    setIsMobileMenuOpen(true);
-  };
-
-  const handleMobileMenuClose = () => {
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleTabClick = () => {
-    setIsMobileMenuOpen(false); // Close the mobile menu when a tab is clicked
-  };
-
-  const navBarStyle = {
-    background: 'rgba(0, 0, 0, 0.8)',
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
-    transition: 'transform 0.3s ease',
-    transform: isNavBarVisible ? 'translateY(0)' : 'translateY(-100%)',
-  };
-
-  const brandStyle = {
-    fontFamily: 'Bebas Neue',
-    fontSize: '2.5rem',
-    textDecoration: 'none',
-    color: 'white',
-    marginRight: 'auto',
-  };
-
-  const navLinksContainerStyle = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: isMobile ? 'center' : 'flex-end',
-    marginTop: isMobile ? '10px' : '0',
-  };
+  }, [prevScrollPos]); // Include handleScroll in the dependency array
   
-  const navLinkStyle = {
-    color: 'white',
-    fontFamily: 'Bebas Neue',
-    textDecoration: 'none',
-    margin: '5px',
-    whiteSpace: 'nowrap',
-    fontSize: '1.3rem',
-    '&:hover': {
-      color: '#b1916e',
-    },
-  };
 
-  const mobileMenuStyle = {
-    position: 'fixed',
-    top: isMobileMenuOpen ? '0' : '-100%', // Slide down animation
-    left: 0,
-    width: '100%',
-    zIndex: 999,
-    transition: 'top 0.3s ease',
-    color: '#000 !important',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Adjust the alpha value for transparency
-    backdropFilter: 'blur(5px) brightness(100%)', // Adjust blur and brightness as needed
-};
+  const list = () => (
+    <List sx={{ padding: '20px', color:'#fff' }}>
+      <ListItem
+  button
+  component={NavLink}
+  to="/"
+  onClick={toggleMobileMenu}
+  activeClassName="active-link"
+>
+  <ListItemIcon sx={{ color: '#EDDEA4' }}>
+    <HomeIcon />
+  </ListItemIcon>
+  <ListItemText primary="Home" />
+</ListItem>
+<ListItem
+  button
+  component={NavLink}
+  to="/about"
+  onClick={toggleMobileMenu}
+  activeClassName="active-link"
+>
+  <ListItemIcon sx={{ color: '#EDDEA4' }}>
+    <InfoIcon />
+  </ListItemIcon>
+  <ListItemText primary="About Me" />
+</ListItem>
+<ListItem
+  button
+  component={NavLink}
+  to="/projects"
+  onClick={toggleMobileMenu}
+  activeClassName="active-link"
+>
+  <ListItemIcon sx={{ color: '#EDDEA4' }}>
+    <WorkIcon />
+  </ListItemIcon>
+  <ListItemText primary="Portfolio" />
+</ListItem>
+<ListItem
+  button
+  component={NavLink}
+  to="/skills"
+  onClick={toggleMobileMenu}
+  activeClassName="active-link"
+>
+  <ListItemIcon sx={{ color: '#EDDEA4' }}>
+    <CodeIcon />
+  </ListItemIcon>
+  <ListItemText primary="Skills" />
+</ListItem>
+<ListItem
+  button
+  component={NavLink}
+  to="/locations"
+  onClick={toggleMobileMenu}
+  activeClassName="active-link"
+>
+  <ListItemIcon sx={{ color: '#EDDEA4' }}>
+    <ContactMailIcon />
+  </ListItemIcon>
+  <ListItemText primary="Contact" />
+</ListItem>
 
+    </List>
+  );
 
   return (
     <>
       <ScrollToTop />
-      <AppBar position="sticky" sx={navBarStyle}>
-        <Container maxWidth="lg">
-          <Toolbar>
-            <Typography variant="h4" component={NavLink} to="/" sx={brandStyle}>
-              AS
-            </Typography>
-            <div style={navLinksContainerStyle}>
-              {!isMobile && (
-                <>
-                  <Button color="inherit" component={NavLink} to="/" sx={navLinkStyle}>
-                    Home
-                  </Button>
-                  <Button color="inherit" component={NavLink} to="/about" sx={navLinkStyle}>
-                    About Me
-                  </Button>
-                  <Button color="inherit" component={NavLink} to="/projects" sx={navLinkStyle}>
-                    Portfolio
-                  </Button>
-                  <Button color="inherit" component={NavLink} to="/skills" sx={navLinkStyle}>
-                    Skills
-                  </Button>
-                  <Button color="inherit" component={NavLink} to="/locations" sx={navLinkStyle}>
-                    Contact
-                  </Button>
-                </>
-              )}
-            </div>
-            <IconButton
-              color="inherit"
-              onClick={isMobileMenuOpen ? handleMobileMenuClose : handleMobileMenuOpen}
-              sx={{ display: { xs: 'block', sm: 'none' } }}
-            >
-              {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
-            </IconButton>
-          </Toolbar>
-        </Container>
-      </AppBar>
-
-      {isMobile && (
-        <div style={mobileMenuStyle}>
-          <Container maxWidth="lg">
-            <div style={{ textAlign: 'right', margin: '10px 0' }}>
-              <IconButton onClick={handleMobileMenuClose}>
-              </IconButton>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <Button color="inherit" component={NavLink} to="/" sx={navLinkStyle} onClick={handleTabClick}>
-                Home
-              </Button>
-              <Button color="inherit" component={NavLink} to="/about" sx={navLinkStyle} onClick={handleTabClick}>
-                About Me
-              </Button>
-              <Button color="inherit" component={NavLink} to="/projects" sx={navLinkStyle} onClick={handleTabClick}>
-                Portfolio
-              </Button>
-              <Button color="inherit" component={NavLink} to="/skills" sx={navLinkStyle} onClick={handleTabClick}>
-                Skills
-              </Button>
-              <Button color="inherit" component={NavLink} to="/locations" sx={navLinkStyle} onClick={handleTabClick}>
-                Contact
-              </Button>
-            </div>
-          </Container>
-        </div>
+      {isMobile && !isMobileMenuOpen && (
+        <HideOnScroll>
+          <IconButton
+            color="inherit"
+            onClick={toggleMobileMenu}
+            sx={{ position: 'fixed', top: '20px', left: '20px', zIndex: 9999, color:'#fff' }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </HideOnScroll>
       )}
+      <Drawer
+  anchor="left"
+  open={!isMobile || isMobileMenuOpen}
+  onClose={!isMobile ? undefined : toggleMobileMenu}
+  variant={isMobile ? 'temporary' : 'permanent'}
+  sx={{
+    width: '240px',
+    position: 'absolute', // Position the drawer absolutely
+    zIndex: 10000, // Ensure it appears above the content
+    '& .MuiDrawer-paper': {
+      backgroundColor: 'rgba(255, 255, 255, 0.125)',
+      backdropFilter: 'blur(5px)',
+    },
+  }}
+>
+  {list()}
+</Drawer>
+
+      <Container maxWidth="lg" sx={{ marginLeft: isNavBarVisible ? (isMobileMenuOpen && isMobile ? '240px' : '0') : '-80px', transition: 'transform 0.3s ease' }}>
+        
+      </Container>
     </>
   );
 }

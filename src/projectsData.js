@@ -7,7 +7,7 @@ const iconStyle = {
 };
 
 if (window.innerWidth <= 768) {
-  iconStyle.fontSize = "18px";
+  iconStyle.fontSize = "20px";
   iconStyle.marginRight = "3px";
 }
 

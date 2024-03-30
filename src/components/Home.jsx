@@ -106,6 +106,7 @@ const Home = () => {
       </div>
       <Skills />
       <Locations />
+      
 
       {/* Scroll Down Icon */}
       {/* <motion.div

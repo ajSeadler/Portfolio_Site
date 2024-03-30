@@ -43,6 +43,11 @@ h3 {
   background-color: rgb(255, 255, 255);
 }
 
+.active-link {
+  color: #90BAAD !important;
+}
+
+
 .custom-divider {
   border-top: 1px solid #fff;
   margin: 20px 0;

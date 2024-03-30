@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaArrowUp } from "react-icons/fa";
 import styled from "styled-components";
 
+
 const FooterContainer = styled.footer`
   background-color: transparent;
   color: #fff;
@@ -9,14 +10,14 @@ const FooterContainer = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed; /* Fixed positioning to keep the footer at the bottom on larger screens */
+  position: fixed; 
   left: 0;
   bottom: 0;
   width: 100%;
-  z-index: 1000; /* Ensure the footer is above other content */
+  z-index: 10000; 
   
   @media (max-width: 768px) {
-    position: static; /* Static positioning on smaller screens */
+    position: static; 
   }
 `;
 
@@ -24,9 +25,10 @@ const FooterLinks = styled.div`
   display: flex;
   flex-direction: column; /* Stack icons vertically */
   gap: 20px;
+  z-index:1000;
 
   @media (max-width: 768px) {
-    flex-direction: row; /* Change back to row direction on smaller screens */
+    flex-direction: row; 
   }
 
   a {
@@ -54,7 +56,7 @@ const ScrollToTopIcon = styled.div`
   pointer-events: ${({ show }) => (show ? "auto" : "none")}; /* Disable pointer events if show is false */
 
   &:hover {
-    background-color: #b1916e;
+    background-color: #90BAAD;
   }
 
   svg {
@@ -99,6 +101,7 @@ const Footer = () => {
         <a href="https://linkedin.com/in/anthony-seadler" target="_blank" rel="noopener noreferrer">
           <FaLinkedin />
         </a>
+        
       </FooterLinks>
       <ScrollToTopIcon show={showScroll} onClick={handleScrollToTop}>
         <FaArrowUp />

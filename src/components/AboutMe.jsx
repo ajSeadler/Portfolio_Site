@@ -17,7 +17,7 @@ const aboutMeContainerStyle = {
 // };
 
 const subHeadingStyle = {
-  color: "#b1916e",
+  color: "#EDDEA4",
   textAlign: 'left',
   marginTop: "20px",
   marginBottom: "10px",

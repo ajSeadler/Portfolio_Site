@@ -51,6 +51,8 @@ const ProjectGrid = () => {
     position: "relative",
     overflow: "hidden",
     borderRadius: "10px",
+    width:'80%',
+    margin:'auto',
     height: "auto",
     zIndex: showModal ? "0" : "1",
   };
